@@ -22,7 +22,7 @@ const InfoSection = () => {
                     lineHeight: '1.2',
                     letterSpacing: '-0.02em'
                 }}>
-                    Compress video online: Save storage, upload faster, and stream smoothly
+                    Comprehensive Oracle Solutions Offered - Integrated Cloud, Data, and Apps
                 </h2>
 
                 <div style={{
@@ -35,12 +35,12 @@ const InfoSection = () => {
                 }}>
                     <div>
                         <p>
-                            Our video compressor reduces your file's size in one click, saving you storage space while preserving visual quality. Experience faster uploads and downloads, and enjoy smooth streaming. Optimize your site's performance by reducing video file sizes to enhance user experience and page loading times—without compromising video quality.
+                            Oracle’s integrated cloud, data, and application platforms enable organisations to modernise IT, unlock data-driven insights, ensure regulatory compliance, and scale with confidence. By combining Oracle’s world-class technology with Multitech’s execution expertise, we ensure seamless digital transformation from strategy to steady-state operations.
                         </p>
                     </div>
                     <div>
                         <p>
-                            Email videos to clients, colleagues, and sales prospects without exceeding file size limits. Conserve mobile data when sharing videos from your phone and ensure smoother playback for your viewers. Plus, you can edit your videos using VEED's built-in <a href="#" style={{ color: '#4F46E5', textDecoration: 'none' }}>video editor</a>—where you can add subtitles, transcribe your audio, and more.
+                            Multitech Solutions, in partnership with Oracle India, can deliver a complete, integrated technology stack including Oracle Cloud Infrastructure (OCI) for secure, mission-critical workloads, Data Management & Analytics, and Enterprise Applications like Oracle ERP, HCM, and SCM.
                         </p>
                     </div>
                 </div>

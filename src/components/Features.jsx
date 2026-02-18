@@ -108,14 +108,14 @@ export const SocialMediaFeature = () => {
                     marginBottom: '2rem',
                     letterSpacing: '-1px'
                 }}>
-                    Compress video files for seamless social media posting
+                    Your Trusted Digital Transformation Partner
                 </h2>
                 <p style={{
                     fontSize: '1.25rem',
                     color: '#4B5563',
                     lineHeight: '1.6'
                 }}>
-                    Keep your audience engaged by ensuring your content loads fast on all social media platforms. Effortlessly share captivating videos even on mobile while keeping their video quality intact. You no longer need to worry about data consumption! Plus, you have a full range of social media optimization tools at your fingertips. Create crisp, high-quality videos and add your logo to create brand awareness.
+                    Multitech Solutions is a Digital Transformation and Advisory Entity working closely with customers to understand their business challenges and deliver measurable outcomes for expansion and future growth. From initial assessment to implementation and ongoing managed services, we partner with you at every step of your transformation journey.
                 </p>
             </div>
         </section>
@@ -143,7 +143,7 @@ export const VersatileFeature = () => {
                     marginBottom: '2rem',
                     letterSpacing: '-1px'
                 }}>
-                    Powerful, versatile, and efficient
+                    End-to-End Services
                 </h2>
                 <p style={{
                     fontSize: '1.25rem',
@@ -151,7 +151,7 @@ export const VersatileFeature = () => {
                     lineHeight: '1.6',
                     marginBottom: '1rem'
                 }}>
-                    VEED is the best online video compression software - simple, automatic, and compatible with all popular file formats. Upload and compress MOV, MKV, AVI, MP4, YouTube videos, and more. It also works as a GIF compressor. Quickly compress and share GIFs via email, instant messaging platforms, and chat apps to increase engagement in your online communities. It's an all-in-one powerful editor, video compressor, and <a href="#" style={{ color: '#6366F1', textDecoration: 'none' }}>video converter</a>!
+                    As your Oracle partner, Multitech Solutions provides complete lifecycle services: Oracle Consulting & Solution Design, Implementation & Rollouts, Cloud & Application Migration, Upgrade & Modernisation, Managed Services & AMC, and Performance Optimisation. We act as a single point of accountability, ensuring faster deployments, lower risk, and better ROI.
                 </p>
             </div>
 

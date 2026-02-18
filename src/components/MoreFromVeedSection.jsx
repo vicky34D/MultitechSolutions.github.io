@@ -73,7 +73,7 @@ const MoreFromVeedSection = () => {
                     textTransform: 'uppercase',
                     letterSpacing: '-1px'
                 }}>
-                    More From Veed
+                    Partnering with Oracle
                 </h2>
 
                 <div style={{
@@ -83,23 +83,23 @@ const MoreFromVeedSection = () => {
                 }}>
                     <Card
                         color="#818CF8" // Periwinkle/Blue
-                        imageTitle="Compress Videos Without Losing Quality"
-                        title="6 Easy Ways to Compress Video Files (Without Losing Quality)"
-                        description="Figuring out how to compress a video file without losing quality doesn't have to be a long and drawn-out process. Try these simple methods now!"
+                        imageTitle="Oracle Cloud Infrastructure"
+                        title="Secure & Scalable Cloud"
+                        description="Secure, high-performance cloud for mission-critical workloads. Scalable infrastructure for enterprise and government use cases."
                     />
                     <Card
                         color="#34D399" // Green
-                        imageTitle="Top 5 Methods"
-                        imageSub="to Compress Your Video"
-                        title="Top 5 Methods to Compress Your Video Files for Email (And When to Use Each)"
-                        description="With so many different ways to compress your video file for email, it can be difficult to understand which is the best method for you. We eliminate the tedious guesswork."
+                        imageTitle="Data Management"
+                        imageSub="& Analytics"
+                        title="Unlock Data-Driven Insights"
+                        description="Oracle Database, Autonomous Database, Data Warehousing. Advanced analytics and real-time insights for better decision making."
                     />
                     <Card
                         color="#F472B6" // Pink/Red
-                        imageTitle="Send Large Video Files"
-                        imageSub="with VEED"
-                        title="How to Send Large Video Files (from Desktop, iPhone, and Android)"
-                        description="Have a large video file that you'd like to share? Check out the 7 best methods that can help with that."
+                        imageTitle="Enterprise Applications"
+                        imageSub="ERP, HCM, SCM, CX"
+                        title="Modernise IT & Operations"
+                        description="Industry-specific enterprise solutions. AI, ML & Automation embedded intelligence to optimise operations."
                     />
                 </div>
             </div>

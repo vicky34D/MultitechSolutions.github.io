@@ -19,24 +19,24 @@ const Hero = () => {
                 {/* Left Column */}
                 <div>
                     <h1 style={{
-                        fontSize: '5rem',
-                        lineHeight: '0.9',
+                        fontSize: '3.5rem',
+                        lineHeight: '1.1',
                         fontWeight: '900', // Heavy bold
-                        letterSpacing: '-3px',
+                        letterSpacing: '-1px',
                         marginBottom: '1.5rem',
                         color: '#111827',
                         textTransform: 'uppercase'
                     }}>
-                        Video Compressor
+                        End-to-End IT Solutions & Services
                     </h1>
                     <p style={{
                         fontSize: '1.25rem',
                         color: '#4B5563',
                         marginBottom: '2.5rem',
-                        maxWidth: '500px',
+                        maxWidth: '550px',
                         lineHeight: '1.6'
                     }}>
-                        Video compression in minutes. Shrink file sizes without visible quality loss.
+                        Multitech Solutions is a 25 years young company delivering technology solutions to enterprises across different industry verticals. Your trusted partner for digital transformation.
                     </p>
                     <button style={{
                         backgroundColor: '#6366F1',
@@ -51,7 +51,7 @@ const Hero = () => {
                         gap: '0.5rem',
                         boxShadow: '0 10px 15px -3px rgba(99, 102, 241, 0.3)'
                     }}>
-                        Compress a video <span style={{ fontSize: '1.2em' }}>→</span>
+                        Connect with Us <span style={{ fontSize: '1.2em' }}>→</span>
                     </button>
                 </div>
 
@@ -66,8 +66,8 @@ const Hero = () => {
                         aspectRatio: '16/9' // Aspect ratio
                     }}>
                         <img
-                            src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80"
-                            alt="Person recording audio"
+                            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80"
+                            alt="Data Center IT Infrastructure"
                             style={{
                                 width: '100%',
                                 height: '100%',

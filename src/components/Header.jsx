@@ -27,7 +27,7 @@ const Header = () => {
         boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.15)'
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '2.5rem' }}>
-          <div style={{ fontWeight: '800', fontSize: '1.5rem', letterSpacing: '-1px', color: '#ffffff' }}>VEED</div>
+          <div style={{ fontWeight: '800', fontSize: '1.5rem', letterSpacing: '-1px', color: '#ffffff' }}>Multitech</div>
           <nav style={{ display: 'flex', gap: '1.5rem', fontSize: '0.85rem', color: '#D1D5DB', fontWeight: '500' }}>
             <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '4px', color: '#E5E7EB' }}>Product <span style={{ fontSize: '0.7em', color: '#9CA3AF' }}>▼</span></a>
             <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '4px', color: '#E5E7EB' }}>Use Cases <span style={{ fontSize: '0.7em', color: '#9CA3AF' }}>▼</span></a>

@@ -112,7 +112,7 @@ const HowToSection = () => {
                 fontFamily: 'Inter, sans-serif',
                 letterSpacing: '-1px'
             }}>
-                How to compress a video online:
+                Our Service Portfolio:
             </h2>
 
             <div style={{
@@ -121,26 +121,26 @@ const HowToSection = () => {
                 gap: '2rem'
             }}>
                 <HowToCard
-                    icon="UploadIcon" // Will render components directly
-                    step="Step 1"
-                    title="Upload your file"
-                    description="Drag and drop your video directly into VEED. Our platform supports all major video formats, making compression easy regardless of your source file."
+                    icon="UploadIcon"
+                    step="Infrastructure"
+                    title="IT Hardware & Networking"
+                    description="Supply & Installation of IT Hardware and Networking solutions. We build robust, scalable foundations for your enterprise technology landscape."
                     Icon={UploadIcon}
                 />
 
                 <HowToCard
                     icon="ReduceIcon"
-                    step="Step 2"
-                    title="Reduce file size"
-                    description="The file compressor automatically balances quality and file size for optimal results. You can also adjust the quality and resolution settings yourself, with real-time file size estimates as you select different options."
+                    step="Software"
+                    title="ERP & Cloud Services"
+                    description="ERP Licencing & Implementation, Cloud infrastructure provisioning, and managed services. We modernize your operations with world-class software solutions."
                     Icon={ReduceIcon}
                 />
 
                 <HowToCard
                     icon="ExportIcon"
-                    step="Step 3"
-                    title="Export or edit"
-                    description={<>Download your compressed video or explore more tools. Use Magic Cut to auto-trim <a href="#" style={{ color: '#4F46E5', textDecoration: 'none' }}>filler words</a> and long pauses. Or instantly share your video with VEED's built-in <a href="#" style={{ color: '#4F46E5', textDecoration: 'none' }}>web hosting</a>.</>}
+                    step="Security"
+                    title="Cyber Security & Surveillance"
+                    description="Comprehensive Cyber security and Surveillance systems to protect your assets, data, and people. Ensuring compliance and peace of mind."
                     Icon={ExportIcon}
                 />
             </div>

@@ -53,14 +53,14 @@ const SectionCard = ({ title, links }) => (
 
 const DiscoverExploreSection = () => {
     const discoverLinks = [
-        'Compress AVI', 'Compress MKV', 'Compress MOV', 'Compress WebM',
-        'Compress WMV', 'Discord Video Compressor', 'GIF Compressor',
-        'MP4 Compressor', 'Video Compressor for Android', 'YouTube Video Compressor'
+        'Oracle Cloud Infrastructure', 'Oracle ERP', 'Oracle HCM', 'Oracle SCM',
+        'Cyber Security', 'Surveillance Systems', 'IT Hardware',
+        'Networking Solutions', 'Managed Services', 'Cloud Migration'
     ];
 
     const exploreLinks = [
-        'Extract Audio from Video', 'Repurpose Video', 'Resize Video',
-        'Share Video', 'Video Downloader', 'Video Feedback Tool', 'YouTube to GIF'
+        'Healthcare', 'Manufacturing', 'Retail',
+        'BFSI', 'Government', 'Education', 'Logistics'
     ];
 
     return (
@@ -69,8 +69,8 @@ const DiscoverExploreSection = () => {
             margin: '0 auto',
             padding: '2rem'
         }}>
-            <SectionCard title="Discover More" links={discoverLinks} />
-            <SectionCard title="Explore Related Tools" links={exploreLinks} />
+            <SectionCard title="Technology Stack" links={discoverLinks} />
+            <SectionCard title="Industry Verticals" links={exploreLinks} />
         </section>
     );
 };

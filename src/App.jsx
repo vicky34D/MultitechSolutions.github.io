@@ -25,16 +25,17 @@ function App() {
           justifyContent: 'center',
           alignItems: 'center',
           gap: '4rem',
-          opacity: '0.4',
+          opacity: '0.6',
           filter: 'grayscale(100%)',
           flexWrap: 'wrap'
         }}>
-          {['NBCUniversal', 'UBS', 'NETFLIX', 'VISA', 'Ventura Foods', 'MERCK', 'TARGET', 'PENTAX', 'P&G'].map((logo) => (
+          {['ORACLE', 'SAP', 'HPE', 'Dell', 'Microsoft', 'Veeam', 'Emerson'].map((logo) => (
             <span key={logo} style={{
-              fontSize: '1.25rem',
-              fontWeight: '700',
-              fontFamily: 'serif',  // Just to vary fonts a bit
-              color: '#374151'
+              fontSize: '1.5rem',
+              fontWeight: '800',
+              fontFamily: 'sans-serif',
+              color: '#374151',
+              letterSpacing: '1px'
             }}>
               {logo}
             </span>

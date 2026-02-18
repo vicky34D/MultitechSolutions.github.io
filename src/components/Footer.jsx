@@ -66,47 +66,32 @@ const SocialIcon = ({ children }) => (
 const Footer = () => {
     const linkGroups = [
         {
-            title: 'Video Editor',
+            title: 'Services',
             links: [
-                'Add Music to Video', 'Add Subtitles to Video', 'Add Text to Video',
-                'Audio to Text', 'Auto Subtitle Generator', 'Video Caption Generator',
-                'Video Compressor', 'Video Converter', 'Video to Text', 'Video Translator'
+                'Oracle Cloud Infrastructure', 'Data Management & Analytics', 'Enterprise Applications',
+                'AI, ML & Automation', 'Security & Compliance', 'Managed Services',
+                'IT Hardware & Networking', 'Cyber Security', 'Surveillance Systems'
             ]
         },
         {
-            title: 'AI Tools',
+            title: 'Partners',
             links: [
-                'AI Video', 'Fabric 1.0 API', 'AI Avatars', 'AI Image Generator',
-                'Video Background Remover', 'Remove Background Noise from Video',
-                'Remove Background Noise from Audio', 'Voice Dubber', 'AI Voice Generator',
-                'Eye Contact AI', 'Text to Speech Video'
+                'Oracle', 'SAP', 'HPE', 'Dell',
+                'Microsoft', 'Veeam', 'Emerson', 'VMware', 'Cisco'
             ]
         },
         {
-            title: 'AI Playground',
+            title: 'Contact',
             links: [
-                'Fabric 1.0', 'Kling O1', 'Sora 2', 'Sora 2 Pro', 'VEO 3.1',
-                'VEO 3.1 Fast', 'VEO 3', 'VEO 3 Fast', 'Seedance 1.0', 'VEO 2',
-                'PixVerse AI', 'MiniMax Video 01', 'LTX Video', 'Kling AI'
-            ]
-        },
-        {
-            title: 'Product',
-            links: ['Pricing', 'Enterprise']
-        },
-        {
-            title: 'Resources',
-            links: [
-                'VEED Blog', 'Articles', 'Webinars', 'Video Guides', 'VEED Alternatives',
-                'CapCut Alternatives', 'Kling O1 AI Video Guide', 'Science of Great Video Report',
-                'The Ultimate Guide to Video Marketing'
+                'Contact Sales', 'Support', 'Media Enquiries', 'Office Locations',
+                'Request a Quote', 'Partner with Us'
             ]
         },
         {
             title: 'Company',
             links: [
-                'Jobs', 'Privacy', 'Terms', 'Cookies', 'Contact Support',
-                'Affiliate Program', 'Media Enquiries'
+                'About Us', 'Careers', 'Privacy Policy', 'Terms of Service', 'Sustainability',
+                'News & Events', 'Case Studies'
             ]
         }
     ];
@@ -154,7 +139,7 @@ const Footer = () => {
                         <SocialIcon>𝕏</SocialIcon> {/* X Logo */}
                         <SocialIcon>▶</SocialIcon> {/* YouTube */}
                         <SocialIcon>📷</SocialIcon> {/* Instagram */}
-                        <SocialIcon>♪</SocialIcon> {/* TikTok */}
+                        <SocialIcon>in</SocialIcon> {/* LinkedIn */}
                         <SocialIcon>✉</SocialIcon> {/* Email */}
                     </div>
 
@@ -165,7 +150,7 @@ const Footer = () => {
                             marginBottom: '1rem',
                             lineHeight: 1
                         }}>
-                            V
+                            MS
                         </div>
                         <p style={{
                             color: '#9CA3AF',
@@ -174,10 +159,10 @@ const Footer = () => {
                             marginBottom: '1rem',
                             maxWidth: '200px'
                         }}>
-                            The easy way to create stunning videos, add subtitles and grow your audience.
+                            End-end IT solutions and services company, delivering technology solutions to enterprises.
                         </p>
                         <p style={{ color: '#6B7280', fontSize: '0.75rem' }}>
-                            © Copyright 2026 VEED
+                            © Copyright 2026 Multitech Solutions
                         </p>
                     </div>
                 </div>
@@ -209,7 +194,7 @@ const Footer = () => {
 
             {/* Giant VEED Text */}
             <div style={{
-                fontSize: '25vw', // Massive viewport-based size
+                fontSize: '15vw', // Massive viewport-based size
                 fontWeight: '900',
                 lineHeight: '0.75',
                 textAlign: 'center',
@@ -220,7 +205,7 @@ const Footer = () => {
                 transform: 'translateY(10%)', // Push it down slightly to cut off
                 color: '#FFFFFF'
             }}>
-                VEED
+                MULTITECH
             </div>
         </footer>
     );

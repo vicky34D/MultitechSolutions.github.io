@@ -17,14 +17,16 @@ const DemoSection = () => {
                 textTransform: 'uppercase',
                 lineHeight: '0.9'
             }}>
-                Learn More
+                Connect with Us
             </h2>
             <p style={{
                 fontSize: '1.5rem',
                 color: '#4B5563',
-                marginBottom: '4rem'
+                marginBottom: '4rem',
+                maxWidth: '800px',
+                margin: '0 auto 4rem auto'
             }}>
-                Watch this video compressor demo:
+                Let’s Transform Your Business. Explore how Oracle solutions can accelerate your digital roadmap.
             </p>
 
             <div style={{

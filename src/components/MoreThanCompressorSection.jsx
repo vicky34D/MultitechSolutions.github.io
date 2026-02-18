@@ -19,7 +19,7 @@ const MoreThanCompressorSection = () => {
                 fontFamily: '"Oswald", sans-serif',
                 letterSpacing: '-2px'
             }}>
-                More than an online video compressor
+                More than just an IT Vendor
             </h2>
 
             <div style={{
@@ -33,10 +33,10 @@ const MoreThanCompressorSection = () => {
                 color: '#4B5563'
             }}>
                 <p>
-                    VEED's video compressor is only one of the many tools you can use when you choose our platform. From cropping and light and color adjustments to video filtering and compressing videos, our video editor has got it all. You can remove your video's
+                    We engage with organisations as their inhouse IT department for designing their IT road map and management of their IT landscape with a strong focus on reliability, performance, and long-term value.
                 </p>
                 <p>
-                    background in one click and replace it with an image or another video. Remove filler words in your recordings, eliminate background noise in your audio, and more. Try VEED today and experience powerful video editing without the learning curve!
+                    From initial assessment to implementation and ongoing managed services, we partner with you at every step of your transformation journey. We act as a single point of accountability, ensuring faster deployments, lower risk, and better ROI.
                 </p>
             </div>
 
