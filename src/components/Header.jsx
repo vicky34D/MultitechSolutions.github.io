@@ -28,20 +28,14 @@ const Header = () => {
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '2.5rem' }}>
           <div style={{ fontWeight: '800', fontSize: '1.5rem', letterSpacing: '-1px', color: '#ffffff' }}>Multitech</div>
-          <nav style={{ display: 'flex', gap: '1.5rem', fontSize: '0.85rem', color: '#D1D5DB', fontWeight: '500' }}>
-            <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '4px', color: '#E5E7EB' }}>Product <span style={{ fontSize: '0.7em', color: '#9CA3AF' }}>▼</span></a>
-            <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '4px', color: '#E5E7EB' }}>Use Cases <span style={{ fontSize: '0.7em', color: '#9CA3AF' }}>▼</span></a>
-            <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '4px', color: '#E5E7EB' }}>
-              <span style={{ color: '#818CF8' }}>✦</span> AI <span style={{ fontSize: '0.7em', color: '#9CA3AF' }}>▼</span>
-            </a>
-            <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '4px', color: '#E5E7EB' }}>APIs <span style={{ fontSize: '0.7em', color: '#9CA3AF' }}>▼</span></a>
-            <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '4px', color: '#E5E7EB' }}>Resources <span style={{ fontSize: '0.7em', color: '#9CA3AF' }}>▼</span></a>
-            <a href="#" style={{ color: '#E5E7EB' }}>Pricing</a>
+          <nav style={{ display: 'flex', gap: '2rem', fontSize: '0.95rem', color: '#D1D5DB', fontWeight: '500' }}>
+            <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '4px', color: '#E5E7EB', textDecoration: 'none' }}>Products <span style={{ fontSize: '0.7em', color: '#9CA3AF' }}>▼</span></a>
+            <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '4px', color: '#E5E7EB', textDecoration: 'none' }}>Resources <span style={{ fontSize: '0.7em', color: '#9CA3AF' }}>▼</span></a>
+            <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '4px', color: '#E5E7EB', textDecoration: 'none' }}>About Us</a>
           </nav>
         </div>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-          <a href="#" style={{ fontSize: '0.85rem', fontWeight: '500', color: '#E5E7EB', marginRight: '0.5rem' }}>Contact Sales</a>
           <button style={{
             backgroundColor: '#FFFFFF',
             border: 'none',
@@ -51,17 +45,7 @@ const Header = () => {
             borderRadius: '9999px',
             fontWeight: '600',
             cursor: 'pointer'
-          }}>Login</button>
-          <button style={{
-            backgroundColor: '#374151',
-            border: '1px solid rgba(255,255,255,0.1)',
-            color: '#FFFFFF',
-            padding: '0.6rem 1.2rem',
-            fontSize: '0.85rem',
-            borderRadius: '9999px',
-            fontWeight: '600',
-            cursor: 'pointer'
-          }}>Sign Up</button>
+          }}>Contact Sales</button>
         </div>
       </header>
     </div>
