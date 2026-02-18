@@ -75,58 +75,7 @@ const DemoSection = () => {
                     </div>
                 </div>
 
-                {/* Advanced Settings Overlay Card */}
-                <div style={{
-                    position: 'absolute',
-                    bottom: '40px',
-                    right: '-40px',
-                    backgroundColor: 'white',
-                    padding: '1.5rem',
-                    borderRadius: '20px',
-                    boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)',
-                    width: '320px',
-                    textAlign: 'left'
-                }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
-                        <span style={{ fontSize: '1.2rem' }}>⚙️</span>
-                        <h3 style={{ fontSize: '1.1rem', fontWeight: 'bold', margin: 0 }}>Advanced</h3>
-                    </div>
-
-                    <div style={{ marginBottom: '1rem' }}>
-                        <label style={{ display: 'block', fontSize: '0.8rem', color: '#6B7280', marginBottom: '0.25rem' }}>Resolution</label>
-                        <div style={{ border: '1px solid #E5E7EB', borderRadius: '8px', padding: '0.5rem', fontSize: '0.9rem', display: 'flex', justifyContent: 'space-between' }}>
-                            720p <span>▼</span>
-                        </div>
-                    </div>
-
-                    <div style={{ marginBottom: '1rem' }}>
-                        <label style={{ display: 'block', fontSize: '0.8rem', color: '#6B7280', marginBottom: '0.25rem' }}>Quality</label>
-                        <div style={{ border: '1px solid #E5E7EB', borderRadius: '8px', padding: '0.5rem', fontSize: '0.9rem', display: 'flex', justifyContent: 'space-between' }}>
-                            High <span>▼</span>
-                        </div>
-                    </div>
-
-                    <div style={{
-                        backgroundColor: '#818CF8', // Indigo/Purple
-                        color: 'white',
-                        padding: '1rem',
-                        borderRadius: '12px',
-                        display: 'flex',
-                        justifyContent: 'space-between',
-                        alignItems: 'center',
-                        fontWeight: '600',
-                        boxShadow: '0 10px 15px -3px rgba(99, 102, 241, 0.4)'
-                    }}>
-                        <div>
-                            <div style={{ fontSize: '0.8rem', opacity: 0.9 }}>Compression</div>
-                            <div>Faster Render</div>
-                        </div>
-                        <span style={{ fontSize: '1.2rem' }}>⌄</span>
-                    </div>
-
-                    {/* Cursor */}
-                    <div style={{ position: 'absolute', bottom: '-10px', right: '10px', fontSize: '24px' }}>👆</div>
-                </div>
+                {/* Advanced Settings Overlay Card Removed */}
             </div>
         </section>
     );

@@ -7,6 +7,8 @@ import MoreFromVeedSection from './components/MoreFromVeedSection';
 import DiscoverExploreSection from './components/DiscoverExploreSection';
 import Footer from './components/Footer';
 import InfoSection from './components/InfoSection';
+import LogoTicker from './components/LogoTicker';
+import RecognitionSection from './components/RecognitionSection';
 import HowToSection from './components/HowToSection';
 
 function App() {
@@ -17,35 +19,14 @@ function App() {
         <Hero />
 
         {/* Logos Section */}
-        <div style={{
-          maxWidth: '1280px',
-          margin: '0 auto',
-          padding: '2rem',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          gap: '4rem',
-          opacity: '0.6',
-          filter: 'grayscale(100%)',
-          flexWrap: 'wrap'
-        }}>
-          {['ORACLE', 'SAP', 'HPE', 'Dell', 'Microsoft', 'Veeam', 'Emerson'].map((logo) => (
-            <span key={logo} style={{
-              fontSize: '1.5rem',
-              fontWeight: '800',
-              fontFamily: 'sans-serif',
-              color: '#374151',
-              letterSpacing: '1px'
-            }}>
-              {logo}
-            </span>
-          ))}
-        </div>
+        {/* Logos Section - Replaced with Ticker */}
+        <LogoTicker />
 
         <InfoSection />
         <HowToSection />
         <SocialMediaFeature />
         <VersatileFeature />
+        <RecognitionSection />
         <DemoSection />
         <MoreThanCompressorSection />
         <MoreFromVeedSection />
