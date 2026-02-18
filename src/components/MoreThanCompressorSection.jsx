@@ -49,8 +49,8 @@ const MoreThanCompressorSection = () => {
             }}>
                 {/* Using the copied image from public folder */}
                 <img
-                    src="/video-editor-mockup.png"
-                    alt="VEED Video Editor Interface Mockup"
+                    src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop"
+                    alt="Cloud Computing and Digital Transformation"
                     style={{
                         width: '100%',
                         height: 'auto',
