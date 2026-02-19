@@ -163,6 +163,8 @@ const Footer = () => {
                         </p>
                         <p style={{ color: '#6B7280', fontSize: '0.75rem' }}>
                             © Copyright 2026 Multitech Solutions
+                            <br />
+                            SUBHANKAR DHAR
                         </p>
                     </div>
                 </div>

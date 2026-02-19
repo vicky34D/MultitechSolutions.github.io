@@ -5,7 +5,7 @@ const Hero = () => {
         <section style={{
             maxWidth: '1280px',
             margin: '0 auto',
-            padding: '4rem 2rem',
+            padding: '12rem 2rem 4rem 2rem', // Increased top padding to prevent navbar overlap
             display: 'flex',
             flexDirection: 'column',
             gap: '6rem'

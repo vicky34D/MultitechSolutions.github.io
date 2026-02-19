@@ -16,7 +16,7 @@ const Header = () => {
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        padding: '0.6rem 0.6rem 0.6rem 1.5rem',
+        padding: '1.2rem 1.5rem', // Increased vertical padding to make it wider (taller)
         maxWidth: '1200px',
         width: '100%',
         backgroundColor: 'rgba(20, 20, 20, 0.4)', // Increased transparency for better glass effect
