@@ -3,45 +3,64 @@ import React from 'react';
 const Hero = () => {
     return (
         <section style={{
-            maxWidth: '1280px',
-            margin: '0 auto',
-            padding: '12rem 2rem 4rem 2rem', // Increased top padding to prevent navbar overlap
+            maxWidth: '100%',
+            minHeight: '100vh', // Full viewport height
+            padding: '12rem 2rem 6rem 2rem',
             display: 'flex',
             flexDirection: 'column',
-            gap: '6rem'
+            alignItems: 'center',
+            justifyContent: 'center',
+            textAlign: 'center',
+            gap: '4rem',
+            position: 'relative',
+            position: 'relative',
+            overflow: 'hidden',
+            // Tech-inspired background (using user provided background)
+            backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.6)), url('/assets/hero_bg_crusoe.jpg')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundAttachment: 'fixed'
         }}>
+            {/* Background glowing orb effect */}
             <div style={{
-                display: 'grid',
-                gridTemplateColumns: '1fr 1fr',
-                gap: '4rem',
-                alignItems: 'center'
-            }}>
-                {/* Left Column */}
-                <div>
-                    <h1 style={{
-                        fontSize: '3.5rem',
-                        lineHeight: '1.1',
-                        fontWeight: '900', // Heavy bold
-                        letterSpacing: '-1px',
-                        marginBottom: '1.5rem',
-                        color: '#111827',
-                        textTransform: 'uppercase'
-                    }}>
-                        End-to-End IT Solutions & Services
-                    </h1>
-                    <p style={{
-                        fontSize: '1.25rem',
-                        color: '#4B5563',
-                        marginBottom: '2.5rem',
-                        maxWidth: '550px',
-                        lineHeight: '1.6'
-                    }}>
-                        Multitech Solutions is a 25 years young company delivering technology solutions to enterprises across different industry verticals. Your trusted partner for digital transformation.
-                    </p>
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                width: '800px',
+                height: '800px',
+                background: 'radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, rgba(255, 255, 255, 0) 70%)',
+                zIndex: 0,
+                pointerEvents: 'none'
+            }} />
+
+            <div style={{ position: 'relative', zIndex: 1, maxWidth: '900px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <h1 style={{
+                    fontSize: '4.5rem', // Larger font for impact
+                    lineHeight: '1.1',
+                    fontWeight: '900',
+                    letterSpacing: '-2px',
+                    marginBottom: '2rem',
+                    color: '#111827',
+                    textTransform: 'uppercase'
+                }}>
+                    End-to-End IT Solutions & Services
+                </h1>
+                <p style={{
+                    fontSize: '1.5rem', // Increased size
+                    color: '#4B5563',
+                    marginBottom: '3rem',
+                    maxWidth: '700px',
+                    lineHeight: '1.6'
+                }}>
+                    Multitech Solutions is a 25 years young company delivering technology solutions to enterprises across different industry verticals. Your trusted partner for digital transformation.
+                </p>
+
+                <div style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center' }}>
                     <button style={{
-                        backgroundColor: '#6366F1',
+                        backgroundColor: '#111827', // Dark button for contrast
                         color: 'white',
-                        padding: '1rem 2rem',
+                        padding: '1rem 2.5rem',
                         fontSize: '1.1rem',
                         borderRadius: '9999px',
                         border: 'none',
@@ -49,56 +68,55 @@ const Hero = () => {
                         display: 'flex',
                         alignItems: 'center',
                         gap: '0.5rem',
-                        boxShadow: '0 10px 15px -3px rgba(99, 102, 241, 0.3)'
-                    }}>
+                        cursor: 'pointer',
+                        boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
+                        transition: 'transform 0.2s'
+                    }}
+                        onMouseEnter={(e) => e.target.style.transform = 'translateY(-2px)'}
+                        onMouseLeave={(e) => e.target.style.transform = 'translateY(0)'}
+                    >
                         Connect with Us <span style={{ fontSize: '1.2em' }}>→</span>
                     </button>
-                </div>
 
-                {/* Right Column */}
-                <div style={{ position: 'relative' }}>
-                    {/* Main Image */}
-                    <div style={{
-                        borderRadius: '24px',
-                        overflow: 'hidden',
-                        boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
-                        backgroundColor: '#E5E7EB', // Placeholder bg
-                        aspectRatio: '16/9' // Aspect ratio
-                    }}>
-                        <img
-                            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80"
-                            alt="Data Center IT Infrastructure"
-                            style={{
-                                width: '100%',
-                                height: '100%',
-                                objectFit: 'cover',
-                                display: 'block'
-                            }}
-                        />
-                    </div>
-
-
+                    <button style={{
+                        backgroundColor: 'white',
+                        color: '#111827',
+                        padding: '1rem 2.5rem',
+                        fontSize: '1.1rem',
+                        borderRadius: '9999px',
+                        border: '1px solid #E5E7EB',
+                        fontWeight: '600',
+                        cursor: 'pointer',
+                        transition: 'background-color 0.2s'
+                    }}
+                        onMouseEnter={(e) => e.target.style.backgroundColor = '#F9FAFB'}
+                        onMouseLeave={(e) => e.target.style.backgroundColor = 'white'}
+                    >
+                        Learn More
+                    </button>
                 </div>
             </div>
 
-            {/* Ratings Section */}
-            <div style={{ textAlign: 'center' }}>
+            {/* Ratings Section - Centered at bottom */}
+            <div style={{ position: 'relative', zIndex: 1 }}>
                 <div style={{
                     display: 'inline-flex',
                     alignItems: 'center',
                     gap: '1rem',
-                    backgroundColor: 'white',
+                    backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                    backdropFilter: 'blur(8px)',
                     padding: '0.75rem 2rem',
                     borderRadius: '9999px',
-                    boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.05)'
+                    boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.05)',
+                    border: '1px solid rgba(255, 255, 255, 0.5)'
                 }}>
-                    <span style={{ fontSize: '1.5rem', fontWeight: '700', color: '#9CA3AF' }}>4.6</span>
-                    <div style={{ display: 'flex', gap: '2px', color: '#D1D5DB' }}>
+                    <span style={{ fontSize: '1.5rem', fontWeight: '700', color: '#111827' }}>4.6</span>
+                    <div style={{ display: 'flex', gap: '2px', color: '#F59E0B' }}> {/* Gold stars */}
                         {'★★★★★'.split('').map((star, i) => (
                             <span key={i} style={{ fontSize: '1.2rem' }}>★</span>
                         ))}
                     </div>
-                    <span style={{ color: '#6B7280', fontSize: '0.9rem' }}>319 reviews</span>
+                    <span style={{ color: '#4B5563', fontSize: '0.9rem' }}>319 reviews</span>
                 </div>
             </div>
         </section>
