@@ -1,5 +1,5 @@
 import React from 'react';
-import './LogoTicker.css'; // Import Styles
+import './LogoTicker.css';
 
 const logos = [
     { name: 'Oracle', url: 'https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg' },
@@ -15,86 +15,34 @@ const LogoTicker = () => {
         <div style={{
             width: '100%',
             overflow: 'hidden',
-            backgroundColor: '#F9FAFB',
-            padding: '2rem 0',
-            borderBottom: '1px solid #E5E7EB',
-            borderTop: '1px solid #E5E7EB'
+            backgroundColor: '#F8F9FA',
+            padding: '3rem 0',
+            borderTop: '1px solid rgba(0, 0, 0, 0.06)',
+            borderBottom: '1px solid rgba(0, 0, 0, 0.06)',
         }}>
             <div className="ticker-track">
-                {/* First set of logos */}
-                {logos.map((logo, index) => (
-                    <div key={`logo-1-${index}`} className="ticker-item">
-                        <img
-                            src={logo.url}
-                            alt={`${logo.name} logo`}
-                            style={{
-                                height: '40px', // Fixed height for consistency
-                                width: 'auto',
-                                opacity: 0.6,
-                                filter: 'grayscale(100%)',
-                                transition: 'all 0.3s ease'
-                            }}
-                            onMouseEnter={(e) => {
-                                e.currentTarget.style.filter = 'grayscale(0%)';
-                                e.currentTarget.style.opacity = '1';
-                            }}
-                            onMouseLeave={(e) => {
-                                e.currentTarget.style.filter = 'grayscale(100%)';
-                                e.currentTarget.style.opacity = '0.6';
-                            }}
-                        />
-                    </div>
-                ))}
-
-                {/* Duplicate set for seamless scrolling */}
-                {logos.map((logo, index) => (
-                    <div key={`logo-2-${index}`} className="ticker-item">
-                        <img
-                            src={logo.url}
-                            alt={`${logo.name} logo`}
-                            style={{
-                                height: '40px',
-                                width: 'auto',
-                                opacity: 0.6,
-                                filter: 'grayscale(100%)',
-                                transition: 'all 0.3s ease'
-                            }}
-                            onMouseEnter={(e) => {
-                                e.currentTarget.style.filter = 'grayscale(0%)';
-                                e.currentTarget.style.opacity = '1';
-                            }}
-                            onMouseLeave={(e) => {
-                                e.currentTarget.style.filter = 'grayscale(100%)';
-                                e.currentTarget.style.opacity = '0.6';
-                            }}
-                        />
-                    </div>
-                ))}
-
-                {/* Triplicate set for wider screens just in case */}
-                {logos.map((logo, index) => (
-                    <div key={`logo-3-${index}`} className="ticker-item">
-                        <img
-                            src={logo.url}
-                            alt={`${logo.name} logo`}
-                            style={{
-                                height: '40px',
-                                width: 'auto',
-                                opacity: 0.6,
-                                filter: 'grayscale(100%)',
-                                transition: 'all 0.3s ease'
-                            }}
-                            onMouseEnter={(e) => {
-                                e.currentTarget.style.filter = 'grayscale(0%)';
-                                e.currentTarget.style.opacity = '1';
-                            }}
-                            onMouseLeave={(e) => {
-                                e.currentTarget.style.filter = 'grayscale(100%)';
-                                e.currentTarget.style.opacity = '0.6';
-                            }}
-                        />
-                    </div>
-                ))}
+                {[1, 2, 3].map(set =>
+                    logos.map((logo, index) => (
+                        <div key={`logo-${set}-${index}`} className="ticker-item">
+                            <img
+                                src={logo.url}
+                                alt={`${logo.name} logo`}
+                                style={{
+                                    height: '28px',
+                                    width: 'auto',
+                                    opacity: 0.7,
+                                    transition: 'all 0.4s ease'
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.currentTarget.style.opacity = '1';
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.currentTarget.style.opacity = '0.7';
+                                }}
+                            />
+                        </div>
+                    ))
+                )}
             </div>
         </div>
     );

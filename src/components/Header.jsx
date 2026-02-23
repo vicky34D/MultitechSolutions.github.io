@@ -1,152 +1,207 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
-  const [showServices, setShowServices] = React.useState(false);
+  const [showNetwork, setShowNetwork] = React.useState(false);
 
   return (
     <div style={{
       position: 'fixed',
-      top: '1.5rem',
-      left: '0',
-      right: '0',
+      top: '1rem',
+      left: 0,
+      right: 0,
       display: 'flex',
       justifyContent: 'center',
       zIndex: 1000,
-      padding: '0 1rem'
+      padding: '0 1.5rem',
+      fontFamily: "'Inter', sans-serif"
     }}>
       <header style={{
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        padding: '1.2rem 1.5rem', // Increased vertical padding to make it wider (taller)
-        maxWidth: '1200px',
+        padding: '0.75rem 1.5rem',
+        maxWidth: '1280px',
         width: '100%',
-        backgroundColor: 'rgba(255, 255, 255, 0.05)', // Much more transparent
-        backdropFilter: 'blur(16px) saturate(180%)', // Strong blur
-        WebkitBackdropFilter: 'blur(16px) saturate(180%)',
+        backgroundColor: 'rgba(255, 255, 255, 0.7)', // Light glass
+        backdropFilter: 'blur(24px) saturate(180%)',
+        WebkitBackdropFilter: 'blur(24px) saturate(180%)',
+        border: '1px solid rgba(0, 0, 0, 0.08)',
         borderRadius: '9999px',
-        border: '1px solid rgba(255, 255, 255, 0.2)', // Slightly stronger border
-        boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1), inset 0 0 20px rgba(255, 255, 255, 0.05)' // Liquid effect shadows
+        boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.05)',
       }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '2.5rem' }}>
-          <div style={{ fontWeight: '800', fontSize: '1.5rem', letterSpacing: '-1px', color: '#111827' }}>Multitech</div>
-          <nav style={{ display: 'flex', gap: '2rem', fontSize: '0.95rem', color: '#374151', fontWeight: '500', height: '100%' }}>
+        {/* Logo + Nav */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '3rem' }}>
+          <Link to="/" style={{
+            fontWeight: '800',
+            fontSize: '1.4rem',
+            letterSpacing: '-1px',
+            color: '#1A1A1A',
+            textDecoration: 'none',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.4rem'
+          }}>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <rect x="2" y="2" width="20" height="20" rx="4" fill="#000" />
+              <rect x="6" y="6" width="5" height="5" rx="1" fill="#D3E95F" />
+              <rect x="13" y="6" width="5" height="5" rx="1" fill="#FFF" />
+              <rect x="6" y="13" width="5" height="5" rx="1" fill="#FFF" />
+              <rect x="13" y="13" width="5" height="5" rx="1" fill="#FFF" opacity="0.4" />
+            </svg>
+            Multitech
+          </Link>
+
+          <nav style={{
+            display: 'flex',
+            gap: '0.5rem',
+            fontSize: '0.95rem',
+            height: '100%',
+            fontWeight: '600'
+          }}>
             <div
               style={{ position: 'relative', height: '100%', display: 'flex', alignItems: 'center' }}
-              onMouseEnter={() => setShowServices(true)}
-              onMouseLeave={() => setShowServices(false)}
+              onMouseEnter={() => setShowNetwork(true)}
+              onMouseLeave={() => setShowNetwork(false)}
             >
-              <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '4px', color: '#1F2937', textDecoration: 'none', height: '100%', cursor: 'default' }}>
+              <a href="#" style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '4px',
+                color: '#4A4A4A',
+                textDecoration: 'none',
+                height: '100%',
+                cursor: 'default',
+                padding: '0.5rem 0.75rem',
+                borderRadius: '6px',
+                transition: 'color 0.2s, background-color 0.2s',
+              }}
+                onMouseEnter={(e) => e.currentTarget.style.color = '#1A1A1A'}
+                onMouseLeave={(e) => e.currentTarget.style.color = '#4A4A4A'}
+              >
                 Services
-                <span style={{ fontSize: '0.7em', color: '#6B7280', transform: showServices ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.2s' }}>▼</span>
+                <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style={{ marginLeft: '2px', transform: showNetwork ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s ease' }}>
+                  <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
               </a>
 
               {/* Mega Menu */}
               <div style={{
                 position: 'absolute',
                 top: '100%',
-                left: '-50px',
-                paddingTop: '1.5rem', // Floating gap
-                opacity: showServices ? 1 : 0,
-                visibility: showServices ? 'visible' : 'hidden',
-                transition: 'all 0.2s ease-in-out',
-                pointerEvents: showServices ? 'auto' : 'none',
+                left: '-10px',
+                paddingTop: '0.75rem',
+                opacity: showNetwork ? 1 : 0,
+                visibility: showNetwork ? 'visible' : 'hidden',
+                transform: showNetwork ? 'translateY(0)' : 'translateY(-8px)',
+                transition: 'all 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
+                pointerEvents: showNetwork ? 'auto' : 'none',
                 zIndex: 100
               }}>
                 <div style={{
-                  backgroundColor: 'white',
+                  backgroundColor: '#FFFFFF',
                   borderRadius: '16px',
-                  boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
-                  padding: '1.5rem', // Reduced padding
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(3, minmax(260px, 1fr))',
-                  gap: '2rem', // Reduced gap
-                  color: '#1F2937',
-                  width: '900px',
-                  // Removed maxHeight and overflow to prevent scrolling, it should fit now
+                  border: '1px solid rgba(0, 0, 0, 0.08)',
+                  boxShadow: '0 20px 60px rgba(0, 0, 0, 0.08)',
+                  padding: '1.5rem',
+                  display: 'flex',
+                  flexDirection: 'row',
+                  gap: '2.5rem',
+                  color: '#1A1A1A',
+                  minWidth: '400px'
                 }}>
-                  {/* Column 1 */}
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                    <div>
-                      <h3 style={{ fontWeight: '700', fontSize: '0.95rem', color: '#111827', marginBottom: '0.5rem' }}>Implementation and Consulting</h3>
-                      <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-                        {['Oracle Enterprise Integration', 'EBS to Cloud Migration', 'Oracle Custom Application Development', 'Reporting Analytics (BI,OTBI)', 'PaaS Development'].map(item => (
-                          <li key={item}><a href="#" style={{ color: '#4B5563', textDecoration: 'none', fontSize: '0.85rem', display: 'block' }} onMouseEnter={e => e.target.style.color = '#2563EB'} onMouseLeave={e => e.target.style.color = '#4B5563'}>{item}</a></li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div>
-                      <h3 style={{ fontWeight: '700', fontSize: '0.95rem', color: '#111827', marginBottom: '0.5rem' }}>Oracle Managed Services (AMS)</h3>
-                      <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-                        {['Fusion AMS - Support Services', 'Technical Support', 'Integrated Support Model', 'Reporting Analytics (BI,OTBI)'].map(item => (
-                          <li key={item}><a href="#" style={{ color: '#4B5563', textDecoration: 'none', fontSize: '0.85rem', display: 'block' }} onMouseEnter={e => e.target.style.color = '#2563EB'} onMouseLeave={e => e.target.style.color = '#4B5563'}>{item}</a></li>
-                        ))}
-                      </ul>
-                    </div>
+                  <div>
+                    <h3 style={{ fontWeight: '700', fontSize: '0.75rem', color: '#888', marginBottom: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>IT Infrastructure</h3>
+                    <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+                      {['Cloud Migration', 'Managed IT Services', 'Cyber Security', 'Disaster Recovery'].map(item => (
+                        <li key={item}><a href="#" style={{ color: '#4A4A4A', textDecoration: 'none', fontSize: '0.95rem', fontWeight: '500', display: 'block', padding: '0.5rem 0.75rem', borderRadius: '8px', transition: 'all 0.15s' }} onMouseEnter={e => { e.target.style.color = '#1A1A1A'; e.target.style.backgroundColor = '#F5F5F5'; }} onMouseLeave={e => { e.target.style.color = '#4A4A4A'; e.target.style.backgroundColor = 'transparent'; }}>{item}</a></li>
+                      ))}
+                    </ul>
                   </div>
-
-                  {/* Column 2 */}
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                    <div>
-                      <h3 style={{ fontWeight: '700', fontSize: '0.95rem', color: '#111827', marginBottom: '0.5rem' }}>OCI (Oracle Cloud Infrastructure)</h3>
-                      <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-                        {['Identity & Access Management (IAM)', 'Compute & Networking', 'Disaster Recovery & High Availability', 'DevOps on OCI'].map(item => (
-                          <li key={item}><a href="#" style={{ color: '#4B5563', textDecoration: 'none', fontSize: '0.85rem', display: 'block' }} onMouseEnter={e => e.target.style.color = '#2563EB'} onMouseLeave={e => e.target.style.color = '#4B5563'}>{item}</a></li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div>
-                      <h3 style={{ fontWeight: '700', fontSize: '0.95rem', color: '#111827', marginBottom: '0.5rem' }}>Oracle Fusion Cloud Services</h3>
-                      <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-                        {['ERP', 'Supply Chain', 'Finance', 'EPM'].map(item => (
-                          <li key={item}><a href="#" style={{ color: '#4B5563', textDecoration: 'none', fontSize: '0.85rem', display: 'block' }} onMouseEnter={e => e.target.style.color = '#2563EB'} onMouseLeave={e => e.target.style.color = '#4B5563'}>{item}</a></li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-
-                  {/* Column 3 */}
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                    <div>
-                      <h3 style={{ fontWeight: '700', fontSize: '0.95rem', color: '#111827', marginBottom: '0.5rem' }}>Low Code Application Development</h3>
-                      <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-                        {['VBCS (Oracle Visual Builder Cloud Services)', 'Oracle APEX', 'Oracle Forms to APEX migration', 'Reporting Analytics (BI,OTBI)'].map(item => (
-                          <li key={item}><a href="#" style={{ color: '#4B5563', textDecoration: 'none', fontSize: '0.85rem', display: 'block' }} onMouseEnter={e => e.target.style.color = '#2563EB'} onMouseLeave={e => e.target.style.color = '#4B5563'}>{item}</a></li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div>
-                      <h3 style={{ fontWeight: '700', fontSize: '0.95rem', color: '#111827', marginBottom: '0.5rem' }}>Artificial Intelligence (AI) Services</h3>
-                      <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-                        {['Oracle Digital Assistant', 'AI-Powered Chatbots & Virtual Assistants', 'Document Intelligence & Automation', 'Speech to Text'].map(item => (
-                          <li key={item}><a href="#" style={{ color: '#4B5563', textDecoration: 'none', fontSize: '0.85rem', display: 'block' }} onMouseEnter={e => e.target.style.color = '#2563EB'} onMouseLeave={e => e.target.style.color = '#4B5563'}>{item}</a></li>
-                        ))}
-                      </ul>
-                    </div>
+                  <div>
+                    <h3 style={{ fontWeight: '700', fontSize: '0.75rem', color: '#888', marginBottom: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Enterprise Apps</h3>
+                    <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+                      {['Oracle Fusion ERP', 'EPM Solutions', 'Data Analytics', 'System Integration'].map(item => (
+                        <li key={item}><a href="#" style={{ color: '#4A4A4A', textDecoration: 'none', fontSize: '0.95rem', fontWeight: '500', display: 'block', padding: '0.5rem 0.75rem', borderRadius: '8px', transition: 'all 0.15s' }} onMouseEnter={e => { e.target.style.color = '#1A1A1A'; e.target.style.backgroundColor = '#F5F5F5'; }} onMouseLeave={e => { e.target.style.color = '#4A4A4A'; e.target.style.backgroundColor = 'transparent'; }}>{item}</a></li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
               </div>
             </div>
 
-            <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '4px', color: '#1F2937', textDecoration: 'none' }}>Resources <span style={{ fontSize: '0.7em', color: '#6B7280' }}>▼</span></a>
-            <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '4px', color: '#1F2937', textDecoration: 'none' }}>About Us</a>
+            <a href="#" style={{
+              display: 'flex',
+              alignItems: 'center',
+              color: '#4A4A4A',
+              textDecoration: 'none',
+              padding: '0.5rem 0.75rem',
+              borderRadius: '6px',
+              transition: 'color 0.2s',
+            }}
+              onMouseEnter={(e) => e.currentTarget.style.color = '#1A1A1A'}
+              onMouseLeave={(e) => e.currentTarget.style.color = '#4A4A4A'}
+            >
+              Solutions
+            </a>
+
+            <a href="#" style={{
+              display: 'flex',
+              alignItems: 'center',
+              color: '#4A4A4A',
+              textDecoration: 'none',
+              padding: '0.5rem 0.75rem',
+              borderRadius: '6px',
+              transition: 'color 0.2s',
+            }}
+              onMouseEnter={(e) => e.currentTarget.style.color = '#1A1A1A'}
+              onMouseLeave={(e) => e.currentTarget.style.color = '#4A4A4A'}
+            >
+              Resources
+            </a>
+
           </nav>
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+        {/* Right side */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          <a href="#" style={{
+            color: '#4A4A4A',
+            textDecoration: 'none',
+            fontSize: '0.95rem',
+            padding: '0.5rem 0.75rem',
+            borderRadius: '6px',
+            transition: 'color 0.2s',
+            fontWeight: '600'
+          }}
+            onMouseEnter={(e) => e.currentTarget.style.color = '#1A1A1A'}
+            onMouseLeave={(e) => e.currentTarget.style.color = '#4A4A4A'}
+          >Client Portal</a>
+
           <button style={{
-            backgroundColor: '#FFFFFF',
+            backgroundColor: '#1A1A1A', // Dark contrasting button
             border: 'none',
-            color: '#111827',
-            padding: '0.6rem 1.2rem',
-            fontSize: '0.85rem',
-            borderRadius: '9999px',
+            color: '#D3E95F', // Lime green text
+            padding: '0.5rem 1.4rem',
+            fontSize: '0.95rem',
+            borderRadius: '999px', // Pill shape
             fontWeight: '600',
-            cursor: 'pointer'
-          }}>Contact Sales</button>
+            cursor: 'pointer',
+            transition: 'all 0.2s ease',
+            lineHeight: '1.4',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.5rem'
+          }}
+            onMouseEnter={e => { e.currentTarget.style.backgroundColor = '#000000'; e.currentTarget.style.transform = 'translateY(-1px)'; }}
+            onMouseLeave={e => { e.currentTarget.style.backgroundColor = '#1A1A1A'; e.currentTarget.style.transform = 'translateY(0)'; }}
+          >
+            Contact Sales
+            <span style={{ fontSize: '1.2rem', lineHeight: '1' }}>→</span>
+          </button>
         </div>
-      </header>
-    </div>
+      </header >
+    </div >
   );
 };
 

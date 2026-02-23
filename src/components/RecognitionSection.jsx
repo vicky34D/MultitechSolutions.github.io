@@ -1,227 +1,134 @@
 import React from 'react';
+import { AnimatedSection } from '../hooks/useScrollAnimation';
 
-const Badge = ({ title, quarter, color = '#3B82F6', scale = 1, rotation = 0, zIndex = 1 }) => (
-    <div style={{
-        position: 'relative',
-        transform: `scale(${scale}) rotate(${rotation}deg)`,
-        zIndex: zIndex,
-        filter: 'drop-shadow(0 10px 15px rgba(0,0,0,0.3))',
-        transition: 'transform 0.3s ease',
-        cursor: 'default'
-    }}
-        onMouseEnter={(e) => e.currentTarget.style.transform = `scale(${scale * 1.05}) rotate(${rotation}deg) translateY(-5px)`}
-        onMouseLeave={(e) => e.currentTarget.style.transform = `scale(${scale}) rotate(${rotation}deg)`}
-    >
-        {/* Top Label */}
+const MetricCard = ({ title, value, highlight = false, delay }) => (
+    <AnimatedSection delay={delay} direction="up">
         <div style={{
-            position: 'absolute',
-            top: '-12px',
-            left: '50%',
-            transform: 'translateX(-50%)',
-            backgroundColor: '#EF4444', // Red label
-            color: 'white',
-            fontSize: '0.6rem',
-            fontWeight: 'bold',
-            padding: '2px 8px',
-            borderRadius: '4px',
-            whiteSpace: 'nowrap',
-            zIndex: 2,
-            boxShadow: '0 2px 4px rgba(0,0,0,0.2)'
-        }}>
-            {quarter}
-        </div>
-
-        {/* Badge Body */}
-        <div style={{
-            width: '100px',
-            height: '120px',
-            backgroundColor: 'white',
-            clipPath: 'polygon(0% 0%, 100% 0%, 100% 85%, 50% 100%, 0% 85%)',
+            backgroundColor: highlight ? '#D3E95F' : '#FFFFFF',
+            borderRadius: '24px',
+            border: `1px solid ${highlight ? '#D3E95F' : 'rgba(0, 0, 0, 0.06)'}`,
+            padding: '2.5rem 2rem',
             display: 'flex',
             flexDirection: 'column',
-            alignItems: 'center',
             justifyContent: 'center',
-            padding: '1rem',
-            textAlign: 'center',
-            position: 'relative' // For pseudo-elements if needed
+            alignItems: 'flex-start',
+            transition: 'all 0.3s ease',
+            boxShadow: highlight ? '0 12px 30px rgba(211, 233, 95, 0.2)' : '0 4px 15px rgba(0,0,0,0.02)',
+            height: '100%',
+            position: 'relative',
+            overflow: 'hidden'
         }}>
-            {/* G Icon */}
-            <div style={{ fontSize: '1.2rem', fontWeight: '900', color: '#EF4444', marginBottom: '0.25rem' }}>G</div>
-
+            {highlight && (
+                <div style={{ position: 'absolute', top: '-50%', right: '-20%', width: '150%', height: '150%', background: 'radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%)', filter: 'blur(20px)', pointerEvents: 'none' }} />
+            )}
             <div style={{
-                fontSize: '0.85rem',
-                fontWeight: '800',
-                color: '#111827',
-                lineHeight: '1.2'
+                fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+                fontWeight: '700',
+                color: '#1A1A1A',
+                letterSpacing: '-0.03em',
+                marginBottom: '0.5rem',
+                lineHeight: '1',
+                zIndex: 1
+            }}>
+                {value}
+            </div>
+            <div style={{
+                fontSize: '1.05rem',
+                fontWeight: '600',
+                color: highlight ? 'rgba(0,0,0,0.6)' : '#6B7280',
+                zIndex: 1
             }}>
                 {title}
             </div>
         </div>
-
-        {/* Bottom Accent */}
-        <div style={{
-            position: 'absolute',
-            bottom: '0',
-            left: '0',
-            width: '100%',
-            height: '10px',
-            backgroundColor: color,
-            clipPath: 'polygon(50% 100%, 0% 0%, 100% 0%)',
-            transform: 'translateY(-15px)', // Tucking it in
-            opacity: 0.5
-        }}></div>
-    </div>
+    </AnimatedSection>
 );
 
-const CenterBadge = ({ title, quarter }) => (
-    <div style={{
-        position: 'relative',
-        zIndex: 10,
-        transform: 'scale(1.2) translateY(-10px)',
-        filter: 'drop-shadow(0 20px 25px rgba(0,0,0,0.4))'
-    }}>
-        {/* Top Label */}
-        <div style={{
-            position: 'absolute',
-            top: '-14px',
-            left: '50%',
-            transform: 'translateX(-50%)',
-            backgroundColor: '#F59E0B', // Orange/Gold
-            color: 'white',
-            fontSize: '0.7rem',
-            fontWeight: 'bold',
-            padding: '3px 10px',
-            borderRadius: '4px',
-            whiteSpace: 'nowrap',
-            zIndex: 2,
-            boxShadow: '0 2px 4px rgba(0,0,0,0.2)'
-        }}>
-            {quarter}
-        </div>
-
-        {/* Badge Body */}
-        <div style={{
-            width: '120px',
-            height: '140px',
-            backgroundColor: 'white',
-            clipPath: 'polygon(0% 0%, 100% 0%, 100% 85%, 50% 100%, 0% 85%)',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            padding: '1.5rem',
-            textAlign: 'center',
-            borderTop: '4px solid #F59E0B' // Gold top border
-        }}>
-            <div style={{ fontSize: '1.5rem', fontWeight: '900', color: '#F59E0B', marginBottom: '0.5rem' }}>G</div>
-            <div style={{
-                fontSize: '1.1rem',
-                fontWeight: '900',
-                color: '#111827',
-                lineHeight: '1.1'
-            }}>
-                {title}
-            </div>
-        </div>
-    </div>
-);
 
 const RecognitionSection = () => {
     return (
         <section style={{
-            backgroundColor: '#0F1115',
-            backgroundImage: 'radial-gradient(circle at 50% 50%, #1a1d23 0%, #0F1115 100%)',
-            padding: '6rem 2rem',
-            color: 'white',
-            overflow: 'hidden'
+            backgroundColor: '#F8F9FA',
+            padding: '8rem 2rem',
+            fontFamily: "'Inter', sans-serif"
         }}>
             <div style={{
                 maxWidth: '1280px',
                 margin: '0 auto',
-                display: 'grid',
-                gridTemplateColumns: 'minmax(300px, 1fr) 1.5fr',
-                gap: '4rem',
-                alignItems: 'center',
-                '@media (max-width: 768px)': {
-                    gridTemplateColumns: '1fr',
-                    textAlign: 'center'
-                }
             }}>
-                {/* Left Content */}
-                <div>
-                    <div style={{
-                        fontSize: '0.875rem',
-                        fontWeight: '600',
-                        letterSpacing: '0.1em',
-                        color: '#9CA3AF',
-                        marginBottom: '1rem',
-                        textTransform: 'uppercase',
-                        fontFamily: 'monospace'
-                    }}>
-                        Recognition
-                    </div>
-                    <h2 style={{
-                        fontSize: '3.5rem',
-                        fontWeight: '800',
-                        lineHeight: '1.1',
-                        marginBottom: '1.5rem',
-                        letterSpacing: '-0.02em',
-                        background: 'linear-gradient(to right, #fff, #9CA3AF)',
-                        WebkitBackgroundClip: 'text',
-                        WebkitTextFillColor: 'transparent'
-                    }}>
-                        Recognized for performance
-                    </h2>
-                    <p style={{
-                        fontSize: '1.125rem',
-                        color: '#D1D5DB',
-                        lineHeight: '1.6',
-                        maxWidth: '500px',
-                        marginBottom: '2rem'
-                    }}>
-                        High customer ratings and global certifications show Multitech Solutions delivers where it matters most.
-                    </p>
-
-                    {/* Star Rating */}
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                        <div style={{ display: 'flex', color: '#F59E0B' }}>
-                            {'★★★★★'.split('').map((star, i) => <span key={i} style={{ fontSize: '1.25rem' }}>{star}</span>)}
+                {/* Section header */}
+                <AnimatedSection delay={0} direction="up">
+                    <div style={{ marginBottom: '4rem', maxWidth: '600px' }}>
+                        <div style={{
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            padding: '0.4rem 1rem',
+                            backgroundColor: '#FFFFFF',
+                            border: '1px solid rgba(0, 0, 0, 0.08)',
+                            borderRadius: '9999px',
+                            marginBottom: '1.5rem',
+                            boxShadow: '0 4px 12px rgba(0,0,0,0.03)',
+                        }}>
+                            <span style={{ fontSize: '0.75rem', fontWeight: '700', color: '#1A1A1A', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Enterprise Scale</span>
                         </div>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#D1D5DB', fontSize: '0.9rem' }}>
-                            <div style={{
-                                backgroundColor: '#F97316',
-                                color: 'white',
-                                width: '24px',
-                                height: '24px',
-                                borderRadius: '4px',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                fontWeight: 'bold',
-                                fontSize: '0.8rem'
-                            }}>G</div>
-                            Based on 60+ reviews
-                        </div>
+                        <h2 style={{
+                            fontSize: 'clamp(2.5rem, 4vw, 4rem)',
+                            fontWeight: '700',
+                            lineHeight: '1.05',
+                            marginBottom: '1.5rem',
+                            letterSpacing: '-0.03em',
+                            color: '#1A1A1A',
+                        }}>
+                            Proven Enterprise Reliability.
+                        </h2>
+                        <p style={{
+                            fontSize: '1.15rem',
+                            fontWeight: '500',
+                            color: '#4A4A4A',
+                            lineHeight: '1.7',
+                        }}>
+                            Multitech operates with industry-leading infrastructure, providing unmatched security and performance for your organizational workloads and data.
+                        </p>
                     </div>
-                </div>
+                </AnimatedSection>
 
-                {/* Right Content - Badges */}
+                {/* Badges grid */}
                 <div style={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    gap: '1rem', // Initial gap, handled by transforms
-                    position: 'relative',
-                    padding: '2rem 0'
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(4, 1fr)',
+                    gap: '1.5rem',
+                    marginBottom: '4rem'
                 }}>
-                    <Badge title="Users Most Likely To Recommend" quarter="WINTER 2026" rotation={-5} zIndex={1} color="#3B82F6" />
-                    <Badge title="Regional Leader" quarter="WINTER 2026" rotation={-2} zIndex={2} color="#3B82F6" />
-
-                    <CenterBadge title="Leader" quarter="WINTER 2026" />
-
-                    <Badge title="Best Support" quarter="WINTER 2026" rotation={2} zIndex={2} color="#10B981" />
-                    <Badge title="Easiest Setup" quarter="WINTER 2026" rotation={5} zIndex={1} color="#10B981" />
+                    <MetricCard title="Enterprise Clients" value="500+" delay={0.1} />
+                    <MetricCard title="Uptime SLA" value="99.9%" delay={0.2} highlight={true} />
+                    <MetricCard title="Total Deployments" value="2.5K+" delay={0.3} />
+                    <MetricCard title="Global Datacenters" value="25+" delay={0.4} />
                 </div>
+
+                {/* Secondary compliance row */}
+                <AnimatedSection delay={0.3} direction="up">
+                    <div style={{
+                        display: 'grid',
+                        gridTemplateColumns: 'repeat(3, 1fr)',
+                        gap: '2rem',
+                        padding: '3rem 0',
+                        borderTop: '1px solid rgba(0, 0, 0, 0.06)',
+                        borderBottom: '1px solid rgba(0, 0, 0, 0.06)',
+                    }}>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                            <div style={{ fontSize: '1.1rem', fontWeight: '700', color: '#1A1A1A' }}>ISO 27001 Certified</div>
+                            <div style={{ fontSize: '0.95rem', color: '#6B7280', lineHeight: '1.6' }}>Our infrastructure meets the highest international standards for information security management.</div>
+                        </div>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                            <div style={{ fontSize: '1.1rem', fontWeight: '700', color: '#1A1A1A' }}>Tier IV Datacenters</div>
+                            <div style={{ fontSize: '0.95rem', color: '#6B7280', lineHeight: '1.6' }}>Fault-tolerant site infrastructure ensuring continuous availability without interruptions.</div>
+                        </div>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                            <div style={{ fontSize: '1.1rem', fontWeight: '700', color: '#1A1A1A' }}>24/7 Managed Support</div>
+                            <div style={{ fontSize: '0.95rem', color: '#6B7280', lineHeight: '1.6' }}>Expert, around-the-clock technical assistance backed by service level agreements.</div>
+                        </div>
+                    </div>
+                </AnimatedSection>
             </div>
         </section>
     );

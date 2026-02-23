@@ -1,9 +1,9 @@
 import React from 'react';
 
 const FooterColumn = ({ title, links }) => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
         <h4 style={{
-            color: 'white',
+            color: '#1A1A1A',
             fontWeight: '600',
             fontSize: '0.9rem',
             marginBottom: '0.5rem'
@@ -16,20 +16,35 @@ const FooterColumn = ({ title, links }) => (
             margin: 0,
             display: 'flex',
             flexDirection: 'column',
-            gap: '0.75rem'
+            gap: '0.4rem'
         }}>
             {links.map((link) => (
-                <li key={link}>
+                <li key={typeof link === 'string' ? link : link.text}>
                     <a href="#" style={{
-                        color: '#9CA3AF',
+                        color: '#4A4A4A',
                         textDecoration: 'none',
                         fontSize: '0.85rem',
-                        transition: 'color 0.2s'
+                        transition: 'color 0.2s',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '0.4rem',
                     }}
-                        onMouseEnter={(e) => e.target.style.color = 'white'}
-                        onMouseLeave={(e) => e.target.style.color = '#9CA3AF'}
+                        onMouseEnter={(e) => e.target.style.color = '#1A1A1A'}
+                        onMouseLeave={(e) => e.target.style.color = '#4A4A4A'}
                     >
-                        {link}
+                        {typeof link === 'string' ? link : link.text}
+                        {typeof link === 'object' && link.badge && (
+                            <span style={{
+                                fontSize: '0.65rem',
+                                fontWeight: '600',
+                                backgroundColor: '#D3E95F',
+                                padding: '2px 6px',
+                                borderRadius: '4px',
+                                color: '#000000',
+                                textTransform: 'uppercase',
+                                letterSpacing: '0.05em',
+                            }}>{link.badge}</span>
+                        )}
                     </a>
                 </li>
             ))}
@@ -37,177 +52,165 @@ const FooterColumn = ({ title, links }) => (
     </div>
 );
 
-const SocialIcon = ({ children }) => (
-    <a href="#" style={{
-        width: '40px',
-        height: '40px',
-        borderRadius: '50%',
-        border: '1px solid #4B5563',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        color: 'white',
-        textDecoration: 'none',
-        transition: 'all 0.2s'
-    }}
-        onMouseEnter={(e) => {
-            e.currentTarget.style.borderColor = 'white';
-            e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.1)';
-        }}
-        onMouseLeave={(e) => {
-            e.currentTarget.style.borderColor = '#4B5563';
-            e.currentTarget.style.backgroundColor = 'transparent';
-        }}
-    >
-        {children}
-    </a>
-);
-
 const Footer = () => {
     const linkGroups = [
         {
             title: 'Services',
             links: [
-                'Oracle Cloud Infrastructure', 'Data Management & Analytics', 'Enterprise Applications',
-                'AI, ML & Automation', 'Security & Compliance', 'Managed Services',
-                'IT Hardware & Networking', 'Cyber Security', 'Surveillance Systems'
+                'Oracle Cloud Infrastructure',
+                'Data Management & Analytics',
+                'Enterprise Applications',
+                'AI, ML & Automation',
+                'Security & Compliance',
+                'Managed Services',
+                'IT Hardware & Networking',
+            ]
+        },
+        {
+            title: 'Solutions',
+            links: [
+                'ERP Implementation',
+                'Cloud Migration',
+                'Infrastructure Setup',
+                'Cyber Security',
+                'Surveillance Systems',
+                { text: 'Custom Integration', badge: 'New' },
             ]
         },
         {
             title: 'Partners',
             links: [
                 'Oracle', 'SAP', 'HPE', 'Dell',
-                'Microsoft', 'Veeam', 'Emerson', 'VMware', 'Cisco'
+                'Microsoft', 'Cisco', 'VMware'
             ]
         },
         {
-            title: 'Contact',
+            title: 'Resources',
             links: [
-                'Contact Sales', 'Support', 'Media Enquiries', 'Office Locations',
-                'Request a Quote', 'Partner with Us'
+                'Case Studies', 'Blog', 'Whitepapers',
+                'Documentation', 'Support', 'Contact'
             ]
         },
         {
             title: 'Company',
             links: [
-                'About Us', 'Careers', 'Privacy Policy', 'Terms of Service', 'Sustainability',
-                'News & Events', 'Case Studies'
+                'About Us', 'Careers', 'News & Events',
+                'Privacy Policy', 'Terms of Service', 'Sustainability'
             ]
         }
     ];
 
     return (
         <footer style={{
-            backgroundColor: '#1F1F1F', // Dark background matching screenshot
-            color: 'white',
-            padding: '4rem 2rem 0 2rem', // No bottom padding to let VEED text hit bottom
-            borderTopLeftRadius: '32px',
-            borderTopRightRadius: '32px',
-            fontFamily: 'Inter, sans-serif',
-            position: 'relative',
-            overflow: 'hidden', // Hide the bottom part of the giant text
-            marginTop: '2rem'
+            backgroundColor: '#F8F9FA', // Light theme footer
+            color: '#1A1A1A',
+            padding: '6rem 2rem 0 2rem',
+            borderTop: '1px solid rgba(0, 0, 0, 0.06)',
+            fontFamily: "'Inter', sans-serif",
         }}>
             <div style={{
-                maxWidth: '1400px',
+                maxWidth: '1280px',
                 margin: '0 auto',
-                display: 'flex',
-                flexWrap: 'wrap',
-                gap: '4rem',
-                marginBottom: '6rem'
             }}>
-                {/* Left Column: Brand & Socials */}
-                <div style={{ flex: '1 1 250px', display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-                    {/* Language Selector */}
-                    <button style={{
-                        background: 'transparent',
-                        border: 'none',
-                        color: 'white',
-                        fontSize: '0.9rem',
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '0.5rem',
-                        cursor: 'pointer',
-                        padding: 0
-                    }}>
-                        English <span style={{ fontSize: '0.7rem' }}>▼</span>
-                    </button>
-
-                    {/* Social Icons */}
-                    <div style={{ display: 'flex', gap: '0.75rem' }}>
-                        {/* Simple SVG Placeholders for Social Icons */}
-                        <SocialIcon>𝕏</SocialIcon> {/* X Logo */}
-                        <SocialIcon>▶</SocialIcon> {/* YouTube */}
-                        <SocialIcon>📷</SocialIcon> {/* Instagram */}
-                        <SocialIcon>in</SocialIcon> {/* LinkedIn */}
-                        <SocialIcon>✉</SocialIcon> {/* Email */}
-                    </div>
-
-                    <div style={{ marginTop: 'auto' }}>
-                        <div style={{
-                            fontSize: '3rem',
-                            fontWeight: '900',
-                            marginBottom: '1rem',
-                            lineHeight: 1
-                        }}>
-                            MS
-                        </div>
-                        <p style={{
-                            color: '#9CA3AF',
-                            fontSize: '0.85rem',
-                            lineHeight: '1.6',
-                            marginBottom: '1rem',
-                            maxWidth: '200px'
-                        }}>
-                            End-end IT solutions and services company, delivering technology solutions to enterprises.
-                        </p>
-                        <p style={{ color: '#6B7280', fontSize: '0.75rem' }}>
-                            © Copyright 2026 Multitech Solutions
-                            <br />
-                            SUBHANKAR DHAR
-                        </p>
-                    </div>
-                </div>
-
-                {/* Right Columns: Links Grid */}
+                {/* Main footer content */}
                 <div style={{
-                    flex: '3 1 800px',
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
-                    gap: '2rem 1rem'
+                    gridTemplateColumns: '200px 1fr',
+                    gap: '4rem',
+                    marginBottom: '4rem',
                 }}>
-                    {linkGroups.map(group => (
-                        <FooterColumn key={group.title} title={group.title} links={group.links} />
-                    ))}
+                    {/* Left Column: Brand */}
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                        {/* Logo */}
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <rect x="2" y="2" width="20" height="20" rx="4" fill="#000" />
+                                <rect x="6" y="6" width="5" height="5" rx="1" fill="#D3E95F" />
+                                <rect x="13" y="6" width="5" height="5" rx="1" fill="#FFF" />
+                                <rect x="6" y="13" width="5" height="5" rx="1" fill="#FFF" />
+                                <rect x="13" y="13" width="5" height="5" rx="1" fill="#FFF" opacity="0.4" />
+                            </svg>
+                            <span style={{ fontWeight: '700', fontSize: '1.2rem', letterSpacing: '-0.02em' }}>Multitech</span>
+                        </div>
 
-                    {/* Cookies Settings (floated to bottom right of grid area roughly) */}
+                        {/* Social Icons */}
+                        <div style={{ display: 'flex', gap: '0.75rem' }}>
+                            {['𝕏', 'in', '▶', '💬'].map((icon, i) => (
+                                <a key={i} href="#" style={{
+                                    color: '#888888',
+                                    textDecoration: 'none',
+                                    fontSize: '0.95rem',
+                                    transition: 'color 0.2s',
+                                }}
+                                    onMouseEnter={(e) => e.currentTarget.style.color = '#1A1A1A'}
+                                    onMouseLeave={(e) => e.currentTarget.style.color = '#888888'}
+                                >{icon}</a>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Right Columns: Links */}
                     <div style={{
-                        gridColumn: '1 / -1',
-                        marginTop: '2rem',
-                        display: 'flex',
-                        justifyContent: 'flex-end'
+                        display: 'grid',
+                        gridTemplateColumns: 'repeat(5, 1fr)',
+                        gap: '1.5rem',
                     }}>
-                        <a href="#" style={{ color: '#9CA3AF', textDecoration: 'none', fontSize: '0.85rem' }}>
-                            Cookies Settings
-                        </a>
+                        {linkGroups.map(group => (
+                            <FooterColumn key={group.title} title={group.title} links={group.links} />
+                        ))}
                     </div>
                 </div>
-            </div>
 
-            {/* Giant VEED Text */}
-            <div style={{
-                fontSize: '15vw', // Massive viewport-based size
-                fontWeight: '900',
-                lineHeight: '0.75',
-                textAlign: 'center',
-                padding: 0,
-                margin: 0,
-                userSelect: 'none',
-                pointerEvents: 'none',
-                transform: 'translateY(10%)', // Push it down slightly to cut off
-                color: '#FFFFFF'
-            }}>
-                MULTITECH
+                {/* Bottom bar */}
+                <div style={{
+                    borderTop: '1px solid rgba(0, 0, 0, 0.06)',
+                    paddingTop: '1.5rem',
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                }}>
+                    <p style={{
+                        color: '#888888',
+                        fontSize: '0.8rem',
+                    }}>
+                        © Multitech Solutions 2026
+                    </p>
+                    <div style={{ display: 'flex', gap: '1rem' }}>
+                        <a href="#" style={{
+                            color: '#888888',
+                            textDecoration: 'none',
+                            fontSize: '0.8rem',
+                            transition: 'color 0.2s',
+                        }}
+                            onMouseEnter={(e) => e.currentTarget.style.color = '#1A1A1A'}
+                            onMouseLeave={(e) => e.currentTarget.style.color = '#888888'}
+                        >Cookies Settings</a>
+                    </div>
+                </div>
+
+                {/* Giant PHALA watermark */}
+                <div style={{
+                    marginTop: '3rem',
+                    overflow: 'hidden',
+                    textAlign: 'center',
+                    lineHeight: 0.75,
+                    userSelect: 'none',
+                    pointerEvents: 'none',
+                    paddingBottom: '0',
+                }}>
+                    <span style={{
+                        fontSize: 'clamp(5rem, 12vw, 10rem)',
+                        fontWeight: '900',
+                        letterSpacing: '-0.04em',
+                        color: 'rgba(0, 0, 0, 0.03)', // Subtle dark watermark on light bg
+                        fontFamily: "'Inter', sans-serif",
+                        textTransform: 'uppercase',
+                        display: 'block',
+                        whiteSpace: 'nowrap',
+                    }}>
+                        MULTITECH
+                    </span>
+                </div>
             </div>
         </footer>
     );

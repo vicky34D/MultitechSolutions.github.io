@@ -1,3 +1,4 @@
+import { Routes, Route } from 'react-router-dom';
 import { SocialMediaFeature, VersatileFeature } from './components/Features';
 import Hero from './components/Hero';
 import DemoSection from './components/DemoSection';
@@ -10,18 +11,16 @@ import InfoSection from './components/InfoSection';
 import LogoTicker from './components/LogoTicker';
 import RecognitionSection from './components/RecognitionSection';
 import HowToSection from './components/HowToSection';
+import AboutUs from './pages/AboutUs';
 
-function App() {
+/* ── Home page ─────────────────────────────────────────────── */
+function HomePage() {
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       <Header />
       <main style={{ flex: 1 }}>
         <Hero />
-
-        {/* Logos Section */}
-        {/* Logos Section - Replaced with Ticker */}
         <LogoTicker />
-
         <InfoSection />
         <HowToSection />
         <SocialMediaFeature />
@@ -34,6 +33,16 @@ function App() {
         <Footer />
       </main>
     </div>
+  );
+}
+
+/* ── Root with routing ─────────────────────────────────────── */
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/about" element={<AboutUs />} />
+    </Routes>
   );
 }
 
