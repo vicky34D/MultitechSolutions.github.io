@@ -147,6 +147,33 @@ const Footer = () => {
                                 >{icon}</a>
                             ))}
                         </div>
+
+                        {/* Contact & Address */}
+                        <div style={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            gap: '0.5rem',
+                            marginTop: '0.5rem',
+                            color: '#4A4A4A',
+                            fontSize: '0.85rem',
+                            lineHeight: '1.6'
+                        }}>
+                            <a href="mailto:info@multitechsolutions.co.in" style={{
+                                color: '#0066FF',
+                                textDecoration: 'none',
+                                transition: 'opacity 0.2s',
+                            }}
+                                onMouseEnter={(e) => e.currentTarget.style.opacity = '0.8'}
+                                onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
+                            >
+                                info@multitechsolutions.co.in
+                            </a>
+                            <div>
+                                An ISO 9001:2015 & ISO 27001: 2013 Company<br />
+                                41/2 B Diamond Harbour Road, Ground Floor<br />
+                                Kolkata - 700027
+                            </div>
+                        </div>
                     </div>
 
                     {/* Right Columns: Links */}
