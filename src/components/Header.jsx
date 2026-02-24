@@ -145,7 +145,7 @@ const Header = () => {
               Solutions
             </a>
 
-            <a href="#" style={{
+            <Link to="/about" style={{
               display: 'flex',
               alignItems: 'center',
               color: '#4A4A4A',
@@ -157,8 +157,8 @@ const Header = () => {
               onMouseEnter={(e) => e.currentTarget.style.color = '#1A1A1A'}
               onMouseLeave={(e) => e.currentTarget.style.color = '#4A4A4A'}
             >
-              Resources
-            </a>
+              About Us
+            </Link>
 
           </nav>
         </div>
