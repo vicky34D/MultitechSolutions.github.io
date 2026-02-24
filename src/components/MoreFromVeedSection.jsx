@@ -1,5 +1,15 @@
 import React from 'react';
 import { AnimatedSection } from '../hooks/useScrollAnimation';
+import './LogoTicker.css';
+
+const scrollingLogos = [
+    { name: 'Spotify', url: 'https://upload.wikimedia.org/wikipedia/commons/2/26/Spotify_logo_with_text.svg' },
+    { name: 'TED', url: 'https://upload.wikimedia.org/wikipedia/commons/a/a2/TED_wordmark.svg' },
+    { name: 'Dropbox', url: 'https://upload.wikimedia.org/wikipedia/commons/c/cb/Dropbox_logo_2017.svg' },
+    { name: 'SoundCloud', url: 'https://upload.wikimedia.org/wikipedia/commons/a/a2/SoundCloud_logo.svg' },
+    { name: 'Reddit', url: 'https://upload.wikimedia.org/wikipedia/commons/b/b4/Reddit_logo.svg' },
+    { name: 'DocuSign', url: 'https://upload.wikimedia.org/wikipedia/commons/f/fc/DocuSign_logo.svg' },
+];
 
 const Card = ({ icon, title, description, accentColor }) => (
     <AnimatedSection delay={0.1} direction="up">
@@ -88,9 +98,45 @@ const MoreFromVeedSection = () => {
         <section style={{
             maxWidth: '1280px',
             margin: '0 auto',
-            padding: '4rem 2rem 8rem 2rem',
+            padding: '2rem 2rem 8rem 2rem',
             fontFamily: "'Inter', sans-serif"
         }}>
+
+            {/* Scrolling Logos */}
+            <div style={{
+                width: '100%',
+                overflow: 'hidden',
+                padding: '2rem 0 5rem 0',
+                position: 'relative'
+            }}>
+                <div className="ticker-track">
+                    {[1, 2, 3].map(set =>
+                        scrollingLogos.map((logo, index) => (
+                            <div key={`partner-logo-${set}-${index}`} className="ticker-item" style={{ padding: '0 2rem' }}>
+                                <img
+                                    src={logo.url}
+                                    alt={`${logo.name} logo`}
+                                    style={{
+                                        height: '24px',
+                                        width: 'auto',
+                                        opacity: 0.6,
+                                        filter: 'grayscale(100%)',
+                                        transition: 'all 0.3s ease'
+                                    }}
+                                    onMouseEnter={(e) => {
+                                        e.currentTarget.style.opacity = '1';
+                                        e.currentTarget.style.filter = 'grayscale(0%)';
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        e.currentTarget.style.opacity = '0.6';
+                                        e.currentTarget.style.filter = 'grayscale(100%)';
+                                    }}
+                                />
+                            </div>
+                        ))
+                    )}
+                </div>
+            </div>
             <AnimatedSection delay={0} direction="up">
                 <h2 style={{
                     fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
