@@ -265,19 +265,6 @@ const Header = () => {
 
         {/* Right side */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-          <a href="#" style={{
-            color: '#4A4A4A',
-            textDecoration: 'none',
-            fontSize: '0.95rem',
-            padding: '0.5rem 0.75rem',
-            borderRadius: '6px',
-            transition: 'color 0.2s',
-            fontWeight: '600'
-          }}
-            onMouseEnter={(e) => e.currentTarget.style.color = '#1A1A1A'}
-            onMouseLeave={(e) => e.currentTarget.style.color = '#4A4A4A'}
-          >Client Portal</a>
-
           <button style={{
             backgroundColor: '#1A1A1A', // Dark contrasting button
             border: 'none',
