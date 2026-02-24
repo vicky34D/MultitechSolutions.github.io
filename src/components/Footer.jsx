@@ -172,8 +172,9 @@ const Footer = () => {
                     <p style={{
                         color: '#888888',
                         fontSize: '0.8rem',
+                        lineHeight: '1.5'
                     }}>
-                        © Multitech Solutions 2026 Subhankar Dhar
+                        © Multitech Solutions 2026<br />Subhankar Dhar
                     </p>
                     <div style={{ display: 'flex', gap: '1rem' }}>
                         <a href="#" style={{
