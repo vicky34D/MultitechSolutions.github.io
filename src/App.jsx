@@ -12,6 +12,7 @@ import LogoTicker from './components/LogoTicker';
 import RecognitionSection from './components/RecognitionSection';
 import HowToSection from './components/HowToSection';
 import AboutUs from './pages/AboutUs';
+import Services from './pages/Services';
 
 /* ── Home page ─────────────────────────────────────────────── */
 function HomePage() {
@@ -42,6 +43,7 @@ function App() {
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/about" element={<AboutUs />} />
+      <Route path="/services" element={<Services />} />
     </Routes>
   );
 }

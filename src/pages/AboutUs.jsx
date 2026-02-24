@@ -133,7 +133,7 @@ const AboutUs = () => {
                         </p>
 
                         <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-                            <Link to="/" style={{
+                            <Link to="/services" style={{
                                 display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
                                 background: '#D3E95F',
                                 color: '#1A1A1A', textDecoration: 'none',

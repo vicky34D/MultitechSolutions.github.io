@@ -65,14 +65,14 @@ const Header = () => {
               onMouseEnter={() => setShowNetwork(true)}
               onMouseLeave={() => setShowNetwork(false)}
             >
-              <a href="#" style={{
+              <Link to="/services" style={{
                 display: 'flex',
                 alignItems: 'center',
                 gap: '4px',
                 color: '#4A4A4A',
                 textDecoration: 'none',
                 height: '100%',
-                cursor: 'default',
+                cursor: 'pointer',
                 padding: '0.5rem 0.75rem',
                 borderRadius: '6px',
                 transition: 'color 0.2s, background-color 0.2s',
@@ -84,7 +84,7 @@ const Header = () => {
                 <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style={{ marginLeft: '2px', transform: showNetwork ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s ease' }}>
                   <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
-              </a>
+              </Link>
 
               {/* Mega Menu */}
               <div style={{
@@ -136,14 +136,14 @@ const Header = () => {
               onMouseEnter={() => setShowSolutions(true)}
               onMouseLeave={() => setShowSolutions(false)}
             >
-              <a href="#" style={{
+              <Link to="/services" style={{
                 display: 'flex',
                 alignItems: 'center',
                 gap: '4px',
                 color: '#4A4A4A',
                 textDecoration: 'none',
                 height: '100%',
-                cursor: 'default',
+                cursor: 'pointer',
                 padding: '0.5rem 0.75rem',
                 borderRadius: '6px',
                 transition: 'color 0.2s, background-color 0.2s',
@@ -155,7 +155,7 @@ const Header = () => {
                 <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style={{ marginLeft: '2px', transform: showSolutions ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s ease' }}>
                   <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
-              </a>
+              </Link>
 
               {/* Mega Menu for Solutions */}
               <div style={{
@@ -260,11 +260,11 @@ const Header = () => {
               About Us
             </Link>
 
-          </nav>
-        </div>
+          </nav >
+        </div >
 
         {/* Right side */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+        < div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
           <button style={{
             backgroundColor: '#1A1A1A', // Dark contrasting button
             border: 'none',
@@ -287,7 +287,7 @@ const Header = () => {
             Contact Sales
             <span style={{ fontSize: '1.2rem', lineHeight: '1' }}>→</span>
           </button>
-        </div>
+        </div >
       </header >
     </div >
   );
