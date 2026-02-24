@@ -75,6 +75,7 @@ const Hero = () => {
                             fontSize: '0.9rem',
                             transition: 'all 0.2s',
                         }}
+                            onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
                             onMouseEnter={(e) => e.currentTarget.style.filter = 'brightness(0.95)'}
                             onMouseLeave={(e) => e.currentTarget.style.filter = 'brightness(1)'}
                         >
