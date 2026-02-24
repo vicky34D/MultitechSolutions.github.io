@@ -173,7 +173,7 @@ const Footer = () => {
                         color: '#888888',
                         fontSize: '0.8rem',
                     }}>
-                        © Multitech Solutions 2026
+                        © Multitech Solutions 2026 Subhankar Dhar
                     </p>
                     <div style={{ display: 'flex', gap: '1rem' }}>
                         <a href="#" style={{
