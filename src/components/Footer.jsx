@@ -200,7 +200,7 @@ const Footer = () => {
                     paddingBottom: '0',
                 }}>
                     <span style={{
-                        fontSize: 'clamp(5rem, 12vw, 10rem)',
+                        fontSize: 'clamp(6rem, 15vw, 14rem)',
                         fontWeight: '900',
                         letterSpacing: '-0.04em',
                         color: 'rgba(0, 0, 0, 0.03)', // Subtle dark watermark on light bg
