@@ -280,6 +280,7 @@ const Header = () => {
             alignItems: 'center',
             gap: '0.5rem'
           }}
+            onClick={() => window.location.href = 'mailto:info@multitech.com'}
             onMouseEnter={e => { e.currentTarget.style.backgroundColor = '#000000'; e.currentTarget.style.transform = 'translateY(-1px)'; }}
             onMouseLeave={e => { e.currentTarget.style.backgroundColor = '#1A1A1A'; e.currentTarget.style.transform = 'translateY(0)'; }}
           >
