@@ -79,15 +79,6 @@ const team = [
     },
 ];
 
-const timeline = [
-    { year: '2000', event: 'Founded in Mumbai as an Oracle consulting boutique.' },
-    { year: '2008', event: 'Expanded to the Middle East; secured first enterprise AMS contract.' },
-    { year: '2014', event: 'Launched OCI practice and AI-powered chatbot division.' },
-    { year: '2018', event: 'Reached 100 enterprise clients milestone across 15 countries.' },
-    { year: '2022', event: 'Launched Low-Code VBCS & Oracle APEX practice to accelerate digital apps.' },
-    { year: '2025', event: 'Celebrating 25 years — 500+ projects, still innovating every day.' },
-];
-
 /* ─── Component ─────────────────────────────────────────────── */
 const AboutUs = () => {
     return (
@@ -257,53 +248,6 @@ const AboutUs = () => {
                                     }}>{tag}</span>
                                 ))}
                             </div>
-                        </div>
-                    </div>
-                </section>
-
-                {/* ── TIMELINE ──────────────────────────────────────── */}
-                <section style={{
-                    padding: '6rem 2rem',
-                    borderTop: '1px solid rgba(0, 0, 0, 0.06)',
-                }}>
-                    <div style={{ maxWidth: 800, margin: '0 auto' }}>
-                        <div style={{
-                            fontSize: '0.75rem',
-                            fontWeight: '600',
-                            textTransform: 'uppercase',
-                            color: '#888888',
-                            letterSpacing: '0.1em',
-                            marginBottom: '1rem',
-                        }}>Our Journey</div>
-                        <h2 style={{
-                            fontSize: 'clamp(2rem, 4vw, 3rem)',
-                            fontWeight: '600',
-                            color: '#1A1A1A',
-                            margin: '0 0 4rem',
-                            letterSpacing: '-0.03em',
-                        }}>25 Years of Milestones</h2>
-
-                        <div style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
-                            {timeline.map((item, i) => (
-                                <div key={i} style={{
-                                    display: 'grid',
-                                    gridTemplateColumns: '100px 1fr',
-                                    gap: '2rem',
-                                    padding: '1.5rem 0',
-                                    borderTop: '1px solid rgba(0, 0, 0, 0.06)',
-                                }}>
-                                    <div style={{
-                                        fontWeight: '600',
-                                        fontSize: '1.05rem',
-                                        color: '#1A1A1A',
-                                    }}>{item.year}</div>
-                                    <div style={{
-                                        color: '#4A4A4A',
-                                        fontSize: '1.05rem',
-                                        lineHeight: 1.6,
-                                    }}>{item.event}</div>
-                                </div>
-                            ))}
                         </div>
                     </div>
                 </section>
