@@ -8,7 +8,7 @@ import MoreFromVeedSection from './components/MoreFromVeedSection';
 import DiscoverExploreSection from './components/DiscoverExploreSection';
 import Footer from './components/Footer';
 import InfoSection from './components/InfoSection';
-import LogoTicker from './components/LogoTicker';
+
 import RecognitionSection from './components/RecognitionSection';
 import HowToSection from './components/HowToSection';
 import AboutUs from './pages/AboutUs';
@@ -21,7 +21,7 @@ function HomePage() {
       <Header />
       <main style={{ flex: 1 }}>
         <Hero />
-        <LogoTicker />
+
         <InfoSection />
         <HowToSection />
         <SocialMediaFeature />
