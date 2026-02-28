@@ -104,7 +104,7 @@ const HowToCard = ({ step, title, description, GraphicComponent, delay = 0 }) =>
 
 const HowToSection = () => {
     return (
-        <section style={{
+        <section className="responsive-padding" style={{
             maxWidth: '1280px',
             margin: '0 auto',
             padding: '4rem 2rem 8rem 2rem',
@@ -124,7 +124,7 @@ const HowToSection = () => {
                 </h2>
             </AnimatedSection>
 
-            <div style={{
+            <div className="responsive-grid-3" style={{
                 display: 'grid',
                 gridTemplateColumns: 'repeat(3, 1fr)',
                 gap: '1.5rem'

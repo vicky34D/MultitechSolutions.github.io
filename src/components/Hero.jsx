@@ -15,7 +15,7 @@ const Hero = () => {
             position: 'relative',
             overflow: 'hidden'
         }}>
-            <div style={{
+            <div className="responsive-grid mobile-reverse" style={{
                 maxWidth: '1280px',
                 margin: '0 auto',
                 width: '100%',
@@ -63,7 +63,7 @@ const Hero = () => {
                         Leveraging the power of AI and cloud-based infrastructure to meet business needs.
                     </p>
 
-                    <div style={{ display: 'flex', gap: '1rem' }}>
+                    <div className="responsive-flex-wrap responsive-button-group" style={{ display: 'flex', gap: '1rem' }}>
                         <button style={{
                             backgroundColor: '#C8F353',
                             color: '#1A1A1A',
@@ -116,7 +116,7 @@ const Hero = () => {
                     }} />
 
                     {/* 3D Model Container */}
-                    <div style={{ position: 'relative', zIndex: 1, width: '100%', minHeight: '500px', height: '100%' }}>
+                    <div style={{ position: 'relative', zIndex: 1, width: '100%', minHeight: '300px', height: '100%' }}>
                         <AbstractTechModel />
                     </div>
                 </AnimatedSection>

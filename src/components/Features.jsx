@@ -3,7 +3,7 @@ import { AnimatedSection } from '../hooks/useScrollAnimation';
 
 export const SocialMediaFeature = () => {
     return (
-        <section style={{
+        <section className="responsive-grid responsive-padding" style={{
             maxWidth: '1280px',
             margin: '0 auto',
             padding: '6rem 2rem',
@@ -125,7 +125,7 @@ export const SocialMediaFeature = () => {
 
 export const VersatileFeature = () => {
     return (
-        <section style={{
+        <section className="responsive-grid mobile-reverse responsive-padding" style={{
             maxWidth: '1280px',
             margin: '0 auto',
             padding: '6rem 2rem 10rem',

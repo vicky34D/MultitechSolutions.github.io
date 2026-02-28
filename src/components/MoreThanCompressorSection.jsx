@@ -3,7 +3,7 @@ import { AnimatedSection } from '../hooks/useScrollAnimation';
 
 const MoreThanCompressorSection = () => {
     return (
-        <section style={{
+        <section className="responsive-padding" style={{
             maxWidth: '1280px',
             margin: '0 auto',
             padding: '8rem 2rem',
@@ -26,7 +26,7 @@ const MoreThanCompressorSection = () => {
             </AnimatedSection>
 
             <AnimatedSection delay={0.15} direction="up">
-                <div style={{
+                <div className="responsive-grid" style={{
                     display: 'grid',
                     gridTemplateColumns: 'repeat(2, 1fr)',
                     gap: '4rem',

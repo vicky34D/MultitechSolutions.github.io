@@ -53,7 +53,7 @@ const Header = () => {
             Multitech
           </Link>
 
-          <nav style={{
+          <nav className="responsive-nav" style={{
             display: 'flex',
             gap: '0.5rem',
             fontSize: '0.95rem',

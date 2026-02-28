@@ -3,7 +3,7 @@ import { AnimatedSection } from '../hooks/useScrollAnimation';
 
 const InfoSection = () => {
     return (
-        <section style={{
+        <section className="responsive-padding" style={{
             maxWidth: '1280px',
             margin: '0 auto',
             padding: '8rem 2rem',
@@ -46,7 +46,7 @@ const InfoSection = () => {
             </AnimatedSection>
 
             {/* Bento Grid layout */}
-            <div style={{
+            <div className="responsive-flex-col" style={{
                 display: 'grid',
                 gridTemplateColumns: 'repeat(12, 1fr)',
                 gridTemplateRows: 'auto auto',

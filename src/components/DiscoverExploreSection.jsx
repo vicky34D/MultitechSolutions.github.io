@@ -79,7 +79,7 @@ const DiscoverExploreSection = () => {
     ];
 
     return (
-        <section style={{
+        <section className="responsive-padding" style={{
             maxWidth: '1280px',
             margin: '0 auto',
             padding: '4rem 2rem 8rem 2rem',

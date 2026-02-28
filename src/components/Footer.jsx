@@ -101,7 +101,7 @@ const Footer = () => {
     ];
 
     return (
-        <footer style={{
+        <footer className="responsive-padding" style={{
             backgroundColor: '#F8F9FA', // Light theme footer
             color: '#1A1A1A',
             padding: '6rem 2rem 0 2rem',
@@ -113,7 +113,7 @@ const Footer = () => {
                 margin: '0 auto',
             }}>
                 {/* Main footer content */}
-                <div style={{
+                <div className="responsive-footer-grid" style={{
                     display: 'grid',
                     gridTemplateColumns: '200px 1fr',
                     gap: '4rem',
@@ -177,7 +177,7 @@ const Footer = () => {
                     </div>
 
                     {/* Right Columns: Links */}
-                    <div style={{
+                    <div className="responsive-footer-links" style={{
                         display: 'grid',
                         gridTemplateColumns: 'repeat(5, 1fr)',
                         gap: '1.5rem',

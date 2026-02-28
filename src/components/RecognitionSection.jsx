@@ -47,7 +47,7 @@ const MetricCard = ({ title, value, highlight = false, delay }) => (
 
 const RecognitionSection = () => {
     return (
-        <section style={{
+        <section className="responsive-padding" style={{
             backgroundColor: '#F8F9FA',
             padding: '8rem 2rem',
             fontFamily: "'Inter', sans-serif"
@@ -93,7 +93,7 @@ const RecognitionSection = () => {
                 </AnimatedSection>
 
                 {/* Badges grid */}
-                <div style={{
+                <div className="responsive-grid-4" style={{
                     display: 'grid',
                     gridTemplateColumns: 'repeat(4, 1fr)',
                     gap: '1.5rem',
@@ -107,7 +107,7 @@ const RecognitionSection = () => {
 
                 {/* Secondary compliance row */}
                 <AnimatedSection delay={0.3} direction="up">
-                    <div style={{
+                    <div className="responsive-grid-3" style={{
                         display: 'grid',
                         gridTemplateColumns: 'repeat(3, 1fr)',
                         gap: '2rem',
