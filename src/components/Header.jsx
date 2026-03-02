@@ -43,13 +43,6 @@ const Header = () => {
             alignItems: 'center',
             gap: '0.4rem'
           }}>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <rect x="2" y="2" width="20" height="20" rx="4" fill="#000" />
-              <rect x="6" y="6" width="5" height="5" rx="1" fill="#D3E95F" />
-              <rect x="13" y="6" width="5" height="5" rx="1" fill="#FFF" />
-              <rect x="6" y="13" width="5" height="5" rx="1" fill="#FFF" />
-              <rect x="13" y="13" width="5" height="5" rx="1" fill="#FFF" opacity="0.4" />
-            </svg>
             Multitech
           </Link>
 
@@ -76,11 +69,33 @@ const Header = () => {
                 padding: '0.5rem 0.75rem',
                 borderRadius: '6px',
                 transition: 'color 0.2s, background-color 0.2s',
+                position: 'relative',
               }}
-                onMouseEnter={(e) => e.currentTarget.style.color = '#1A1A1A'}
-                onMouseLeave={(e) => e.currentTarget.style.color = '#4A4A4A'}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.color = '#1A1A1A';
+                  const underline = e.currentTarget.querySelector('.nav-underline');
+                  if (underline) underline.style.transform = 'scaleX(1)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color = '#4A4A4A';
+                  const underline = e.currentTarget.querySelector('.nav-underline');
+                  if (underline) underline.style.transform = 'scaleX(0)';
+                }}
               >
-                Services
+                <span style={{ position: 'relative' }}>
+                  Services
+                  <span className="nav-underline" style={{
+                    position: 'absolute',
+                    bottom: '-4px',
+                    left: 0,
+                    width: '100%',
+                    height: '1.5px',
+                    backgroundColor: '#1A1A1A',
+                    transform: 'scaleX(0)',
+                    transformOrigin: 'left',
+                    transition: 'transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+                  }} />
+                </span>
                 <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style={{ marginLeft: '2px', transform: showNetwork ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s ease' }}>
                   <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
@@ -147,11 +162,33 @@ const Header = () => {
                 padding: '0.5rem 0.75rem',
                 borderRadius: '6px',
                 transition: 'color 0.2s, background-color 0.2s',
+                position: 'relative',
               }}
-                onMouseEnter={(e) => e.currentTarget.style.color = '#1A1A1A'}
-                onMouseLeave={(e) => e.currentTarget.style.color = '#4A4A4A'}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.color = '#1A1A1A';
+                  const underline = e.currentTarget.querySelector('.nav-underline');
+                  if (underline) underline.style.transform = 'scaleX(1)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color = '#4A4A4A';
+                  const underline = e.currentTarget.querySelector('.nav-underline');
+                  if (underline) underline.style.transform = 'scaleX(0)';
+                }}
               >
-                Solutions
+                <span style={{ position: 'relative' }}>
+                  Solutions
+                  <span className="nav-underline" style={{
+                    position: 'absolute',
+                    bottom: '-4px',
+                    left: 0,
+                    width: '100%',
+                    height: '1.5px',
+                    backgroundColor: '#1A1A1A',
+                    transform: 'scaleX(0)',
+                    transformOrigin: 'left',
+                    transition: 'transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+                  }} />
+                </span>
                 <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style={{ marginLeft: '2px', transform: showSolutions ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s ease' }}>
                   <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
@@ -253,11 +290,33 @@ const Header = () => {
               padding: '0.5rem 0.75rem',
               borderRadius: '6px',
               transition: 'color 0.2s',
+              position: 'relative',
             }}
-              onMouseEnter={(e) => e.currentTarget.style.color = '#1A1A1A'}
-              onMouseLeave={(e) => e.currentTarget.style.color = '#4A4A4A'}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = '#1A1A1A';
+                const underline = e.currentTarget.querySelector('.nav-underline');
+                if (underline) underline.style.transform = 'scaleX(1)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = '#4A4A4A';
+                const underline = e.currentTarget.querySelector('.nav-underline');
+                if (underline) underline.style.transform = 'scaleX(0)';
+              }}
             >
-              About Us
+              <span style={{ position: 'relative' }}>
+                About Us
+                <span className="nav-underline" style={{
+                  position: 'absolute',
+                  bottom: '-4px',
+                  left: 0,
+                  width: '100%',
+                  height: '1.5px',
+                  backgroundColor: '#1A1A1A',
+                  transform: 'scaleX(0)',
+                  transformOrigin: 'left',
+                  transition: 'transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+                }} />
+              </span>
             </Link>
 
           </nav >

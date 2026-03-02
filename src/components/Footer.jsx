@@ -28,11 +28,37 @@ const FooterColumn = ({ title, links }) => (
                         display: 'inline-flex',
                         alignItems: 'center',
                         gap: '0.4rem',
+                        position: 'relative',
+                        paddingBottom: '2px',
                     }}
-                        onMouseEnter={(e) => e.target.style.color = '#1A1A1A'}
-                        onMouseLeave={(e) => e.target.style.color = '#4A4A4A'}
+                        onMouseEnter={(e) => {
+                            e.currentTarget.style.color = '#1A1A1A';
+                            const underline = e.currentTarget.querySelector('.footer-underline');
+                            if (underline) underline.style.transform = 'scaleX(1)';
+                        }}
+                        onMouseLeave={(e) => {
+                            e.currentTarget.style.color = '#4A4A4A';
+                            const underline = e.currentTarget.querySelector('.footer-underline');
+                            if (underline) underline.style.transform = 'scaleX(0)';
+                        }}
                     >
-                        {typeof link === 'string' ? link : link.text}
+                        <span style={{ position: 'relative' }}>
+                            {typeof link === 'string' ? link : link.text}
+                            <span
+                                className="footer-underline"
+                                style={{
+                                    position: 'absolute',
+                                    bottom: '-2px',
+                                    left: 0,
+                                    width: '100%',
+                                    height: '1.5px',
+                                    backgroundColor: '#1A1A1A',
+                                    transform: 'scaleX(0)',
+                                    transformOrigin: 'left',
+                                    transition: 'transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+                                }}
+                            />
+                        </span>
                         {typeof link === 'object' && link.badge && (
                             <span style={{
                                 fontSize: '0.65rem',
