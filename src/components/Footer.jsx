@@ -64,11 +64,18 @@ const Footer = () => {
                                             color: '#E0E0E0',
                                             textDecoration: 'none',
                                             fontSize: '0.95rem',
-                                            transition: 'color 0.2s',
+                                            transition: 'all 0.2s',
                                             fontWeight: '400'
                                         }}
-                                            onMouseEnter={e => e.currentTarget.style.color = '#FFFFFF'}
-                                            onMouseLeave={e => e.currentTarget.style.color = '#E0E0E0'}
+                                            onMouseEnter={e => {
+                                                e.currentTarget.style.color = '#FFFFFF';
+                                                e.currentTarget.style.textDecoration = 'underline';
+                                                e.currentTarget.style.textUnderlineOffset = '4px';
+                                            }}
+                                            onMouseLeave={e => {
+                                                e.currentTarget.style.color = '#E0E0E0';
+                                                e.currentTarget.style.textDecoration = 'none';
+                                            }}
                                         >
                                             {link}
                                         </a>
