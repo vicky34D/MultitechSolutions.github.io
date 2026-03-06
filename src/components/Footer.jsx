@@ -1,269 +1,99 @@
 import React from 'react';
 
-const FooterColumn = ({ title, links }) => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
-        <h4 style={{
-            color: '#1A1A1A',
-            fontWeight: '600',
-            fontSize: '0.9rem',
-            marginBottom: '0.5rem'
-        }}>
-            {title}
-        </h4>
-        <ul style={{
-            listStyle: 'none',
-            padding: 0,
-            margin: 0,
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '0.4rem'
-        }}>
-            {links.map((link) => (
-                <li key={typeof link === 'string' ? link : link.text}>
-                    <a href="#" style={{
-                        color: '#4A4A4A',
-                        textDecoration: 'none',
-                        fontSize: '0.85rem',
-                        transition: 'color 0.2s',
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '0.4rem',
-                        position: 'relative',
-                        paddingBottom: '2px',
-                    }}
-                        onMouseEnter={(e) => {
-                            e.currentTarget.style.color = '#1A1A1A';
-                            const underline = e.currentTarget.querySelector('.footer-underline');
-                            if (underline) underline.style.transform = 'scaleX(1)';
-                        }}
-                        onMouseLeave={(e) => {
-                            e.currentTarget.style.color = '#4A4A4A';
-                            const underline = e.currentTarget.querySelector('.footer-underline');
-                            if (underline) underline.style.transform = 'scaleX(0)';
-                        }}
-                    >
-                        <span style={{ position: 'relative' }}>
-                            {typeof link === 'string' ? link : link.text}
-                            <span
-                                className="footer-underline"
-                                style={{
-                                    position: 'absolute',
-                                    bottom: '-2px',
-                                    left: 0,
-                                    width: '100%',
-                                    height: '1.5px',
-                                    backgroundColor: '#1A1A1A',
-                                    transform: 'scaleX(0)',
-                                    transformOrigin: 'left',
-                                    transition: 'transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-                                }}
-                            />
-                        </span>
-                        {typeof link === 'object' && link.badge && (
-                            <span style={{
-                                fontSize: '0.65rem',
-                                fontWeight: '600',
-                                backgroundColor: '#D3E95F',
-                                padding: '2px 6px',
-                                borderRadius: '4px',
-                                color: '#000000',
-                                textTransform: 'uppercase',
-                                letterSpacing: '0.05em',
-                            }}>{link.badge}</span>
-                        )}
-                    </a>
-                </li>
-            ))}
-        </ul>
-    </div>
-);
-
 const Footer = () => {
-    const linkGroups = [
-        {
-            title: 'Services',
-            links: [
-                'Oracle Cloud Infrastructure',
-                'Data Management & Analytics',
-                'Enterprise Applications',
-                'AI, ML & Automation',
-                'Security & Compliance',
-                'Managed Services',
-                'IT Hardware & Networking',
-            ]
-        },
-        {
-            title: 'Solutions',
-            links: [
-                'ERP Implementation',
-                'Cloud Migration',
-                'Infrastructure Setup',
-                'Cyber Security',
-                'Surveillance Systems',
-                { text: 'Custom Integration', badge: 'New' },
-            ]
-        },
-        {
-            title: 'Partners',
-            links: [
-                'Oracle', 'SAP', 'HPE', 'Dell',
-                'Microsoft', 'Cisco', 'VMware'
-            ]
-        },
-        {
-            title: 'Resources',
-            links: [
-                'Case Studies', 'Blog', 'Whitepapers',
-                'Documentation', 'Support', 'Contact'
-            ]
-        },
-        {
-            title: 'Company',
-            links: [
-                'About Us', 'Careers', 'News & Events',
-                'Privacy Policy', 'Terms of Service', 'Sustainability'
-            ]
-        }
+    const servicesLeft = [
+        'UX audit', 'SaaS', 'Digital product design', 'B2B design agency', 'Design system', 'Web design consultancy', 'AI consulting services', 'Webflow design agency', 'Digital transformation services', 'Corporate website design agency', 'Branding design agency'
     ];
 
+    const servicesMid1 = [
+        'UI design', 'Web app', 'Website redesign', 'UX research consultancy', 'Product redesign', 'MVP product design', 'Usability testing services', 'Generative AI consulting services', 'Digital transformation consulting', 'Law firm website design services'
+    ];
+
+    const servicesMid2 = [
+        'UX design', 'Mobile app', 'UX/UI design', 'Digital product consulting', 'Startup web design', 'Conversational AI consulting', 'Product growth design services', 'AI conversational design', 'Creative web design services', 'Outsourced design services'
+    ];
+
+    const servicesRight = [
+        'UX research', 'Web design services', 'UX design team', 'UX strategy agency', 'Responsive web design', 'Hire AI designers', 'Branding agency', 'UX prototyping services', 'Landing page web design services', 'SaaS MVP design'
+    ];
+
+    const columns = [servicesLeft, servicesMid1, servicesMid2, servicesRight];
+
     return (
-        <footer className="responsive-padding" style={{
-            backgroundColor: '#F8F9FA', // Light theme footer
-            color: '#1A1A1A',
-            padding: '6rem 2rem 0 2rem',
-            borderTop: '1px solid rgba(0, 0, 0, 0.06)',
+        <footer style={{
+            backgroundColor: '#111111',
+            color: '#FFFFFF',
+            padding: '6rem 2rem 2rem 2rem',
             fontFamily: "'Inter', sans-serif",
+            borderTop: '1px solid #2A2A2A',
+            position: 'relative',
         }}>
             <div style={{
-                maxWidth: '1280px',
+                maxWidth: '1440px',
                 margin: '0 auto',
             }}>
-                {/* Main footer content */}
-                <div className="responsive-footer-grid" style={{
-                    display: 'grid',
-                    gridTemplateColumns: '200px 1fr',
-                    gap: '4rem',
-                    marginBottom: '4rem',
-                }}>
-                    {/* Left Column: Brand */}
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                        {/* Logo */}
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <rect x="2" y="2" width="20" height="20" rx="4" fill="#000" />
-                                <rect x="6" y="6" width="5" height="5" rx="1" fill="#D3E95F" />
-                                <rect x="13" y="6" width="5" height="5" rx="1" fill="#FFF" />
-                                <rect x="6" y="13" width="5" height="5" rx="1" fill="#FFF" />
-                                <rect x="13" y="13" width="5" height="5" rx="1" fill="#FFF" opacity="0.4" />
-                            </svg>
-                            <span style={{ fontWeight: '700', fontSize: '1.2rem', letterSpacing: '-0.02em' }}>Multitech</span>
-                        </div>
-
-                        {/* Social Icons */}
-                        <div style={{ display: 'flex', gap: '0.75rem' }}>
-                            {['𝕏', 'in', '▶', '💬'].map((icon, i) => (
-                                <a key={i} href="#" style={{
-                                    color: '#888888',
-                                    textDecoration: 'none',
-                                    fontSize: '0.95rem',
-                                    transition: 'color 0.2s',
-                                }}
-                                    onMouseEnter={(e) => e.currentTarget.style.color = '#1A1A1A'}
-                                    onMouseLeave={(e) => e.currentTarget.style.color = '#888888'}
-                                >{icon}</a>
-                            ))}
-                        </div>
-
-                        {/* Contact & Address */}
-                        <div style={{
-                            display: 'flex',
-                            flexDirection: 'column',
-                            gap: '0.5rem',
-                            marginTop: '0.5rem',
-                            color: '#4A4A4A',
-                            fontSize: '0.85rem',
-                            lineHeight: '1.6'
-                        }}>
-                            <a href="mailto:info@multitechsolutions.co.in" style={{
-                                color: '#0066FF',
-                                textDecoration: 'none',
-                                transition: 'opacity 0.2s',
-                            }}
-                                onMouseEnter={(e) => e.currentTarget.style.opacity = '0.8'}
-                                onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
-                            >
-                                info@multitechsolutions.co.in
-                            </a>
-                            <div>
-                                An ISO 9001:2015 & ISO 27001: 2013 Company<br />
-                                41/2 B Diamond Harbour Road, Ground Floor<br />
-                                Kolkata - 700027
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Right Columns: Links */}
-                    <div className="responsive-footer-links" style={{
-                        display: 'grid',
-                        gridTemplateColumns: 'repeat(5, 1fr)',
-                        gap: '1.5rem',
+                <div style={{ marginBottom: '4rem' }}>
+                    <h3 style={{
+                        color: '#777777',
+                        fontSize: '0.85rem',
+                        fontWeight: '700',
+                        letterSpacing: '0.05em',
+                        marginBottom: '2.5rem',
+                        textTransform: 'uppercase'
                     }}>
-                        {linkGroups.map(group => (
-                            <FooterColumn key={group.title} title={group.title} links={group.links} />
+                        SERVICES:
+                    </h3>
+
+                    <div style={{
+                        display: 'grid',
+                        gridTemplateColumns: 'repeat(4, 1fr)',
+                        gap: '2rem'
+                    }}>
+                        {columns.map((col, colIdx) => (
+                            <ul key={colIdx} style={{
+                                listStyle: 'none',
+                                padding: 0,
+                                margin: 0,
+                                display: 'flex',
+                                flexDirection: 'column',
+                                gap: '1.25rem'
+                            }}>
+                                {col.map((link, i) => (
+                                    <li key={i}>
+                                        <a href="#" style={{
+                                            color: '#E0E0E0',
+                                            textDecoration: 'none',
+                                            fontSize: '0.95rem',
+                                            transition: 'color 0.2s',
+                                            fontWeight: '400'
+                                        }}
+                                            onMouseEnter={e => e.currentTarget.style.color = '#FFFFFF'}
+                                            onMouseLeave={e => e.currentTarget.style.color = '#E0E0E0'}
+                                        >
+                                            {link}
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
                         ))}
                     </div>
                 </div>
 
-                {/* Bottom bar */}
                 <div style={{
-                    borderTop: '1px solid rgba(0, 0, 0, 0.06)',
-                    paddingTop: '1.5rem',
+                    borderTop: '1px solid #2A2A2A',
+                    paddingTop: '2rem',
                     display: 'flex',
                     justifyContent: 'space-between',
                     alignItems: 'center',
+                    color: '#E0E0E0',
+                    fontSize: '0.95rem'
                 }}>
-                    <p style={{
-                        color: '#888888',
-                        fontSize: '0.8rem',
-                        lineHeight: '1.5'
-                    }}>
-                        © Multitech Solutions 2026<br />Subhankar Dhar
-                    </p>
-                    <div style={{ display: 'flex', gap: '1rem' }}>
-                        <a href="#" style={{
-                            color: '#888888',
-                            textDecoration: 'none',
-                            fontSize: '0.8rem',
-                            transition: 'color 0.2s',
-                        }}
-                            onMouseEnter={(e) => e.currentTarget.style.color = '#1A1A1A'}
-                            onMouseLeave={(e) => e.currentTarget.style.color = '#888888'}
-                        >Cookies Settings</a>
+                    <div>
+                        Lazarev. — AI + Product Design Agency.
                     </div>
-                </div>
-
-                {/* Giant PHALA watermark */}
-                <div style={{
-                    marginTop: '3rem',
-                    overflow: 'hidden',
-                    textAlign: 'center',
-                    lineHeight: 0.75,
-                    userSelect: 'none',
-                    pointerEvents: 'none',
-                    paddingBottom: '0',
-                }}>
-                    <span style={{
-                        fontSize: 'clamp(6rem, 15vw, 14rem)',
-                        fontWeight: '900',
-                        letterSpacing: '-0.04em',
-                        color: 'rgba(0, 0, 0, 0.03)', // Subtle dark watermark on light bg
-                        fontFamily: "'Inter', sans-serif",
-                        textTransform: 'uppercase',
-                        display: 'block',
-                        whiteSpace: 'nowrap',
-                    }}>
-                        MULTITECH
-                    </span>
+                    <div>
+                        All Rights Reserved
+                    </div>
                 </div>
             </div>
         </footer>

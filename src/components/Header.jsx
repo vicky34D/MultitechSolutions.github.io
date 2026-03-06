@@ -2,353 +2,96 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
-  const [showNetwork, setShowNetwork] = React.useState(false);
-  const [showSolutions, setShowSolutions] = React.useState(false);
-
   return (
     <div style={{
       position: 'fixed',
-      top: '1rem',
+      top: 0,
       left: 0,
       right: 0,
       display: 'flex',
       justifyContent: 'center',
       zIndex: 1000,
-      padding: '0 1.5rem',
-      fontFamily: "'Inter', sans-serif"
+      fontFamily: "'Inter', sans-serif",
+      backgroundColor: 'rgba(17, 17, 17, 0.8)',
+      backdropFilter: 'blur(10px)',
+      borderBottom: '1px solid rgba(255,255,255,0.05)'
     }}>
       <header style={{
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        padding: '0.75rem 1.5rem',
-        maxWidth: '1280px',
+        padding: '1.5rem 2.5rem',
+        maxWidth: '1440px',
         width: '100%',
-        backgroundColor: 'rgba(255, 255, 255, 0.7)', // Light glass
-        backdropFilter: 'blur(24px) saturate(180%)',
-        WebkitBackdropFilter: 'blur(24px) saturate(180%)',
-        border: '1px solid rgba(0, 0, 0, 0.08)',
-        borderRadius: '9999px',
-        boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.05)',
       }}>
-        {/* Logo + Nav */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '3rem' }}>
+        {/* Logo */}
+        <div>
           <Link to="/" style={{
-            fontWeight: '800',
+            fontWeight: '900',
             fontSize: '1.4rem',
-            letterSpacing: '-1px',
-            color: '#1A1A1A',
+            letterSpacing: '0.5px',
+            color: '#FFFFFF',
             textDecoration: 'none',
             display: 'flex',
             alignItems: 'center',
-            gap: '0.4rem'
+            textTransform: 'uppercase'
           }}>
-            Multitech
+            LAZAREV.
           </Link>
+        </div>
 
-          <nav className="responsive-nav" style={{
-            display: 'flex',
-            gap: '0.5rem',
-            fontSize: '0.95rem',
-            height: '100%',
-            fontWeight: '600'
-          }}>
-            <div
-              style={{ position: 'relative', height: '100%', display: 'flex', alignItems: 'center' }}
-              onMouseEnter={() => setShowNetwork(true)}
-              onMouseLeave={() => setShowNetwork(false)}
-            >
-              <Link to="/services" style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '4px',
-                color: '#4A4A4A',
-                textDecoration: 'none',
-                height: '100%',
-                cursor: 'pointer',
-                padding: '0.5rem 0.75rem',
-                borderRadius: '6px',
-                transition: 'color 0.2s, background-color 0.2s',
-                position: 'relative',
-              }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.color = '#1A1A1A';
-                  const underline = e.currentTarget.querySelector('.nav-underline');
-                  if (underline) underline.style.transform = 'scaleX(1)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.color = '#4A4A4A';
-                  const underline = e.currentTarget.querySelector('.nav-underline');
-                  if (underline) underline.style.transform = 'scaleX(0)';
-                }}
-              >
-                <span style={{ position: 'relative' }}>
-                  Services
-                  <span className="nav-underline" style={{
-                    position: 'absolute',
-                    bottom: '-4px',
-                    left: 0,
-                    width: '100%',
-                    height: '1.5px',
-                    backgroundColor: '#1A1A1A',
-                    transform: 'scaleX(0)',
-                    transformOrigin: 'left',
-                    transition: 'transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-                  }} />
-                </span>
-                <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style={{ marginLeft: '2px', transform: showNetwork ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s ease' }}>
-                  <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </Link>
+        {/* Nav */}
+        <nav style={{
+          display: 'flex',
+          gap: '2.5rem',
+          fontSize: '0.8rem',
+          fontWeight: '600',
+          letterSpacing: '0.5px',
+          alignItems: 'center'
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '5px', cursor: 'pointer', color: '#FFFFFF' }}>
+            WHAT WE DO
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none">
+              <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </div>
+          <Link to="/cases" style={{ color: '#FFFFFF', textDecoration: 'none' }}>CASES</Link>
+          <Link to="/outcomes" style={{ color: '#FFFFFF', textDecoration: 'none' }}>OUTCOMES</Link>
+          <Link to="/news" style={{ color: '#FFFFFF', textDecoration: 'none' }}>NEWS</Link>
+        </nav>
 
-              {/* Mega Menu */}
-              <div style={{
-                position: 'absolute',
-                top: '100%',
-                left: '-10px',
-                paddingTop: '0.75rem',
-                opacity: showNetwork ? 1 : 0,
-                visibility: showNetwork ? 'visible' : 'hidden',
-                transform: showNetwork ? 'translateY(0)' : 'translateY(-8px)',
-                transition: 'all 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
-                pointerEvents: showNetwork ? 'auto' : 'none',
-                zIndex: 100
-              }}>
-                <div style={{
-                  backgroundColor: '#FFFFFF',
-                  borderRadius: '16px',
-                  border: '1px solid rgba(0, 0, 0, 0.08)',
-                  boxShadow: '0 20px 60px rgba(0, 0, 0, 0.08)',
-                  padding: '1.5rem',
-                  display: 'flex',
-                  flexDirection: 'row',
-                  gap: '2.5rem',
-                  color: '#1A1A1A',
-                  minWidth: '400px'
-                }}>
-                  <div>
-                    <h3 style={{ fontWeight: '700', fontSize: '0.75rem', color: '#888', marginBottom: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>IT Infrastructure</h3>
-                    <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
-                      {['Cloud Migration', 'Managed IT Services', 'Cyber Security', 'Disaster Recovery'].map(item => (
-                        <li key={item}><a href="#" style={{ color: '#4A4A4A', textDecoration: 'none', fontSize: '0.95rem', fontWeight: '500', display: 'block', padding: '0.5rem 0.75rem', borderRadius: '8px', transition: 'all 0.15s' }} onMouseEnter={e => { e.target.style.color = '#1A1A1A'; e.target.style.backgroundColor = '#F5F5F5'; }} onMouseLeave={e => { e.target.style.color = '#4A4A4A'; e.target.style.backgroundColor = 'transparent'; }}>{item}</a></li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div>
-                    <h3 style={{ fontWeight: '700', fontSize: '0.75rem', color: '#888', marginBottom: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Enterprise Apps</h3>
-                    <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
-                      {['Oracle Fusion ERP', 'EPM Solutions', 'Data Analytics', 'System Integration'].map(item => (
-                        <li key={item}><a href="#" style={{ color: '#4A4A4A', textDecoration: 'none', fontSize: '0.95rem', fontWeight: '500', display: 'block', padding: '0.5rem 0.75rem', borderRadius: '8px', transition: 'all 0.15s' }} onMouseEnter={e => { e.target.style.color = '#1A1A1A'; e.target.style.backgroundColor = '#F5F5F5'; }} onMouseLeave={e => { e.target.style.color = '#4A4A4A'; e.target.style.backgroundColor = 'transparent'; }}>{item}</a></li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div
-              style={{ position: 'relative', height: '100%', display: 'flex', alignItems: 'center' }}
-              onMouseEnter={() => setShowSolutions(true)}
-              onMouseLeave={() => setShowSolutions(false)}
-            >
-              <Link to="/services" style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '4px',
-                color: '#4A4A4A',
-                textDecoration: 'none',
-                height: '100%',
-                cursor: 'pointer',
-                padding: '0.5rem 0.75rem',
-                borderRadius: '6px',
-                transition: 'color 0.2s, background-color 0.2s',
-                position: 'relative',
-              }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.color = '#1A1A1A';
-                  const underline = e.currentTarget.querySelector('.nav-underline');
-                  if (underline) underline.style.transform = 'scaleX(1)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.color = '#4A4A4A';
-                  const underline = e.currentTarget.querySelector('.nav-underline');
-                  if (underline) underline.style.transform = 'scaleX(0)';
-                }}
-              >
-                <span style={{ position: 'relative' }}>
-                  Solutions
-                  <span className="nav-underline" style={{
-                    position: 'absolute',
-                    bottom: '-4px',
-                    left: 0,
-                    width: '100%',
-                    height: '1.5px',
-                    backgroundColor: '#1A1A1A',
-                    transform: 'scaleX(0)',
-                    transformOrigin: 'left',
-                    transition: 'transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-                  }} />
-                </span>
-                <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style={{ marginLeft: '2px', transform: showSolutions ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s ease' }}>
-                  <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </Link>
-
-              {/* Mega Menu for Solutions */}
-              <div style={{
-                position: 'absolute',
-                top: '100%',
-                left: '50%',
-                transform: showSolutions ? 'translate(-50%, 0)' : 'translate(-50%, -8px)',
-                paddingTop: '0.75rem',
-                opacity: showSolutions ? 1 : 0,
-                visibility: showSolutions ? 'visible' : 'hidden',
-                transition: 'all 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
-                pointerEvents: showSolutions ? 'auto' : 'none',
-                zIndex: 100
-              }}>
-                <div style={{
-                  backgroundColor: '#FFFFFF',
-                  borderRadius: '16px',
-                  border: '1px solid rgba(0, 0, 0, 0.08)',
-                  boxShadow: '0 20px 60px rgba(0, 0, 0, 0.08)',
-                  padding: '2rem',
-                  display: 'flex',
-                  flexDirection: 'row',
-                  gap: '3rem',
-                  color: '#1A1A1A',
-                  minWidth: '850px'
-                }}>
-                  {/* Column 1 */}
-                  <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-                    <div>
-                      <h3 style={{ fontWeight: '700', fontSize: '0.85rem', color: '#1A1A1A', marginBottom: '0.75rem' }}>Implementation and Consulting</h3>
-                      <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-                        {['Oracle Enterprise Integration', 'EBS to Cloud Migration', 'Oracle Custom Application Development', 'Reporting Analytics (BI,OTBI)', 'PaaS Development'].map(item => (
-                          <li key={item}><a href="#" style={{ color: '#4A4A4A', textDecoration: 'none', fontSize: '0.85rem', fontWeight: '400', display: 'block', transition: 'color 0.15s' }} onMouseEnter={e => { e.target.style.color = '#1A1A1A'; }} onMouseLeave={e => { e.target.style.color = '#4A4A4A'; }}>{item}</a></li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div>
-                      <h3 style={{ fontWeight: '700', fontSize: '0.85rem', color: '#1A1A1A', marginBottom: '0.75rem' }}>Oracle Managed Services (AMS)</h3>
-                      <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-                        {['Fusion AMS – Support Services', 'Technical Support', 'Integrated Support Model', 'Reporting Analytics (BI,OTBI)'].map(item => (
-                          <li key={item}><a href="#" style={{ color: '#4A4A4A', textDecoration: 'none', fontSize: '0.85rem', fontWeight: '400', display: 'block', transition: 'color 0.15s' }} onMouseEnter={e => { e.target.style.color = '#1A1A1A'; }} onMouseLeave={e => { e.target.style.color = '#4A4A4A'; }}>{item}</a></li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-
-                  {/* Column 2 */}
-                  <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-                    <div>
-                      <h3 style={{ fontWeight: '700', fontSize: '0.85rem', color: '#1A1A1A', marginBottom: '0.75rem' }}>OCI (Oracle Cloud Infrastructure)</h3>
-                      <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-                        {['Identity & Access Management (IAM)', 'Compute & Networking', 'Disaster Recovery & High Availability', 'DevOps on OCI'].map(item => (
-                          <li key={item}><a href="#" style={{ color: '#4A4A4A', textDecoration: 'none', fontSize: '0.85rem', fontWeight: '400', display: 'block', transition: 'color 0.15s' }} onMouseEnter={e => { e.target.style.color = '#1A1A1A'; }} onMouseLeave={e => { e.target.style.color = '#4A4A4A'; }}>{item}</a></li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div>
-                      <h3 style={{ fontWeight: '700', fontSize: '0.85rem', color: '#1A1A1A', marginBottom: '0.75rem' }}>Oracle Fusion Cloud Services</h3>
-                      <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-                        {['ERP', 'Supply Chain', 'Finance', 'EPM'].map(item => (
-                          <li key={item}><a href="#" style={{ color: '#4A4A4A', textDecoration: 'none', fontSize: '0.85rem', fontWeight: '400', display: 'block', transition: 'color 0.15s' }} onMouseEnter={e => { e.target.style.color = '#1A1A1A'; }} onMouseLeave={e => { e.target.style.color = '#4A4A4A'; }}>{item}</a></li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-
-                  {/* Column 3 */}
-                  <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-                    <div>
-                      <h3 style={{ fontWeight: '700', fontSize: '0.85rem', color: '#1A1A1A', marginBottom: '0.75rem' }}>Low Code Application Development</h3>
-                      <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-                        {['VBCS (Oracle Visual Builder Cloud Services)', 'Oracle APEX', 'Oracle Forms to APEX migration', 'Reporting Analytics (BI,OTBI)'].map(item => (
-                          <li key={item}><a href="#" style={{ color: '#4A4A4A', textDecoration: 'none', fontSize: '0.85rem', fontWeight: '400', display: 'block', transition: 'color 0.15s' }} onMouseEnter={e => { e.target.style.color = '#1A1A1A'; }} onMouseLeave={e => { e.target.style.color = '#4A4A4A'; }}>{item}</a></li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div>
-                      <h3 style={{ fontWeight: '700', fontSize: '0.85rem', color: '#1A1A1A', marginBottom: '0.75rem' }}>Artificial Intelligence (AI) Services</h3>
-                      <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-                        {['Oracle Digital Assistant', 'AI-Powered Chatbots & Virtual Assistants', 'Document Intelligence & Automation', 'Speech to Text'].map(item => (
-                          <li key={item}><a href="#" style={{ color: '#4A4A4A', textDecoration: 'none', fontSize: '0.85rem', fontWeight: '400', display: 'block', transition: 'color 0.15s' }} onMouseEnter={e => { e.target.style.color = '#1A1A1A'; }} onMouseLeave={e => { e.target.style.color = '#4A4A4A'; }}>{item}</a></li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <Link to="/about" style={{
-              display: 'flex',
-              alignItems: 'center',
-              color: '#4A4A4A',
-              textDecoration: 'none',
-              padding: '0.5rem 0.75rem',
-              borderRadius: '6px',
-              transition: 'color 0.2s',
-              position: 'relative',
-            }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.color = '#1A1A1A';
-                const underline = e.currentTarget.querySelector('.nav-underline');
-                if (underline) underline.style.transform = 'scaleX(1)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.color = '#4A4A4A';
-                const underline = e.currentTarget.querySelector('.nav-underline');
-                if (underline) underline.style.transform = 'scaleX(0)';
-              }}
-            >
-              <span style={{ position: 'relative' }}>
-                About Us
-                <span className="nav-underline" style={{
-                  position: 'absolute',
-                  bottom: '-4px',
-                  left: 0,
-                  width: '100%',
-                  height: '1.5px',
-                  backgroundColor: '#1A1A1A',
-                  transform: 'scaleX(0)',
-                  transformOrigin: 'left',
-                  transition: 'transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-                }} />
-              </span>
-            </Link>
-
-          </nav >
-        </div >
-
-        {/* Right side */}
-        < div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+        {/* Right side Button */}
+        <div>
           <button style={{
-            backgroundColor: '#1A1A1A', // Dark contrasting button
+            backgroundColor: '#0BBC5C', // Vibrant Green
             border: 'none',
-            color: '#D3E95F', // Lime green text
-            padding: '0.5rem 1.4rem',
-            fontSize: '0.95rem',
-            borderRadius: '999px', // Pill shape
-            fontWeight: '600',
+            color: '#FFFFFF',
+            padding: '0.75rem 1.5rem',
+            fontSize: '0.85rem',
+            borderRadius: '999px',
+            fontWeight: '700',
             cursor: 'pointer',
-            transition: 'all 0.2s ease',
-            lineHeight: '1.4',
             display: 'flex',
             alignItems: 'center',
-            gap: '0.5rem'
+            gap: '0.5rem',
+            textTransform: 'uppercase',
+            letterSpacing: '0.5px',
+            transition: 'background-color 0.2s ease',
           }}
-            onClick={() => window.location.href = 'mailto:info@multitech.com'}
-            onMouseEnter={e => { e.currentTarget.style.backgroundColor = '#000000'; e.currentTarget.style.transform = 'translateY(-1px)'; }}
-            onMouseLeave={e => { e.currentTarget.style.backgroundColor = '#1A1A1A'; e.currentTarget.style.transform = 'translateY(0)'; }}
+            onMouseEnter={e => e.currentTarget.style.backgroundColor = '#0AA350'}
+            onMouseLeave={e => e.currentTarget.style.backgroundColor = '#0BBC5C'}
           >
-            Contact Sales
-            <span style={{ fontSize: '1.2rem', lineHeight: '1' }}>→</span>
+            LET'S TALK
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M12 19l7-7 3 3-7 7-3-3z" />
+              <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
+              <path d="M2 2l7.586 7.586" />
+              <circle cx="11" cy="11" r="2" />
+            </svg>
           </button>
-        </div >
-      </header >
-    </div >
+        </div>
+      </header>
+    </div>
   );
 };
 

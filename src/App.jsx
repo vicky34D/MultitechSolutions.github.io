@@ -1,50 +1,43 @@
+import React, { useRef } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { SocialMediaFeature, VersatileFeature } from './components/Features';
-import Hero from './components/Hero';
-import DemoSection from './components/DemoSection';
 import Header from './components/Header';
-import MoreThanCompressorSection from './components/MoreThanCompressorSection';
-import MoreFromVeedSection from './components/MoreFromVeedSection';
-import DiscoverExploreSection from './components/DiscoverExploreSection';
+import Hero from './components/Hero';
 import Footer from './components/Footer';
-import InfoSection from './components/InfoSection';
 
-import RecognitionSection from './components/RecognitionSection';
-import HowToSection from './components/HowToSection';
-import AboutUs from './pages/AboutUs';
-import Services from './pages/Services';
+import OurClients from './components/OurClients';
+import SuccessStories from './components/SuccessStories';
+import CaseStudiesList from './components/CaseStudiesList';
+import ServicesOffered from './components/ServicesOffered';
+import DesignProcess from './components/DesignProcess';
+import AwardWinning from './components/AwardWinning';
 
-/* ── Home page ─────────────────────────────────────────────── */
 function HomePage() {
   return (
-    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-      <Header />
-      <main style={{ flex: 1 }}>
-        <Hero />
-
-        <InfoSection />
-        <HowToSection />
-        <SocialMediaFeature />
-        <VersatileFeature />
-        <RecognitionSection />
-        <DemoSection />
-        <MoreThanCompressorSection />
-        <MoreFromVeedSection />
-        <DiscoverExploreSection />
-        <Footer />
-      </main>
-    </div>
+    <>
+      <Hero />
+      <OurClients />
+      <SuccessStories />
+      <CaseStudiesList />
+      <ServicesOffered />
+      <DesignProcess />
+      <AwardWinning />
+    </>
   );
 }
 
-/* ── Root with routing ─────────────────────────────────────── */
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/about" element={<AboutUs />} />
-      <Route path="/services" element={<Services />} />
-    </Routes>
+    <div className="bg-[#0A0A0A] min-h-screen text-white w-full overflow-hidden font-sans">
+      <Header />
+
+      <main className="w-full">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+        </Routes>
+      </main>
+
+      <Footer />
+    </div>
   );
 }
 
