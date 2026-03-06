@@ -36,7 +36,7 @@ const Header = () => {
             alignItems: 'center',
             textTransform: 'uppercase'
           }}>
-            LAZAREV.
+            Multitech.
           </Link>
         </div>
 

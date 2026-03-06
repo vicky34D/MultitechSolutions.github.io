@@ -89,7 +89,7 @@ const Footer = () => {
                     fontSize: '0.95rem'
                 }}>
                     <div>
-                        Lazarev. — AI + Product Design Agency.
+                        Multitech. — AI + Product Design Agency.
                     </div>
                     <div>
                         All Rights Reserved

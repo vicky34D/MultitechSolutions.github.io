@@ -110,7 +110,7 @@ const CaseStudiesList = () => {
                             fontWeight: '400',
                             maxWidth: '90%'
                         }}>
-                            See how VTnews.ai reached 240K monthly readers with a news platform exposing media bias by Lazarev.agency.
+                            See how VTnews.ai reached 240K monthly readers with a news platform exposing media bias by Multitech.
                         </p>
                         <div style={{
                             width: '100%',

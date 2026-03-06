@@ -122,8 +122,8 @@ const AwardWinning = () => {
                                         <path id="circlePath" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" />
                                     </defs>
                                     <text fontSize="10" fill="#FFFFFF" letterSpacing="2px">
-                                        <textPath href="#circlePath" startOffset="0%">LAZAREV. AGENCY •</textPath>
-                                        <textPath href="#circlePath" startOffset="50%">LAZAREV. AGENCY •</textPath>
+                                        <textPath href="#circlePath" startOffset="0%">MULTITECH. AGENCY •</textPath>
+                                        <textPath href="#circlePath" startOffset="50%">MULTITECH. AGENCY •</textPath>
                                     </text>
                                 </svg>
                             </div>
@@ -139,7 +139,7 @@ const AwardWinning = () => {
                             margin: 0,
                             maxWidth: '90%'
                         }}>
-                            <span style={{ fontSize: '0.85rem', fontWeight: '700', letterSpacing: '0.05em', color: '#777777', textTransform: 'uppercase', display: 'block', marginBottom: '1.5rem' }}>LAZAREV.</span>
+                            <span style={{ fontSize: '0.85rem', fontWeight: '700', letterSpacing: '0.05em', color: '#777777', textTransform: 'uppercase', display: 'block', marginBottom: '1.5rem' }}>MULTITECH.</span>
                             The powerhouse of AI tech, creative audacity, and business mindset. We work with everything digital and help you turn innovative ideas, products, services, and processes into a profitable business and then support you to scale it from pre-seed to series D and beyond.
                         </p>
                     </AnimatedSection>
