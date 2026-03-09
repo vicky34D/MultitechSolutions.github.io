@@ -63,7 +63,7 @@ const Header = () => {
         {/* Right side Button */}
         <div>
           <button style={{
-            backgroundColor: '#0BBC5C', // Vibrant Green
+            backgroundColor: '#2563EB', // Blue
             border: 'none',
             color: '#FFFFFF',
             padding: '0.75rem 1.5rem',
@@ -78,8 +78,8 @@ const Header = () => {
             letterSpacing: '0.5px',
             transition: 'background-color 0.2s ease',
           }}
-            onMouseEnter={e => e.currentTarget.style.backgroundColor = '#0AA350'}
-            onMouseLeave={e => e.currentTarget.style.backgroundColor = '#0BBC5C'}
+            onMouseEnter={e => e.currentTarget.style.backgroundColor = '#1D4ED8'}
+            onMouseLeave={e => e.currentTarget.style.backgroundColor = '#2563EB'}
           >
             LET'S TALK
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
