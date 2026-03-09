@@ -206,8 +206,8 @@ const Hero = () => {
                             marginBottom: '1.5rem',
                             maxWidth: '500px',
                         }}>
-                            Design That Performs.<br />
-                            Strategy That Wins.
+                            Multitech Solutions<br />
+                            Smarter business. Real impact.
                         </h1>
 
                         <p style={{
@@ -218,7 +218,7 @@ const Hero = () => {
                             marginBottom: '2.5rem',
                             fontWeight: '400',
                         }}>
-                            We craft stunning user experiences backed by strategic insights like SWOT analysis to help your product not only look good—but succeed in the market.
+                            — Your Trusted Digital Transformation Partner with 25+ Years of Experience
                         </p>
 
                         <button className="hero-cta-btn">

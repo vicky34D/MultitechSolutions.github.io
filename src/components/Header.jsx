@@ -28,7 +28,7 @@ const Header = () => {
         <div>
           <Link to="/" style={{
             fontWeight: '900',
-            fontSize: '1.4rem',
+            fontSize: '1rem',
             letterSpacing: '0.5px',
             color: '#FFFFFF',
             textDecoration: 'none',
@@ -36,7 +36,9 @@ const Header = () => {
             alignItems: 'center',
             textTransform: 'uppercase'
           }}>
-            Multitech.
+            Multitech
+            <br />
+            Solutions.
           </Link>
         </div>
 
