@@ -110,7 +110,7 @@ const Hero = () => {
                     align-items: center;
                     gap: 0.5rem;
                     padding: 0.9rem 1.8rem;
-                    border: 1.5px solid rgba(0, 0, 0, 0.5);
+                    border: 1.5px solid #FFFFFF;
                     border-radius: 8px;
                     background: transparent;
                     color: #FFFFFF;
@@ -122,9 +122,9 @@ const Hero = () => {
                     letter-spacing: 0.01em;
                 }
                 .hero-cta-btn:hover {
-                    background: rgba(0, 0, 0, 0.1);
-                    border-color: rgba(0, 0, 0, 0.8);
-                    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+                    background: rgba(255, 255, 255, 0.1);
+                    border-color: #FFFFFF;
+                    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
                 }
                 .swot-x-line {
                     position: absolute;
@@ -207,7 +207,7 @@ const Hero = () => {
                             maxWidth: '500px',
                         }}>
                             Multitech Solutions<br />
-                            Smarter business. Real impact.
+
                         </h1>
 
                         <p style={{
@@ -222,7 +222,7 @@ const Hero = () => {
                         </p>
 
                         <button className="hero-cta-btn">
-                            View Our Process
+                            Contact Us
                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style={{ marginLeft: '4px' }}>
                                 <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
@@ -374,7 +374,7 @@ const Hero = () => {
                             }}>
                                 <span style={{ color: '#777777', fontSize: '0.9rem', fontWeight: '500' }}>/ 01</span>
                                 <div>
-                                    <h2 style={{ fontSize: '4.5rem', fontWeight: '800', color: '#FFFFFF', margin: '0 0 0.5rem 0', letterSpacing: '-0.03em' }}>$500M+</h2>
+                                    <h2 style={{ fontSize: '4.5rem', fontWeight: '800', color: '#FFFFFF', margin: '0 0 0.5rem 0', letterSpacing: '-0.03em' }}>₹500M+</h2>
                                     <p style={{ color: '#999999', margin: 0, fontSize: '1.1rem', lineHeight: '1.3' }}>in funding secured<br />for our clients</p>
                                 </div>
                             </div>
@@ -414,8 +414,8 @@ const Hero = () => {
                             }}>
                                 <span style={{ color: '#777777', fontSize: '0.9rem', fontWeight: '500' }}>/ 03</span>
                                 <div>
-                                    <h2 style={{ fontSize: '4.5rem', fontWeight: '800', color: '#FFFFFF', margin: '0 0 0.5rem 0', letterSpacing: '-0.03em' }}>2015</h2>
-                                    <p style={{ color: '#999999', margin: 0, fontSize: '1.1rem', lineHeight: '1.3' }}>founded, 10+ years<br />of experience</p>
+                                    <h2 style={{ fontSize: '4.5rem', fontWeight: '800', color: '#FFFFFF', margin: '0 0 0.5rem 0', letterSpacing: '-0.03em' }}>2000</h2>
+                                    <p style={{ color: '#999999', margin: 0, fontSize: '1.1rem', lineHeight: '1.3' }}>founded, 25+ years<br />of experience</p>
                                 </div>
                             </div>
                         </div>
@@ -443,7 +443,7 @@ const Hero = () => {
                             }}>
                                 <span style={{ color: '#777777', fontSize: '0.9rem', fontWeight: '500' }}>/ 04</span>
                                 <h2 style={{ fontSize: '3rem', fontWeight: '800', color: '#FFFFFF', margin: '0', letterSpacing: '-0.02em', lineHeight: '1.1' }}>
-                                    San Francisco, CA
+                                    Kolkata, India
                                 </h2>
                             </div>
 

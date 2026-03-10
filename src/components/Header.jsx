@@ -51,15 +51,15 @@ const Header = () => {
           letterSpacing: '0.5px',
           alignItems: 'center'
         }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '5px', cursor: 'pointer', color: '#FFFFFF' }}>
+          <Link to="/what-we-do" style={{ display: 'flex', alignItems: 'center', gap: '5px', cursor: 'pointer', color: '#FFFFFF', textDecoration: 'none' }}>
             WHAT WE DO
             <svg width="10" height="6" viewBox="0 0 10 6" fill="none">
               <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-          </div>
+          </Link>
           <Link to="/cases" style={{ color: '#FFFFFF', textDecoration: 'none' }}>CASES</Link>
           <Link to="/outcomes" style={{ color: '#FFFFFF', textDecoration: 'none' }}>OUTCOMES</Link>
-          <Link to="/news" style={{ color: '#FFFFFF', textDecoration: 'none' }}>NEWS</Link>
+          <Link to="/about-us" style={{ color: '#FFFFFF', textDecoration: 'none' }}>About Us</Link>
         </nav>
 
         {/* Right side Button */}

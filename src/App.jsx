@@ -3,6 +3,8 @@ import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Footer from './components/Footer';
+import WhatWeDo from './pages/WhatWeDo';
+import AboutUs from './pages/AboutUs';
 
 import OurClients from './components/OurClients';
 import SuccessStories from './components/SuccessStories';
@@ -33,6 +35,8 @@ function App() {
       <main className="w-full">
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/what-we-do" element={<WhatWeDo />} />
+          <Route path="/about-us" element={<AboutUs />} />
         </Routes>
       </main>
 
