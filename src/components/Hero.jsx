@@ -113,44 +113,51 @@ const Hero = () => {
         </div>
 
         {/* Client Logos section */}
-        <AnimatedSection delay={0.3} direction="up" style={{ width: '100%', maxWidth: '1200px', marginTop: '4rem', padding: '0 2rem' }}>
+        <AnimatedSection delay={0.3} direction="up" style={{ width: '100%', maxWidth: '1200px', marginTop: '4rem', padding: '0 2rem', overflow: 'hidden' }}>
           <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            flexWrap: 'wrap',
-            gap: '2rem',
+            position: 'relative',
+            width: '100%',
+            overflow: 'hidden',
             opacity: 0.5,
+            maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
+            WebkitMaskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
           }}>
-            {['descript', 'Basecamp', 'Booking.com', 'himalayas', 'coinbase', 'contentful'].map((logo, i) => (
-              <span key={i} style={{
-                fontSize: '1.1rem',
-                fontWeight: '700',
-                color: '#374151',
-                letterSpacing: '-0.01em',
-                fontFamily: 'var(--kiros-font)',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '0.3rem',
-                transition: 'opacity 0.3s',
-              }}>
-                {logo === 'descript' && (
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="#374151"><rect x="2" y="2" width="16" height="16" rx="3" strokeWidth="0"/></svg>
-                )}
-                {logo === 'Basecamp' && (
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="#374151" strokeWidth="2"/><path d="M7 10l3 3 3-3" stroke="#374151" strokeWidth="2" strokeLinecap="round"/></svg>
-                )}
-                {logo === 'Booking.com' && null}
-                {logo === 'himalayas' && (
-                  <svg width="22" height="16" viewBox="0 0 22 16" fill="#374151"><path d="M0 16L7 4L11 10L15 2L22 16H0Z"/></svg>
-                )}
-                {logo === 'coinbase' && null}
-                {logo === 'contentful' && (
-                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7" stroke="#374151" strokeWidth="2"/></svg>
-                )}
-                {logo}
-              </span>
-            ))}
+            <div className="logo-ticker-track" style={{ display: 'flex', width: 'fit-content' }}>
+              {/* Duplicate array twice for seamless infinite looping */}
+              {[...Array(2)].map((_, arrayIndex) => (
+                <div key={arrayIndex} style={{ display: 'flex', gap: '5rem', paddingRight: '5rem', flexShrink: 0, alignItems: 'center' }}>
+                  {['descript', 'Basecamp', 'Booking.com', 'himalayas', 'coinbase', 'contentful'].map((logo, i) => (
+                    <span key={`${arrayIndex}-${i}`} style={{
+                      fontSize: '1.2rem',
+                      fontWeight: '700',
+                      color: '#374151',
+                      letterSpacing: '-0.01em',
+                      fontFamily: 'var(--kiros-font)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.4rem',
+                      whiteSpace: 'nowrap',
+                    }}>
+                      {logo === 'descript' && (
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="#374151"><rect x="2" y="2" width="16" height="16" rx="3" strokeWidth="0"/></svg>
+                      )}
+                      {logo === 'Basecamp' && (
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="#374151" strokeWidth="2"/><path d="M7 10l3 3 3-3" stroke="#374151" strokeWidth="2" strokeLinecap="round"/></svg>
+                      )}
+                      {logo === 'Booking.com' && null}
+                      {logo === 'himalayas' && (
+                        <svg width="22" height="16" viewBox="0 0 22 16" fill="#374151"><path d="M0 16L7 4L11 10L15 2L22 16H0Z"/></svg>
+                      )}
+                      {logo === 'coinbase' && null}
+                      {logo === 'contentful' && (
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" stroke="#374151" strokeWidth="2"/></svg>
+                      )}
+                      {logo}
+                    </span>
+                  ))}
+                </div>
+              ))}
+            </div>
           </div>
         </AnimatedSection>
       </section>
