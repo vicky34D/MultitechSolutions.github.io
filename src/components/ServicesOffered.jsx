@@ -23,17 +23,16 @@ const WhatSetsUsApart = () => {
             marginBottom: '0.75rem',
             lineHeight: '1.2',
           }}>
-            What Sets Us Apart?
+            End-to-End IT Services
           </h2>
           <p style={{
             fontSize: '1.05rem',
             color: '#6B7280',
-            maxWidth: '500px',
+            maxWidth: '600px',
             margin: '0 auto',
             lineHeight: '1.6',
           }}>
-            Uncover The Unique Advantages That Make Multitech Solutions
-            the Leading Choice in Integrated HR, Finance, and IT Solutions.
+            As your partner, Multitech Solutions provides complete lifecycle services, acting as your in-house IT department to ensure faster deployments and better ROI.
           </p>
         </AnimatedSection>
 
@@ -77,7 +76,7 @@ const WhatSetsUsApart = () => {
                 gap: '0.75rem',
               }}>
                 <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.5rem' }}>
-                  {['Overview', 'Payrolls', 'Apps'].map((tab, i) => (
+                  {['Consulting', 'Migration', 'AMC'].map((tab, i) => (
                     <span key={i} style={{
                       fontSize: '0.75rem',
                       fontWeight: i === 0 ? '600' : '400',
@@ -91,9 +90,9 @@ const WhatSetsUsApart = () => {
                 </div>
                 {/* Fake list items */}
                 {[
-                  { name: 'Sarah Chen', role: 'Product Designer', color: '#10B981' },
-                  { name: 'James Wilson', role: 'Frontend Dev', color: '#3B82F6' },
-                  { name: 'Maya Patel', role: 'HR Manager', color: '#F59E0B' },
+                  { name: 'Cloud Migration', role: 'Infrastructure', color: '#10B981' },
+                  { name: 'ERP Rollouts', role: 'Enterprise Apps', color: '#3B82F6' },
+                  { name: 'Security Hardening', role: 'Cyber Security', color: '#F59E0B' },
                 ].map((person, i) => (
                   <div key={i} style={{
                     display: 'flex',
@@ -119,10 +118,10 @@ const WhatSetsUsApart = () => {
               </div>
               <div>
                 <h3 style={{ fontSize: '1.1rem', fontWeight: '700', color: '#111827', marginBottom: '0.5rem' }}>
-                  Unified Team Dashboard
+                  Complete Lifecycle Services
                 </h3>
                 <p style={{ fontSize: '0.85rem', color: '#6B7280', lineHeight: '1.5', margin: 0 }}>
-                  Beautifully streamline your team management with real-time insights and workflow automation.
+                  From Solution Design and Consulting to Implementation, Upgrades, and ongoing Managed Services.
                 </p>
               </div>
               <button style={{
@@ -221,7 +220,7 @@ const WhatSetsUsApart = () => {
                     background: '#F59E0B',
                   }} />
                   <span style={{ fontSize: '0.75rem', color: '#6B7280' }}>
-                    Payroll cost increased by 12% this quarter
+                    Successful migration to Oracle Cloud completed
                   </span>
                 </div>
                 <div style={{
@@ -237,19 +236,19 @@ const WhatSetsUsApart = () => {
                 }}>
                   <div style={{
                     width: '8px', height: '8px', borderRadius: '50%',
-                    background: '#EF4444',
+                    background: '#10B981',
                   }} />
                   <span style={{ fontSize: '0.75rem', color: '#6B7280' }}>
-                    3 ex-employees still have access to systems
+                    Zero downtime during enterprise ERP upgrade
                   </span>
                 </div>
               </div>
               <div>
                 <h3 style={{ fontSize: '1.1rem', fontWeight: '700', color: '#111827', marginBottom: '0.5rem' }}>
-                  Smart Integrations & Alerts
+                  Single Point of Accountability
                 </h3>
                 <p style={{ fontSize: '0.85rem', color: '#6B7280', lineHeight: '1.5', margin: 0 }}>
-                  Connect with your favorite tools and get real-time alerts for critical HR events and anomalies.
+                  We ensure seamless operations, lower deployment risk, and better ROI across your entire IT landscape.
                 </p>
               </div>
             </div>

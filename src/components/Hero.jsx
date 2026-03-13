@@ -1,5 +1,52 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { AnimatedSection } from '../hooks/useScrollAnimation';
+
+const LogoItem = ({ logo }) => {
+  const [hasError, setHasError] = useState(false);
+
+  if (hasError) {
+    return (
+      <span style={{
+        fontSize: '1.5rem',
+        fontWeight: '800',
+        color: '#374151',
+        letterSpacing: '0.05em',
+        fontFamily: 'var(--kiros-font)',
+        display: 'flex',
+        alignItems: 'center',
+        gap: '0.4rem',
+        whiteSpace: 'nowrap',
+        textTransform: 'uppercase',
+      }}>
+        {logo.name}
+      </span>
+    );
+  }
+
+  return (
+    <img 
+      src={logo.url} 
+      alt={logo.name}
+      onError={() => setHasError(true)}
+      style={{
+        height: logo.name === 'DRDO' || logo.name === 'UPCL' || logo.name === 'Coal India' ? '45px' : '30px',
+        width: 'auto',
+        objectFit: 'contain',
+        opacity: 0.8,
+        filter: 'grayscale(100%) contrast(1.2)',
+        transition: 'all 0.3s ease',
+      }}
+      onMouseEnter={e => {
+        e.currentTarget.style.filter = 'grayscale(0%) contrast(1)';
+        e.currentTarget.style.opacity = '1';
+      }}
+      onMouseLeave={e => {
+        e.currentTarget.style.filter = 'grayscale(100%) contrast(1.2)';
+        e.currentTarget.style.opacity = '0.8';
+      }}
+    />
+  );
+};
 
 const Hero = () => {
   return (
@@ -80,8 +127,8 @@ const Hero = () => {
               zIndex: 1,
               textShadow: '0 2px 30px rgba(0,0,0,0.1)',
             }}>
-              Beyond Ordinary<br />
-              HR Solutions
+              End-to-End IT Solutions<br />
+              & Services
             </h1>
           </AnimatedSection>
 
@@ -96,7 +143,7 @@ const Hero = () => {
               zIndex: 1,
               fontWeight: '400',
             }}>
-              Empowering Modern Businesses,
+              Empowering Modern Enterprises,
             </p>
             <p style={{
               fontSize: 'clamp(1rem, 1.5vw, 1.2rem)',
@@ -107,7 +154,7 @@ const Hero = () => {
               zIndex: 1,
               fontWeight: '400',
             }}>
-              with Integrated HR, Finance, & IT Solutions
+              with 25 Years of Excellence in Digital Transformation
             </p>
           </AnimatedSection>
         </div>
@@ -126,34 +173,20 @@ const Hero = () => {
               {/* Duplicate array twice for seamless infinite looping */}
               {[...Array(2)].map((_, arrayIndex) => (
                 <div key={arrayIndex} style={{ display: 'flex', gap: '5rem', paddingRight: '5rem', flexShrink: 0, alignItems: 'center' }}>
-                  {['descript', 'Basecamp', 'Booking.com', 'himalayas', 'coinbase', 'contentful'].map((logo, i) => (
-                    <span key={`${arrayIndex}-${i}`} style={{
-                      fontSize: '1.2rem',
-                      fontWeight: '700',
-                      color: '#374151',
-                      letterSpacing: '-0.01em',
-                      fontFamily: 'var(--kiros-font)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '0.4rem',
-                      whiteSpace: 'nowrap',
-                    }}>
-                      {logo === 'descript' && (
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="#374151"><rect x="2" y="2" width="16" height="16" rx="3" strokeWidth="0"/></svg>
-                      )}
-                      {logo === 'Basecamp' && (
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="#374151" strokeWidth="2"/><path d="M7 10l3 3 3-3" stroke="#374151" strokeWidth="2" strokeLinecap="round"/></svg>
-                      )}
-                      {logo === 'Booking.com' && null}
-                      {logo === 'himalayas' && (
-                        <svg width="22" height="16" viewBox="0 0 22 16" fill="#374151"><path d="M0 16L7 4L11 10L15 2L22 16H0Z"/></svg>
-                      )}
-                      {logo === 'coinbase' && null}
-                      {logo === 'contentful' && (
-                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" stroke="#374151" strokeWidth="2"/></svg>
-                      )}
-                      {logo}
-                    </span>
+                  {[
+                    { name: 'ISRO', url: 'https://upload.wikimedia.org/wikipedia/commons/b/bd/Indian_Space_Research_Organisation_Logo.svg' },
+                    { name: 'Coal India', url: 'https://upload.wikimedia.org/wikipedia/en/9/9a/Coal_India_Logo.svg' },
+                    { name: 'UPCL', url: 'https://www.upcl.org/wp-content/uploads/2019/12/logo-upcl.png' },
+                    { name: 'DRDO', url: 'https://upload.wikimedia.org/wikipedia/en/8/87/Defence_Research_and_Development_Organisation_Logo.png' },
+                    { name: 'Oracle', url: 'https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg' },
+                    { name: 'SAP', url: 'https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg' },
+                    { name: 'Microsoft', url: 'https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg' },
+                    { name: 'HP', url: 'https://upload.wikimedia.org/wikipedia/commons/a/ad/HP_logo_2012.svg' },
+                    { name: 'Lenovo', url: 'https://upload.wikimedia.org/wikipedia/commons/b/b8/Lenovo_logo_2015.svg' },
+                    { name: 'Dell', url: 'https://upload.wikimedia.org/wikipedia/commons/1/18/Dell_logo_2016.svg' },
+                    { name: 'Acer', url: 'https://upload.wikimedia.org/wikipedia/commons/1/1d/Acer_logo_2016.svg' },
+                  ].map((logo, i) => (
+                    <LogoItem key={`${arrayIndex}-${i}`} logo={logo} />
                   ))}
                 </div>
               ))}
@@ -183,18 +216,17 @@ const Hero = () => {
               marginBottom: '1rem',
               lineHeight: '1.2',
             }}>
-              Simplify Your Business with<br />
-              Streamlined Solutions
+              Delivering World-Class<br />
+              IT Infrastructure & Solutions
             </h2>
             <p style={{
               fontSize: '1.05rem',
               color: '#6B7280',
-              maxWidth: '550px',
+              maxWidth: '600px',
               margin: '0 auto',
               lineHeight: '1.6',
             }}>
-              Consolidate Your People Operations with Our All-in-One
-              HR Software and Say Goodbye to Fragmented Tools.
+              We are premium partners of global IT leaders, acting as your in-house IT department to design roadmaps with a strong focus on reliability and long-term value.
             </p>
           </AnimatedSection>
 
@@ -205,9 +237,9 @@ const Hero = () => {
               gap: '1.5rem',
             }}>
               {[
-                { number: '4K+', label: 'Companies Worldwide', sub: 'Put Their Trust in Multitech Solutions', color: '#3B5BFF' },
-                { number: '24+', label: 'Countries Spanning', sub: 'Across the Globe', color: '#3B5BFF' },
-                { number: '5K+', label: 'Positive Reviews from', sub: 'Happy Users', color: '#3B5BFF' },
+                { number: '25+', label: 'Years of Experience', sub: 'Delivering end-to-end IT solutions', color: '#3B5BFF' },
+                { number: '10+', label: 'Premium Global Partners', sub: 'Including Oracle, SAP, Microsoft', color: '#3B5BFF' },
+                { number: '100%', label: 'Trusted by Government', sub: 'ISRO, DRDO, Coal India, UPCL', color: '#3B5BFF' },
               ].map((stat, i) => (
                 <div key={i} style={{
                   background: '#F8F9FB',

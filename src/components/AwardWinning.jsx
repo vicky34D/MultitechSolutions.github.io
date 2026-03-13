@@ -58,19 +58,19 @@ const AwardWinning = () => {
               position: 'relative',
               zIndex: 1,
             }}>
-              The Platform for<br />
-              Employee Development
+              Your Trusted Digital<br />
+              Transformation Partner
             </h2>
             <p style={{
               fontSize: '1.05rem',
               color: 'rgba(255,255,255,0.6)',
-              maxWidth: '480px',
+              maxWidth: '550px',
               margin: '0 auto 2rem',
               lineHeight: '1.6',
               position: 'relative',
               zIndex: 1,
             }}>
-              Elevate Your Team's Potential and Transform Your Business with Multitech Solutions.
+              Delivering measurable outcomes for expansion and future growth across your entire IT landscape.
             </p>
             <button style={{
               background: '#FFFFFF',

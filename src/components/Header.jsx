@@ -66,10 +66,10 @@ const Header = () => {
           fontWeight: '500',
           alignItems: 'center'
         }}>
-          {['Product', 'Pricing', 'Resources'].map((item) => (
+          {['Product', 'Pricing', 'About Us'].map((item) => (
             <Link
               key={item}
-              to={`/${item.toLowerCase()}`}
+              to={item === 'About Us' ? '/about-us' : `/${item.toLowerCase()}`}
               style={{
                 color: scrolled ? '#6B7280' : 'rgba(255,255,255,0.8)',
                 textDecoration: 'none',

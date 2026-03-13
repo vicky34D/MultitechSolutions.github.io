@@ -3,39 +3,39 @@ import { AnimatedSection } from '../hooks/useScrollAnimation';
 
 const testimonials = [
   {
-    name: 'Robert Kim',
-    title: 'Founder of Ticketzy',
-    text: '"Multitech Solutions has revolutionized and refined our structured HR processes, curating an a new tool streamlining tools with automation, boosting our team\'s productivity."',
+    name: 'Director of IT',
+    title: 'Government Enterprise',
+    text: '"Multitech Solutions has completely transformed our IT infrastructure. Their execution in migrating us to Oracle Cloud was flawless and zero-disruption."',
     color: '#3B82F6',
   },
   {
-    name: 'Stephanie Aniston',
-    title: 'Founder of ElevatGen',
-    text: '"With its intuitive interface and efficient document management, Multitech Solutions simplifies daily HR workflows, enabling a focus on strategic initiatives."',
+    name: 'Operations Head',
+    title: 'Public Sector Undertaking',
+    text: '"Their deep understanding of enterprise applications and prompt Managed Services makes Multitech our most trusted technology partner."',
     color: '#10B981',
   },
   {
-    name: 'Michael Lee',
-    title: 'Founder of Saraza',
-    text: '"Compared to others, Multitech Solutions stands out with its comprehensive employee management, saving us countless hours and enhancing efficiency."',
+    name: 'Chief Technology Officer',
+    title: 'Enterprise Client',
+    text: '"The hardware supply and network implementation by the Multitech team was executed precisely to our strict specifications and security standards."',
     color: '#6366F1',
   },
   {
-    name: 'Henry Tulba',
-    title: 'Founder of Dontes',
-    text: '"Multitech Solutions has transformed our HR department with intuitive features and ensures accuracy, making it indispensable for strategic employee engagement."',
+    name: 'Head of Analytics',
+    title: 'Financial Institution',
+    text: '"Working with Multitech for our Data Management transformation unlocked secure, real-time insights we didn\'t know were possible."',
     color: '#F59E0B',
   },
   {
-    name: 'Sarah Port',
-    title: 'Founder of Saurir',
-    text: '"Multitech Solutions streamlines more HR tasks—it redefines productivity growth by automating workflows and providing actionable analytics."',
+    name: 'Security Director',
+    title: 'Mission-Critical Agency',
+    text: '"We rely heavily on their robust security and surveillance systems. Their end-to-end accountability is exactly what our organisation needs."',
     color: '#EF4444',
   },
   {
-    name: 'Mark Johnson',
-    title: 'Founder of Dawnway',
-    text: '"Since adopting Multitech Solutions, our HR team\'s productivity soared. Its seamless interface and powerful analytics make it an outstanding tool."',
+    name: 'IT Procurement Manager',
+    title: 'Global Manufacturing Firm',
+    text: '"25 years of experience truly shows in their work. From Oracle licensing advisory to actual deployments, Multitech Solutions is exceptional."',
     color: '#8B5CF6',
   },
 ];
@@ -62,7 +62,7 @@ const SuccessStories = () => {
             marginBottom: '0.75rem',
             lineHeight: '1.2',
           }}>
-            Hear from Our Loyal Users
+            Hear from Our Customers
           </h2>
           <p style={{
             fontSize: '1.05rem',
@@ -71,8 +71,7 @@ const SuccessStories = () => {
             margin: '0 auto',
             lineHeight: '1.6',
           }}>
-            Dive Into Inspiring Stories and Valuable Insights Shared by Our Dedicated
-            Community of Users.
+            Discover how enterprise and government organisations achieve measurable outcomes with Multitech Solutions.
           </p>
         </AnimatedSection>
 

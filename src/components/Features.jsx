@@ -5,20 +5,20 @@ const features = [
   {
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3B5BFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+        <path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/>
       </svg>
     ),
-    title: 'Streamline',
-    description: 'Simplify complex HR processes. Automate routine tasks, reduce manual workloads, and boost overall efficiency.',
+    title: 'Oracle Cloud Infrastructure',
+    description: 'Secure, high-performance cloud for mission-critical workloads. Scalable infrastructure for enterprise and government use cases.',
   },
   {
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3B5BFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
       </svg>
     ),
-    title: 'Tailored',
-    description: 'Enjoy streamlined processes, letting your team focus on what matters most — building a thriving workplace.',
+    title: 'Data Management',
+    description: 'Oracle Database, Autonomous Database, Data Warehousing. Advanced analytics and real-time insights for your business.',
   },
   {
     icon: (
@@ -26,26 +26,26 @@ const features = [
         <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
       </svg>
     ),
-    title: 'Simplify',
-    description: 'Integrate payroll, benefits, and time tracking in one platform with smart analytics and reporting.',
+    title: 'Enterprise Applications',
+    description: 'Oracle ERP, HCM, SCM, CX. Industry-specific enterprise solutions that modernise IT and unlock data-driven insights.',
   },
   {
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3B5BFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+        <circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/>
       </svg>
     ),
-    title: 'Automate',
-    description: 'Automate onboarding, compliance, and scheduling. Save time and focus on core business strategy.',
+    title: 'AI, ML & Automation',
+    description: 'Embedded intelligence to optimise operations. Predictive insights and business automation for future growth.',
   },
   {
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3B5BFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
       </svg>
     ),
-    title: 'Optimize',
-    description: 'Gain instant insights, easy device management. Get key workforce insights, manage devices, and automate tasks.',
+    title: 'Security & Compliance',
+    description: 'End-to-end security across infrastructure and applications. Support for Indian regulatory and data residency requirements.',
   },
   {
     icon: (
@@ -53,8 +53,8 @@ const features = [
         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
       </svg>
     ),
-    title: 'Maximize',
-    description: 'Simplify benefits and minimize downtime. Maximize employee satisfaction and productivity.',
+    title: 'IT Hardware & Networking',
+    description: 'Supply & Installation of IT Hardware and Networking solutions, Cyber security, and Surveillance systems.',
   },
 ];
 
@@ -80,17 +80,17 @@ const FeaturesSection = () => {
             marginBottom: '1rem',
             lineHeight: '1.2',
           }}>
-            Explore Our Product's<br />
-            Features and Benefits
+            Comprehensive Oracle<br />
+            Solutions Offered
           </h2>
           <p style={{
             fontSize: '1.05rem',
             color: '#6B7280',
-            maxWidth: '500px',
+            maxWidth: '650px',
             margin: '0 auto',
             lineHeight: '1.6',
           }}>
-            Everything you need to manage your workforce, all in one powerful platform.
+            Oracle’s integrated cloud, data, and application platforms paired with Multitech’s execution expertise ensure seamless digital transformation.
           </p>
         </AnimatedSection>
 

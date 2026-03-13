@@ -22,13 +22,13 @@ const OurClients = () => {
             color: '#111827',
             marginBottom: '0.5rem',
           }}>
-            Featured On
+            Our Global Partnerships
           </h3>
           <p style={{
             fontSize: '0.9rem',
             color: '#9CA3AF',
           }}>
-            Recognized by Prominent Platforms and Publications Globally
+            Premium partners of the world's leading IT & ITES innovators
           </p>
         </AnimatedSection>
 
@@ -43,11 +43,13 @@ const OurClients = () => {
             opacity: 0.45,
           }}>
             {[
-              { name: 'TechCrunch', prefix: 'T⊂' },
-              { name: 'Bloomberg', prefix: '' },
-              { name: 'The Washington Post', prefix: '' },
-              { name: 'Forbes', prefix: '' },
-              { name: 'GIZMODO', prefix: '' },
+              { name: 'ORACLE', prefix: '' },
+              { name: 'SAP', prefix: '' },
+              { name: 'HPE', prefix: '' },
+              { name: 'DELL', prefix: '' },
+              { name: 'MICROSOFT', prefix: '' },
+              { name: 'VEEAM', prefix: '' },
+              { name: 'EMERSON', prefix: '' },
             ].map((pub, i) => (
               <span key={i} style={{
                 fontSize: '1rem',

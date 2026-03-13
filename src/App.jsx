@@ -8,6 +8,7 @@ import WhatSetsUsApart from './components/ServicesOffered';
 import OurClients from './components/OurClients';
 import SuccessStories from './components/SuccessStories';
 import AwardWinning from './components/AwardWinning';
+import AboutUs from './components/AboutUs';
 
 function HomePage() {
   return (
@@ -36,6 +37,7 @@ function App() {
       <main style={{ width: '100%' }}>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/about-us" element={<AboutUs />} />
         </Routes>
       </main>
 
