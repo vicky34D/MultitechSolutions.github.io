@@ -2,157 +2,107 @@ import React from 'react';
 import { AnimatedSection } from '../hooks/useScrollAnimation';
 
 const AwardWinning = () => {
-    return (
-        <section style={{
-            width: '100%',
-            backgroundColor: '#111111',
-            padding: '10rem 2rem',
-            fontFamily: "'Inter', sans-serif",
-            color: '#FFFFFF'
-        }}>
+  return (
+    <section style={{
+      width: '100%',
+      backgroundColor: '#000000',
+      padding: '6rem 0',
+      fontFamily: 'var(--kiros-font)',
+    }}>
+      <div style={{
+        maxWidth: '1200px',
+        margin: '0 auto',
+        padding: '0 2rem',
+      }}>
+        <AnimatedSection delay={0} direction="up">
+          <div style={{
+            background: 'linear-gradient(135deg, #111111 0%, #000000 100%)',
+            borderRadius: '32px',
+            border: '1px solid rgba(255,255,255,0.06)',
+            padding: 'clamp(3rem, 6vw, 5rem)',
+            textAlign: 'center',
+            position: 'relative',
+            overflow: 'hidden',
+          }}>
+            {/* Gradient orbs */}
             <div style={{
-                maxWidth: '1440px',
-                margin: '0 auto',
+              position: 'absolute',
+              top: '-30%',
+              left: '20%',
+              width: '300px',
+              height: '300px',
+              borderRadius: '50%',
+              background: 'radial-gradient(circle, rgba(59,91,255,0.15) 0%, transparent 70%)',
+              filter: 'blur(60px)',
+              pointerEvents: 'none',
+            }} />
+            <div style={{
+              position: 'absolute',
+              bottom: '-20%',
+              right: '15%',
+              width: '250px',
+              height: '250px',
+              borderRadius: '50%',
+              background: 'radial-gradient(circle, rgba(16,185,129,0.12) 0%, transparent 70%)',
+              filter: 'blur(60px)',
+              pointerEvents: 'none',
+            }} />
+
+            <h2 style={{
+              fontSize: 'clamp(2rem, 4vw, 3rem)',
+              fontWeight: '800',
+              color: '#FFFFFF',
+              letterSpacing: '-0.03em',
+              marginBottom: '1rem',
+              lineHeight: '1.15',
+              position: 'relative',
+              zIndex: 1,
             }}>
-                <div style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'minmax(250px, 1fr) 4fr',
-                    gap: '4rem',
-                    marginBottom: '8rem'
-                }}>
-                    {/* Left Column - Button */}
-                    <AnimatedSection delay={0} direction="up" style={{ paddingTop: '1rem' }}>
-                        <button style={{
-                            backgroundColor: '#1EAB53',
-                            color: '#FFFFFF',
-                            border: 'none',
-                            borderRadius: '999px',
-                            padding: '1.25rem 2.5rem',
-                            fontSize: '0.85rem',
-                            fontWeight: '700',
-                            letterSpacing: '0.05em',
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: '0.75rem',
-                            cursor: 'pointer',
-                            textTransform: 'uppercase',
-                            transition: 'background-color 0.2s'
-                        }}
-                            onMouseEnter={e => e.currentTarget.style.backgroundColor = '#168F43'}
-                            onMouseLeave={e => e.currentTarget.style.backgroundColor = '#1EAB53'}
-                        >
-                            BECOME A CLIENT
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                                <line x1="7" y1="17" x2="17" y2="7"></line>
-                                <polyline points="7 7 17 7 17 17"></polyline>
-                            </svg>
-                        </button>
-                    </AnimatedSection>
-
-                    {/* Right Column - Heading & Text */}
-                    <div style={{ paddingRight: '1rem' }}>
-                        <AnimatedSection delay={0.2} direction="up">
-                            <h2 style={{
-                                fontSize: 'clamp(4rem, 8vw, 7rem)',
-                                fontWeight: '800',
-                                letterSpacing: '-0.04em',
-                                margin: '0 0 4rem 0',
-                                lineHeight: '1'
-                            }}>
-                                Award-winning<br />
-                                product design agency
-                            </h2>
-                        </AnimatedSection>
-                        <AnimatedSection delay={0.4} direction="up">
-                            <p style={{
-                                fontSize: '2rem',
-                                lineHeight: '1.4',
-                                fontWeight: '300',
-                                color: '#E0E0E0',
-                                marginBottom: '2rem',
-                                maxWidth: '95%'
-                            }}>
-                                Instead of handing off the ready design mock-ups and saying goodbye, we promote your project, build recognition for your brand, and expand your reach when winning international awards.
-                            </p>
-                            <p style={{
-                                fontSize: '2rem',
-                                lineHeight: '1.4',
-                                fontWeight: '300',
-                                color: '#E0E0E0',
-                                margin: 0,
-                                maxWidth: '95%'
-                            }}>
-                                Up to 2023, our design team <strong style={{ color: '#FFFFFF', fontWeight: '600' }}>won 120+ design awards</strong>, some of which had us share the stage with:
-                            </p>
-                        </AnimatedSection>
-                    </div>
-                </div>
-
-                {/* Section 10 Component Integration: Powerhouse of AI Tech */}
-                <div style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'minmax(250px, 1fr) 4fr',
-                    gap: '4rem',
-                    borderTop: '1px solid #2A2A2A',
-                    paddingTop: '6rem'
-                }}>
-                    <AnimatedSection delay={0} direction="up">
-                        <div style={{
-                            width: '90px',
-                            height: '90px',
-                            border: '1px solid #FFFFFF',
-                            borderRadius: '50%',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            position: 'relative'
-                        }}>
-                            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-                                <path d="M12 2L2 12h3v8h14v-8h3L12 2z"></path>
-                            </svg>
-                            <div style={{
-                                position: 'absolute',
-                                width: '100%',
-                                height: '100%',
-                                animation: 'spin 10s linear infinite',
-                            }}>
-                                {/* Circular text element simulation */}
-                                <svg viewBox="0 0 100 100" width="100%" height="100%">
-                                    <defs>
-                                        <path id="circlePath" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" />
-                                    </defs>
-                                    <text fontSize="10" fill="#FFFFFF" letterSpacing="2px">
-                                        <textPath href="#circlePath" startOffset="0%">MULTITECH. AGENCY •</textPath>
-                                        <textPath href="#circlePath" startOffset="50%">MULTITECH. AGENCY •</textPath>
-                                    </text>
-                                </svg>
-                            </div>
-                        </div>
-                    </AnimatedSection>
-
-                    <AnimatedSection delay={0.2} direction="up">
-                        <p style={{
-                            fontSize: '2rem',
-                            lineHeight: '1.4',
-                            fontWeight: '300',
-                            color: '#E0E0E0',
-                            margin: 0,
-                            maxWidth: '90%'
-                        }}>
-                            <span style={{ fontSize: '0.85rem', fontWeight: '700', letterSpacing: '0.05em', color: '#777777', textTransform: 'uppercase', display: 'block', marginBottom: '1.5rem' }}>MULTITECH.</span>
-                            The powerhouse of AI tech, creative audacity, and business mindset. We work with everything digital and help you turn innovative ideas, products, services, and processes into a profitable business and then support you to scale it from pre-seed to series D and beyond.
-                        </p>
-                    </AnimatedSection>
-                </div>
-            </div>
-            {/* Embedded CSS for the spinning wheel */}
-            <style>{`
-                @keyframes spin {
-                    100% { transform: rotate(360deg); }
-                }
-            `}</style>
-        </section>
-    );
+              The Platform for<br />
+              Employee Development
+            </h2>
+            <p style={{
+              fontSize: '1.05rem',
+              color: 'rgba(255,255,255,0.6)',
+              maxWidth: '480px',
+              margin: '0 auto 2rem',
+              lineHeight: '1.6',
+              position: 'relative',
+              zIndex: 1,
+            }}>
+              Elevate Your Team's Potential and Transform Your Business with Multitech Solutions.
+            </p>
+            <button style={{
+              background: '#FFFFFF',
+              color: '#0F172A',
+              border: 'none',
+              borderRadius: '999px',
+              padding: '0.875rem 2rem',
+              fontSize: '0.9rem',
+              fontWeight: '700',
+              fontFamily: 'var(--kiros-font)',
+              cursor: 'pointer',
+              transition: 'all 0.3s cubic-bezier(0.4,0,0.2,1)',
+              position: 'relative',
+              zIndex: 1,
+              boxShadow: '0 4px 15px rgba(0,0,0,0.2)',
+            }}
+              onMouseEnter={e => {
+                e.currentTarget.style.transform = 'translateY(-2px)';
+                e.currentTarget.style.boxShadow = '0 8px 30px rgba(0,0,0,0.3)';
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '0 4px 15px rgba(0,0,0,0.2)';
+              }}
+            >
+              Find Out More
+            </button>
+          </div>
+        </AnimatedSection>
+      </div>
+    </section>
+  );
 };
 
 export default AwardWinning;

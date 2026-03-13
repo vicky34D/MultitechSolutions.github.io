@@ -1,125 +1,163 @@
 import React from 'react';
 import { AnimatedSection } from '../hooks/useScrollAnimation';
 
-const SuccessStories = () => {
-    return (
-        <section style={{
-            width: '100%',
-            backgroundColor: '#F5F5F5',
-            padding: '8rem 2rem 10rem',
-            fontFamily: "'Inter', sans-serif",
-            color: '#111111'
-        }}>
-            <div style={{
-                maxWidth: '1300px',
-                margin: '0 auto',
-            }}>
-                <div style={{
-                    display: 'flex',
-                    flexDirection: 'row',
-                    flexWrap: 'wrap',
-                    justifyContent: 'space-between',
-                    marginBottom: '8rem',
-                    gap: '4rem'
-                }}>
-                    <AnimatedSection delay={0} direction="up" style={{ flex: '1', minWidth: '300px' }}>
-                        <h2 style={{
-                            fontSize: 'clamp(3rem, 6vw, 5rem)',
-                            fontWeight: '800',
-                            letterSpacing: '-0.04em',
-                            margin: 0,
-                            lineHeight: '1.1'
-                        }}>
-                            Success stories<br />
-                            shaped by our user experience<br />
-                            design agency
-                        </h2>
-                    </AnimatedSection>
+const testimonials = [
+  {
+    name: 'Robert Kim',
+    title: 'Founder of Ticketzy',
+    text: '"Multitech Solutions has revolutionized and refined our structured HR processes, curating an a new tool streamlining tools with automation, boosting our team\'s productivity."',
+    color: '#3B82F6',
+  },
+  {
+    name: 'Stephanie Aniston',
+    title: 'Founder of ElevatGen',
+    text: '"With its intuitive interface and efficient document management, Multitech Solutions simplifies daily HR workflows, enabling a focus on strategic initiatives."',
+    color: '#10B981',
+  },
+  {
+    name: 'Michael Lee',
+    title: 'Founder of Saraza',
+    text: '"Compared to others, Multitech Solutions stands out with its comprehensive employee management, saving us countless hours and enhancing efficiency."',
+    color: '#6366F1',
+  },
+  {
+    name: 'Henry Tulba',
+    title: 'Founder of Dontes',
+    text: '"Multitech Solutions has transformed our HR department with intuitive features and ensures accuracy, making it indispensable for strategic employee engagement."',
+    color: '#F59E0B',
+  },
+  {
+    name: 'Sarah Port',
+    title: 'Founder of Saurir',
+    text: '"Multitech Solutions streamlines more HR tasks—it redefines productivity growth by automating workflows and providing actionable analytics."',
+    color: '#EF4444',
+  },
+  {
+    name: 'Mark Johnson',
+    title: 'Founder of Dawnway',
+    text: '"Since adopting Multitech Solutions, our HR team\'s productivity soared. Its seamless interface and powerful analytics make it an outstanding tool."',
+    color: '#8B5CF6',
+  },
+];
 
-                    <AnimatedSection delay={0.2} direction="up" style={{ flex: '1', maxWidth: '600px', minWidth: '300px' }}>
-                        <p style={{
-                            fontSize: '1.5rem',
-                            lineHeight: '1.5',
-                            color: '#333333',
-                            marginBottom: '3rem',
-                            fontWeight: '400',
-                            letterSpacing: '-0.01em'
-                        }}>
-                            Along with taking the lead in designing AI-powered solutions, we embody a partnership mentality. This exact commitment has been the bedrock of our clients' successes. When you choose to collaborate with us, we promise to be right where your audience's changing desires meet your ambitious business goals. We don't settle for mediocrity; we strive for excellence in every Figma pixel, every touchpoint, and every UX interaction.
-                        </p>
-                        <p style={{
-                            fontSize: '1.5rem',
-                            lineHeight: '1.5',
-                            color: '#333333',
-                            fontWeight: '400',
-                            letterSpacing: '-0.01em'
-                        }}>
-                            That is how we've built 50+ sustainable startup products and helped 400+ brands secure millions in funding, achieve successful acquisitions, and establish themselves as globally recognized companies.
-                        </p>
-                    </AnimatedSection>
+const SuccessStories = () => {
+  return (
+    <section style={{
+      width: '100%',
+      backgroundColor: '#F8F9FB',
+      padding: '6rem 0',
+      fontFamily: 'var(--kiros-font)',
+    }}>
+      <div style={{
+        maxWidth: '1200px',
+        margin: '0 auto',
+        padding: '0 2rem',
+      }}>
+        <AnimatedSection delay={0} direction="up" style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
+          <h2 style={{
+            fontSize: 'clamp(2rem, 3.5vw, 2.8rem)',
+            fontWeight: '700',
+            color: '#111827',
+            letterSpacing: '-0.03em',
+            marginBottom: '0.75rem',
+            lineHeight: '1.2',
+          }}>
+            Hear from Our Loyal Users
+          </h2>
+          <p style={{
+            fontSize: '1.05rem',
+            color: '#6B7280',
+            maxWidth: '550px',
+            margin: '0 auto',
+            lineHeight: '1.6',
+          }}>
+            Dive Into Inspiring Stories and Valuable Insights Shared by Our Dedicated
+            Community of Users.
+          </p>
+        </AnimatedSection>
+
+        <AnimatedSection delay={0.15} direction="up">
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(3, 1fr)',
+            gap: '1.25rem',
+          }}>
+            {testimonials.map((t, i) => (
+              <div key={i} style={{
+                background: '#FFFFFF',
+                borderRadius: '20px',
+                padding: '2rem',
+                border: '1px solid #E5E7EB',
+                display: 'flex',
+                flexDirection: 'column',
+                transition: 'all 0.4s cubic-bezier(0.4,0,0.2,1)',
+              }}
+                onMouseEnter={e => {
+                  e.currentTarget.style.borderColor = `${t.color}30`;
+                  e.currentTarget.style.boxShadow = `0 12px 40px ${t.color}0A`;
+                  e.currentTarget.style.transform = 'translateY(-4px)';
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.borderColor = '#E5E7EB';
+                  e.currentTarget.style.boxShadow = 'none';
+                  e.currentTarget.style.transform = 'translateY(0)';
+                }}
+              >
+                {/* Avatar + Name */}
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.75rem',
+                  marginBottom: '1.25rem',
+                }}>
+                  <div style={{
+                    width: '44px',
+                    height: '44px',
+                    borderRadius: '12px',
+                    background: `${t.color}15`,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '1.1rem',
+                    fontWeight: '700',
+                    color: t.color,
+                  }}>
+                    {t.name.split(' ').map(n => n[0]).join('')}
+                  </div>
+                  <div>
+                    <div style={{
+                      fontSize: '0.9rem',
+                      fontWeight: '700',
+                      color: '#111827',
+                    }}>
+                      {t.name}
+                    </div>
+                    <div style={{
+                      fontSize: '0.8rem',
+                      color: '#9CA3AF',
+                    }}>
+                      {t.title}
+                    </div>
+                  </div>
                 </div>
 
-                <AnimatedSection delay={0.4} direction="up">
-                    <div style={{
-                        display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-                        gap: '1.5rem'
-                    }}>
-                        {/* Card 1 */}
-                        <div style={{
-                            backgroundColor: '#EBEBEB',
-                            borderRadius: '16px',
-                            padding: '3rem 2.5rem',
-                            display: 'flex',
-                            flexDirection: 'column',
-                            justifyContent: 'space-between',
-                            minHeight: '350px'
-                        }}>
-                            <h2 style={{ fontSize: '4.5rem', fontWeight: '800', color: '#111111', margin: '0', letterSpacing: '-0.03em' }}>$500M</h2>
-                            <div>
-                                <p style={{ color: '#555555', margin: 0, fontSize: '1.1rem', lineHeight: '1.4' }}>in funding secured<br />owning to our designs</p>
-                                <span style={{ color: '#999999', fontSize: '0.9rem', fontWeight: '500', display: 'block', marginTop: '1rem' }}>/001</span>
-                            </div>
-                        </div>
-
-                        {/* Card 2 */}
-                        <div style={{
-                            backgroundColor: '#EBEBEB',
-                            borderRadius: '16px',
-                            padding: '3rem 2.5rem',
-                            display: 'flex',
-                            flexDirection: 'column',
-                            justifyContent: 'space-between',
-                            minHeight: '350px'
-                        }}>
-                            <h2 style={{ fontSize: '4.5rem', fontWeight: '800', color: '#111111', margin: '0', letterSpacing: '-0.03em', lineHeight: '1' }}>+1 million</h2>
-                            <div>
-                                <p style={{ color: '#555555', margin: 0, fontSize: '1.1rem', lineHeight: '1.4' }}>increase<br />in customer base</p>
-                                <span style={{ color: '#999999', fontSize: '0.9rem', fontWeight: '500', display: 'block', marginTop: '1rem' }}>/002</span>
-                            </div>
-                        </div>
-
-                        {/* Card 3 */}
-                        <div style={{
-                            backgroundColor: '#EBEBEB',
-                            borderRadius: '16px',
-                            padding: '3rem 2.5rem',
-                            display: 'flex',
-                            flexDirection: 'column',
-                            justifyContent: 'space-between',
-                            minHeight: '350px'
-                        }}>
-                            <h2 style={{ fontSize: '4.5rem', fontWeight: '800', color: '#111111', margin: '0', letterSpacing: '-0.03em', lineHeight: '1' }}>1,000,000+</h2>
-                            <div>
-                                <p style={{ color: '#555555', margin: 0, fontSize: '1.1rem', lineHeight: '1.4' }}>of active<br />marketplace users</p>
-                                <span style={{ color: '#999999', fontSize: '0.9rem', fontWeight: '500', display: 'block', marginTop: '1rem' }}>/003</span>
-                            </div>
-                        </div>
-                    </div>
-                </AnimatedSection>
-            </div>
-        </section>
-    );
+                {/* Quote */}
+                <p style={{
+                  fontSize: '0.88rem',
+                  color: '#4B5563',
+                  lineHeight: '1.6',
+                  margin: 0,
+                  flex: 1,
+                }}>
+                  {t.text}
+                </p>
+              </div>
+            ))}
+          </div>
+        </AnimatedSection>
+      </div>
+    </section>
+  );
 };
 
 export default SuccessStories;

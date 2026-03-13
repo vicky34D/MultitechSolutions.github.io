@@ -1,27 +1,22 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Footer from './components/Footer';
-import WhatWeDo from './pages/WhatWeDo';
-import AboutUs from './pages/AboutUs';
-
+import Features from './components/Features';
+import WhatSetsUsApart from './components/ServicesOffered';
 import OurClients from './components/OurClients';
 import SuccessStories from './components/SuccessStories';
-import CaseStudiesList from './components/CaseStudiesList';
-import ServicesOffered from './components/ServicesOffered';
-import DesignProcess from './components/DesignProcess';
 import AwardWinning from './components/AwardWinning';
 
 function HomePage() {
   return (
     <>
       <Hero />
+      <Features />
+      <WhatSetsUsApart />
       <OurClients />
       <SuccessStories />
-      <CaseStudiesList />
-      <ServicesOffered />
-      <DesignProcess />
       <AwardWinning />
     </>
   );
@@ -29,14 +24,18 @@ function HomePage() {
 
 function App() {
   return (
-    <div className="bg-[#0A0A0A] min-h-screen text-white w-full overflow-hidden font-sans">
+    <div style={{
+      backgroundColor: '#FFFFFF',
+      minHeight: '100vh',
+      width: '100%',
+      overflowX: 'hidden',
+      fontFamily: 'var(--kiros-font)',
+    }}>
       <Header />
 
-      <main className="w-full">
+      <main style={{ width: '100%' }}>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/what-we-do" element={<WhatWeDo />} />
-          <Route path="/about-us" element={<AboutUs />} />
         </Routes>
       </main>
 

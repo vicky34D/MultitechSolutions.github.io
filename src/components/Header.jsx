@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <div style={{
       position: 'fixed',
@@ -11,85 +19,112 @@ const Header = () => {
       display: 'flex',
       justifyContent: 'center',
       zIndex: 1000,
-      fontFamily: "'Inter', sans-serif",
-      backgroundColor: 'rgba(17, 17, 17, 0.8)',
-      backdropFilter: 'blur(10px)',
-      borderBottom: '1px solid rgba(255,255,255,0.05)'
+      fontFamily: "var(--kiros-font)",
+      backgroundColor: scrolled ? 'rgba(255, 255, 255, 0.92)' : 'transparent',
+      backdropFilter: scrolled ? 'blur(20px)' : 'none',
+      borderBottom: scrolled ? '1px solid rgba(0,0,0,0.06)' : 'none',
+      transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
     }}>
       <header style={{
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        padding: '1.5rem 2.5rem',
-        maxWidth: '1440px',
+        padding: '1rem 2.5rem',
+        maxWidth: '1240px',
         width: '100%',
       }}>
         {/* Logo */}
-        <div>
-          <Link to="/" style={{
-            fontWeight: '900',
-            fontSize: '1rem',
-            letterSpacing: '0.5px',
-            color: '#FFFFFF',
-            textDecoration: 'none',
-            display: 'flex',
-            alignItems: 'center',
-            textTransform: 'uppercase'
-          }}>
-            Multitech
-            <br />
-            Solutions.
-          </Link>
-        </div>
+        <Link to="/" style={{
+          fontWeight: '800',
+          fontSize: '1.2rem',
+          color: scrolled ? '#111827' : '#FFFFFF',
+          textDecoration: 'none',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '0.4rem',
+          letterSpacing: '-0.02em',
+          transition: 'color 0.3s',
+        }}>
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <rect width="28" height="28" rx="8" fill="url(#logoGrad)" />
+            <path d="M8 18V10L14 14L20 10V18" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <defs>
+              <linearGradient id="logoGrad" x1="0" y1="0" x2="28" y2="28">
+                <stop stopColor="#4F6BFF" />
+                <stop offset="1" stopColor="#10B981" />
+              </linearGradient>
+            </defs>
+          </svg>
+          Multitech Solutions
+        </Link>
 
         {/* Nav */}
         <nav style={{
           display: 'flex',
           gap: '2.5rem',
-          fontSize: '0.8rem',
-          fontWeight: '600',
-          letterSpacing: '0.5px',
+          fontSize: '0.9rem',
+          fontWeight: '500',
           alignItems: 'center'
         }}>
-          <Link to="/what-we-do" style={{ display: 'flex', alignItems: 'center', gap: '5px', cursor: 'pointer', color: '#FFFFFF', textDecoration: 'none' }}>
-            WHAT WE DO
-            <svg width="10" height="6" viewBox="0 0 10 6" fill="none">
-              <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </Link>
-          <Link to="/cases" style={{ color: '#FFFFFF', textDecoration: 'none' }}>CASES</Link>
-          <Link to="/outcomes" style={{ color: '#FFFFFF', textDecoration: 'none' }}>OUTCOMES</Link>
-          <Link to="/about-us" style={{ color: '#FFFFFF', textDecoration: 'none' }}>About Us</Link>
+          {['Product', 'Pricing', 'Resources'].map((item) => (
+            <Link
+              key={item}
+              to={`/${item.toLowerCase()}`}
+              style={{
+                color: scrolled ? '#6B7280' : 'rgba(255,255,255,0.8)',
+                textDecoration: 'none',
+                transition: 'color 0.3s',
+                position: 'relative',
+              }}
+              onMouseEnter={e => e.currentTarget.style.color = scrolled ? '#111827' : '#FFFFFF'}
+              onMouseLeave={e => e.currentTarget.style.color = scrolled ? '#6B7280' : 'rgba(255,255,255,0.8)'}
+            >
+              {item}
+            </Link>
+          ))}
         </nav>
 
-        {/* Right side Button */}
-        <div>
+        {/* Right side */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+          <Link
+            to="/login"
+            style={{
+              color: scrolled ? '#6B7280' : 'rgba(255,255,255,0.8)',
+              fontSize: '0.9rem',
+              fontWeight: '500',
+              textDecoration: 'none',
+              transition: 'color 0.3s',
+            }}
+            onMouseEnter={e => e.currentTarget.style.color = scrolled ? '#111827' : '#FFFFFF'}
+            onMouseLeave={e => e.currentTarget.style.color = scrolled ? '#6B7280' : 'rgba(255,255,255,0.8)'}
+          >
+            Login
+          </Link>
           <button style={{
-            backgroundColor: '#2563EB', // Blue
+            backgroundColor: '#111827',
             border: 'none',
             color: '#FFFFFF',
-            padding: '0.75rem 1.5rem',
+            padding: '0.7rem 1.5rem',
             fontSize: '0.85rem',
             borderRadius: '999px',
-            fontWeight: '700',
+            fontWeight: '600',
             cursor: 'pointer',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '0.5rem',
-            textTransform: 'uppercase',
-            letterSpacing: '0.5px',
-            transition: 'background-color 0.2s ease',
+            fontFamily: 'var(--kiros-font)',
+            transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+            boxShadow: '0 2px 10px rgba(0,0,0,0.1)',
           }}
-            onMouseEnter={e => e.currentTarget.style.backgroundColor = '#1D4ED8'}
-            onMouseLeave={e => e.currentTarget.style.backgroundColor = '#2563EB'}
+            onMouseEnter={e => {
+              e.currentTarget.style.backgroundColor = '#1E293B';
+              e.currentTarget.style.transform = 'translateY(-1px)';
+              e.currentTarget.style.boxShadow = '0 6px 20px rgba(0,0,0,0.15)';
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.backgroundColor = '#111827';
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            }}
           >
-            LET'S TALK
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M12 19l7-7 3 3-7 7-3-3z" />
-              <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
-              <path d="M2 2l7.586 7.586" />
-              <circle cx="11" cy="11" r="2" />
-            </svg>
+            Book a Demo
           </button>
         </div>
       </header>

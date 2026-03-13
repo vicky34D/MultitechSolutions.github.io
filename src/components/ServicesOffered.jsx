@@ -1,178 +1,263 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { AnimatedSection } from '../hooks/useScrollAnimation';
 
-const ServiceItem = ({ title, description }) => {
-    const [isHovered, setIsHovered] = useState(false);
-    return (
-        <div
-            style={{
-                display: 'grid',
-                gridTemplateColumns: '1fr 2fr',
-                gap: '2rem',
-                padding: '2.5rem 0',
-                borderTop: '1px solid #2A2A2A',
-                cursor: 'pointer',
-                transition: 'background-color 0.3s',
+const WhatSetsUsApart = () => {
+  return (
+    <section style={{
+      width: '100%',
+      backgroundColor: '#F8F9FB',
+      padding: '6rem 0',
+      fontFamily: 'var(--kiros-font)',
+    }}>
+      <div style={{
+        maxWidth: '1200px',
+        margin: '0 auto',
+        padding: '0 2rem',
+      }}>
+        <AnimatedSection delay={0} direction="up" style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
+          <h2 style={{
+            fontSize: 'clamp(2rem, 3.5vw, 2.8rem)',
+            fontWeight: '700',
+            color: '#111827',
+            letterSpacing: '-0.03em',
+            marginBottom: '0.75rem',
+            lineHeight: '1.2',
+          }}>
+            What Sets Us Apart?
+          </h2>
+          <p style={{
+            fontSize: '1.05rem',
+            color: '#6B7280',
+            maxWidth: '500px',
+            margin: '0 auto',
+            lineHeight: '1.6',
+          }}>
+            Uncover The Unique Advantages That Make Multitech Solutions
+            the Leading Choice in Integrated HR, Finance, and IT Solutions.
+          </p>
+        </AnimatedSection>
+
+        {/* Main grid layout with cards */}
+        <AnimatedSection delay={0.2} direction="up">
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            gap: '1.25rem',
+          }}>
+            {/* Left Card — Platform Overview */}
+            <div style={{
+              background: '#FFFFFF',
+              borderRadius: '24px',
+              border: '1px solid #E5E7EB',
+              padding: '2.5rem',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              minHeight: '360px',
+              transition: 'all 0.4s cubic-bezier(0.4,0,0.2,1)',
             }}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-        >
-            <h3 style={{
-                fontSize: '2rem',
-                fontWeight: '400',
-                margin: 0,
-                color: isHovered ? '#FFFFFF' : '#E0E0E0',
-                transition: 'color 0.3s'
-            }}>
-                {title}
-            </h3>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-                <p style={{
-                    color: '#A0A0A0',
-                    fontSize: '1.1rem',
-                    lineHeight: '1.6',
-                    margin: 0,
-                    maxWidth: '85%'
-                }}>
-                    {description}
-                </p>
-                <div style={{
-                    width: '40px',
-                    height: '40px',
-                    borderRadius: '50%',
-                    backgroundColor: isHovered ? '#FFFFFF' : 'transparent',
+              onMouseEnter={e => {
+                e.currentTarget.style.boxShadow = '0 12px 40px rgba(0,0,0,0.06)';
+                e.currentTarget.style.transform = 'translateY(-3px)';
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.boxShadow = 'none';
+                e.currentTarget.style.transform = 'translateY(0)';
+              }}
+            >
+              {/* Mock UI - Team Dashboard */}
+              <div style={{
+                background: '#F3F4F6',
+                borderRadius: '16px',
+                padding: '1.5rem',
+                marginBottom: '1.5rem',
+                flex: 1,
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '0.75rem',
+              }}>
+                <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.5rem' }}>
+                  {['Overview', 'Payrolls', 'Apps'].map((tab, i) => (
+                    <span key={i} style={{
+                      fontSize: '0.75rem',
+                      fontWeight: i === 0 ? '600' : '400',
+                      color: i === 0 ? '#111827' : '#9CA3AF',
+                      padding: '0.35rem 0.75rem',
+                      borderRadius: '8px',
+                      background: i === 0 ? '#FFFFFF' : 'transparent',
+                      boxShadow: i === 0 ? '0 1px 3px rgba(0,0,0,0.06)' : 'none',
+                    }}>{tab}</span>
+                  ))}
+                </div>
+                {/* Fake list items */}
+                {[
+                  { name: 'Sarah Chen', role: 'Product Designer', color: '#10B981' },
+                  { name: 'James Wilson', role: 'Frontend Dev', color: '#3B82F6' },
+                  { name: 'Maya Patel', role: 'HR Manager', color: '#F59E0B' },
+                ].map((person, i) => (
+                  <div key={i} style={{
                     display: 'flex',
                     alignItems: 'center',
-                    justifyContent: 'center',
-                    transition: 'all 0.3s',
-                    color: isHovered ? '#111111' : '#FFFFFF'
-                }}>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <line x1="7" y1="17" x2="17" y2="7"></line>
-                        <polyline points="7 7 17 7 17 17"></polyline>
-                    </svg>
-                </div>
-            </div>
-        </div>
-    );
-};
-
-const ServicesOffered = () => {
-    return (
-        <section style={{
-            width: '100%',
-            backgroundColor: '#111111',
-            padding: '5rem 2rem 10rem 2rem',
-            fontFamily: "'Inter', sans-serif",
-            color: '#FFFFFF'
-        }}>
-            <div style={{
-                maxWidth: '1440px',
-                margin: '0 auto',
-            }}>
-                <div style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'minmax(250px, 1fr) 2fr 2fr',
-                    gap: '4rem',
-                    marginBottom: '4rem'
-                }}>
-                    {/* Left Column - Empty */}
-                    <div style={{ padding: '1rem' }}></div>
-
-                    {/* Middle & Right Column - Heading */}
-                    <div style={{ gridColumn: '2 / span 2' }}>
-                        <AnimatedSection delay={0} direction="up">
-                            <h2 style={{
-                                fontSize: 'clamp(3rem, 5vw, 4.5rem)',
-                                fontWeight: '800',
-                                letterSpacing: '-0.04em',
-                                margin: '0 0 4rem 0',
-                                lineHeight: '1.1'
-                            }}>
-                                Digital product<br />
-                                design services and<br />
-                                solutions we offer
-                            </h2>
-                        </AnimatedSection>
+                    gap: '0.75rem',
+                    padding: '0.5rem',
+                    background: '#FFFFFF',
+                    borderRadius: '10px',
+                  }}>
+                    <div style={{
+                      width: '32px', height: '32px', borderRadius: '8px',
+                      background: person.color, opacity: 0.2,
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    }}>
+                      <div style={{ width: '16px', height: '16px', borderRadius: '50%', background: person.color }} />
                     </div>
-                </div>
-
-                <div style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'minmax(250px, 1fr) 4fr',
-                    gap: '4rem',
-                    marginBottom: '4rem'
-                }}>
-                    {/* Left Column - Button */}
-                    <AnimatedSection delay={0.2} direction="up" style={{ paddingTop: '1rem' }}>
-                        <button style={{
-                            backgroundColor: '#1EAB53',
-                            color: '#FFFFFF',
-                            border: 'none',
-                            borderRadius: '999px',
-                            padding: '1.25rem 2.5rem',
-                            fontSize: '0.85rem',
-                            fontWeight: '700',
-                            letterSpacing: '0.05em',
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: '0.75rem',
-                            cursor: 'pointer',
-                            textTransform: 'uppercase',
-                            transition: 'background-color 0.2s'
-                        }}
-                            onMouseEnter={e => e.currentTarget.style.backgroundColor = '#168F43'}
-                            onMouseLeave={e => e.currentTarget.style.backgroundColor = '#1EAB53'}
-                        >
-                            BECOME A CLIENT
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                                <line x1="7" y1="17" x2="17" y2="7"></line>
-                                <polyline points="7 7 17 7 17 17"></polyline>
-                            </svg>
-                        </button>
-                    </AnimatedSection>
-
-                    {/* Right Column - Text & List */}
                     <div>
-                        <AnimatedSection delay={0.4} direction="up">
-                            <p style={{
-                                fontSize: '2rem',
-                                lineHeight: '1.4',
-                                fontWeight: '300',
-                                color: '#E0E0E0',
-                                marginBottom: '5rem',
-                                maxWidth: '100%'
-                            }}>
-                                We lead your startup at every step of its growth, providing unparalleled personal service at every interaction. Whether it's launching an MVP, revamping an existing product, securing funding with UI prototypes, increasing customer engagement, or boosting conversions, we develop a suite of custom-tailored design services to fulfill your expectations.
-                            </p>
-                        </AnimatedSection>
-
-                        <AnimatedSection delay={0.6} direction="up">
-                            <div>
-                                <ServiceItem
-                                    title="UX/UI design"
-                                    description="UI UX design services to solve business challenges and unlock growth. We go beyond your website or digital product—shaping brand perception and positioning for lasting impact."
-                                />
-                                <ServiceItem
-                                    title="Website redesign"
-                                    description="We specialize in redesigning websites to increase business KPIs and propel your brand forward. We've helped clients increase traffic and drive conversions by 50% and beyond."
-                                />
-                                <ServiceItem
-                                    title="UX research"
-                                    description="Before making any design solutions, our team conducts UX research, leaving no stone unturned. This entails market analysis, competitor assessment, crystallizing your product positioning, and defining comprehensive feature lists."
-                                />
-                                <ServiceItem
-                                    title="UX design"
-                                    description="UX designers take on the task of transferring user research insights and design solutions onto the interface. Through a series of user tests and iterative sessions, we ensure the digital experience is both scalable and highly functional."
-                                />
-                                <div style={{ borderTop: '1px solid #2A2A2A', width: '100%' }}></div>
-                            </div>
-                        </AnimatedSection>
+                      <div style={{ fontSize: '0.8rem', fontWeight: '600', color: '#111827' }}>{person.name}</div>
+                      <div style={{ fontSize: '0.7rem', color: '#9CA3AF' }}>{person.role}</div>
                     </div>
-                </div>
+                  </div>
+                ))}
+              </div>
+              <div>
+                <h3 style={{ fontSize: '1.1rem', fontWeight: '700', color: '#111827', marginBottom: '0.5rem' }}>
+                  Unified Team Dashboard
+                </h3>
+                <p style={{ fontSize: '0.85rem', color: '#6B7280', lineHeight: '1.5', margin: 0 }}>
+                  Beautifully streamline your team management with real-time insights and workflow automation.
+                </p>
+              </div>
+              <button style={{
+                marginTop: '1.25rem',
+                background: '#111827',
+                color: '#FFFFFF',
+                border: 'none',
+                borderRadius: '999px',
+                padding: '0.65rem 1.25rem',
+                fontSize: '0.8rem',
+                fontWeight: '600',
+                fontFamily: 'var(--kiros-font)',
+                cursor: 'pointer',
+                alignSelf: 'flex-start',
+                transition: 'all 0.3s',
+              }}
+                onMouseEnter={e => e.currentTarget.style.background = '#1E293B'}
+                onMouseLeave={e => e.currentTarget.style.background = '#111827'}
+              >
+                Find Out More
+              </button>
             </div>
-        </section>
-    );
+
+            {/* Right Card — Integrations */}
+            <div style={{
+              background: '#FFFFFF',
+              borderRadius: '24px',
+              border: '1px solid #E5E7EB',
+              padding: '2.5rem',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              minHeight: '360px',
+              transition: 'all 0.4s cubic-bezier(0.4,0,0.2,1)',
+            }}
+              onMouseEnter={e => {
+                e.currentTarget.style.boxShadow = '0 12px 40px rgba(0,0,0,0.06)';
+                e.currentTarget.style.transform = 'translateY(-3px)';
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.boxShadow = 'none';
+                e.currentTarget.style.transform = 'translateY(0)';
+              }}
+            >
+              {/* Integration Icons Grid */}
+              <div style={{
+                background: '#F3F4F6',
+                borderRadius: '16px',
+                padding: '2rem',
+                marginBottom: '1.5rem',
+                flex: 1,
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '1rem',
+              }}>
+                <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+                  {[
+                    { bg: '#24292E', icon: '⌘' },  // Github-like
+                    { bg: '#4A154B', icon: '◈' },  // Slack-like
+                    { bg: '#3B5BFF', icon: '✦' },  // App
+                    { bg: '#000000', icon: '●' },  // Notion-like
+                    { bg: '#10B981', icon: '◉' },  // Custom
+                  ].map((app, i) => (
+                    <div key={i} style={{
+                      width: '48px', height: '48px', borderRadius: '12px',
+                      background: app.bg, color: '#FFFFFF',
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      fontSize: '1.2rem', fontWeight: '700',
+                      boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
+                      transition: 'transform 0.3s',
+                      cursor: 'default',
+                    }}
+                      onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.1)'}
+                      onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
+                    >
+                      {app.icon}
+                    </div>
+                  ))}
+                </div>
+                {/* Alert mockups */}
+                <div style={{
+                  background: '#FFFFFF',
+                  borderRadius: '10px',
+                  padding: '0.75rem 1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
+                  width: '100%',
+                  maxWidth: '280px',
+                }}>
+                  <div style={{
+                    width: '8px', height: '8px', borderRadius: '50%',
+                    background: '#F59E0B',
+                  }} />
+                  <span style={{ fontSize: '0.75rem', color: '#6B7280' }}>
+                    Payroll cost increased by 12% this quarter
+                  </span>
+                </div>
+                <div style={{
+                  background: '#FFFFFF',
+                  borderRadius: '10px',
+                  padding: '0.75rem 1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
+                  width: '100%',
+                  maxWidth: '280px',
+                }}>
+                  <div style={{
+                    width: '8px', height: '8px', borderRadius: '50%',
+                    background: '#EF4444',
+                  }} />
+                  <span style={{ fontSize: '0.75rem', color: '#6B7280' }}>
+                    3 ex-employees still have access to systems
+                  </span>
+                </div>
+              </div>
+              <div>
+                <h3 style={{ fontSize: '1.1rem', fontWeight: '700', color: '#111827', marginBottom: '0.5rem' }}>
+                  Smart Integrations & Alerts
+                </h3>
+                <p style={{ fontSize: '0.85rem', color: '#6B7280', lineHeight: '1.5', margin: 0 }}>
+                  Connect with your favorite tools and get real-time alerts for critical HR events and anomalies.
+                </p>
+              </div>
+            </div>
+          </div>
+        </AnimatedSection>
+      </div>
+    </section>
+  );
 };
 
-export default ServicesOffered;
+export default WhatSetsUsApart;
