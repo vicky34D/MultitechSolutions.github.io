@@ -9,6 +9,8 @@ import OurClients from './components/OurClients';
 import SuccessStories from './components/SuccessStories';
 import AwardWinning from './components/AwardWinning';
 import AboutUs from './components/AboutUs';
+import Product from './components/Product';
+import Pricing from './components/Pricing';
 
 function HomePage() {
   return (
@@ -38,6 +40,8 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/product" element={<Product />} />
+          <Route path="/pricing" element={<Pricing />} />
         </Routes>
       </main>
 

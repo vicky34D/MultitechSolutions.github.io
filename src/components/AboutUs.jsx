@@ -1,5 +1,57 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { AnimatedSection } from '../hooks/useScrollAnimation';
+
+const PartnerLogo = ({ logo }) => {
+  const [hasError, setHasError] = useState(false);
+
+  if (hasError) {
+    return (
+      <span style={{
+        background: '#F8F9FB', border: '1px solid #E5E7EB', padding: '0.6rem 1.25rem',
+        borderRadius: '999px', fontSize: '0.9rem', fontWeight: '700', color: '#374151',
+        boxShadow: '0 2px 4px rgba(0,0,0,0.02)', whiteSpace: 'nowrap'
+      }}>
+        {logo.name}
+      </span>
+    );
+  }
+
+  return (
+    <div style={{
+      background: '#FFFFFF', border: '1px solid #F3F4F6', borderRadius: '12px',
+      padding: '0.8rem 1.2rem', display: 'flex', alignItems: 'center', justifyContent: 'center',
+      transition: 'all 0.3s ease', cursor: 'default', height: '55px', minWidth: '100px',
+    }}
+      onMouseEnter={e => {
+        e.currentTarget.style.transform = 'translateY(-2px)';
+        e.currentTarget.style.boxShadow = '0 6px 16px rgba(0,0,0,0.06)';
+        e.currentTarget.style.borderColor = '#E5E7EB';
+        const img = e.currentTarget.querySelector('img');
+        if (img) img.style.filter = 'grayscale(0%) opacity(1)';
+      }}
+      onMouseLeave={e => {
+        e.currentTarget.style.transform = 'translateY(0)';
+        e.currentTarget.style.boxShadow = 'none';
+        e.currentTarget.style.borderColor = '#F3F4F6';
+        const img = e.currentTarget.querySelector('img');
+        if (img) img.style.filter = 'grayscale(100%) opacity(0.6)';
+      }}
+    >
+      <img 
+        src={logo.url} 
+        alt={logo.name}
+        onError={() => setHasError(true)}
+        style={{
+          maxHeight: '26px',
+          maxWidth: '100px',
+          objectFit: 'contain',
+          filter: 'grayscale(100%) opacity(0.6)',
+          transition: 'all 0.3s ease',
+        }}
+      />
+    </div>
+  );
+};
 
 const AboutUs = () => {
   return (
@@ -170,9 +222,23 @@ const AboutUs = () => {
                     'Cloud Infrastructure Provisioning',
                     'Ongoing Managed IT Services'
                   ].map((item, i) => (
-                    <li key={i} style={{ position: 'relative', listStyleType: 'none' }}>
-                      <span style={{ position: 'absolute', left: '-1.5rem', top: '0.5rem', width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#10B981' }} />
-                      {item}
+                    <li key={i} style={{ position: 'relative', listStyleType: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', width: 'fit-content', transition: 'color 0.3s ease' }}
+                        onMouseEnter={e => {
+                          e.currentTarget.style.color = '#111827';
+                          const line = e.currentTarget.querySelector('.hover-line');
+                          if (line) line.style.width = '100%';
+                        }}
+                        onMouseLeave={e => {
+                          e.currentTarget.style.color = '#4B5563';
+                          const line = e.currentTarget.querySelector('.hover-line');
+                          if (line) line.style.width = '0%';
+                        }}
+                    >
+                      <span style={{ position: 'absolute', left: '-1.5rem', top: '0.6rem', width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#10B981' }} />
+                      <span style={{ position: 'relative', display: 'inline-block' }}>
+                        {item}
+                        <span className="hover-line" style={{ position: 'absolute', bottom: '-2px', left: 0, width: '0%', height: '2px', backgroundColor: '#10B981', transition: 'width 0.3s cubic-bezier(0.4, 0, 0.2, 1)' }} />
+                      </span>
                     </li>
                   ))}
                 </ul>
@@ -207,20 +273,19 @@ const AboutUs = () => {
                 <p style={{ color: '#6B7280', lineHeight: '1.6', marginBottom: '2.5rem', fontSize: '1.05rem' }}>
                   We are premium partners with the world's leading IT innovators, ensuring our clients get access to enterprise-grade technologies.
                 </p>
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.8rem' }}>
-                  {['Oracle', 'SAP', 'HPE', 'Dell', 'Microsoft', 'Veeam', 'Emerson'].map((partner, i) => (
-                    <span key={i} style={{
-                      background: '#F8F9FB',
-                      border: '1px solid #E5E7EB',
-                      padding: '0.6rem 1.25rem',
-                      borderRadius: '999px',
-                      fontSize: '0.9rem',
-                      fontWeight: '700',
-                      color: '#374151',
-                      boxShadow: '0 2px 4px rgba(0,0,0,0.02)'
-                    }}>
-                      {partner}
-                    </span>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.8rem', alignItems: 'center' }}>
+                  {[
+                    { name: 'Oracle', url: 'https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg' },
+                    { name: 'SAP', url: 'https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg' },
+                    { name: 'Microsoft', url: 'https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg' },
+                    { name: 'HP', url: 'https://upload.wikimedia.org/wikipedia/commons/a/ad/HP_logo_2012.svg' },
+                    { name: 'Dell', url: 'https://upload.wikimedia.org/wikipedia/commons/1/18/Dell_logo_2016.svg' },
+                    { name: 'Lenovo', url: 'https://upload.wikimedia.org/wikipedia/commons/b/b8/Lenovo_logo_2015.svg' },
+                    { name: 'Acer', url: 'https://upload.wikimedia.org/wikipedia/commons/1/1d/Acer_logo_2016.svg' },
+                    { name: 'Veeam', url: 'https://upload.wikimedia.org/wikipedia/commons/a/ab/Veeam_logo.svg' },
+                    { name: 'Emerson', url: 'https://upload.wikimedia.org/wikipedia/commons/f/fd/Emerson_Electric_logo.svg' }
+                  ].map((partner, i) => (
+                    <PartnerLogo key={i} logo={partner} />
                   ))}
                 </div>
               </div>

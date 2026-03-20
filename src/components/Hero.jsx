@@ -24,8 +24,8 @@ const LogoItem = ({ logo }) => {
   }
 
   return (
-    <img 
-      src={logo.url} 
+    <img
+      src={logo.url}
       alt={logo.name}
       onError={() => setHasError(true)}
       style={{
@@ -127,8 +127,8 @@ const Hero = () => {
               zIndex: 1,
               textShadow: '0 2px 30px rgba(0,0,0,0.1)',
             }}>
-              End-to-End IT Solutions<br />
-              & Services
+              Your Trusted Digital<br />
+              Transformation Partner
             </h1>
           </AnimatedSection>
 

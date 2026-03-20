@@ -34,20 +34,23 @@ const Header = () => {
         width: '100%',
       }}>
         {/* Logo */}
-        <Link to="/" style={{
-          fontWeight: '800',
-          fontSize: '1.2rem',
-          color: scrolled ? '#111827' : '#FFFFFF',
-          textDecoration: 'none',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '0.4rem',
-          letterSpacing: '-0.02em',
-          transition: 'color 0.3s',
-        }}>
+        <Link
+          to="/"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          style={{
+            fontWeight: '800',
+            fontSize: '1.2rem',
+            color: '#111827',
+            textDecoration: 'none',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.4rem',
+            letterSpacing: '-0.02em',
+            transition: 'color 0.3s',
+          }}>
           <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
             <rect width="28" height="28" rx="8" fill="url(#logoGrad)" />
-            <path d="M8 18V10L14 14L20 10V18" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M8 18V10L14 14L20 10V18" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             <defs>
               <linearGradient id="logoGrad" x1="0" y1="0" x2="28" y2="28">
                 <stop stopColor="#4F6BFF" />
@@ -71,13 +74,13 @@ const Header = () => {
               key={item}
               to={item === 'About Us' ? '/about-us' : `/${item.toLowerCase()}`}
               style={{
-                color: scrolled ? '#6B7280' : 'rgba(255,255,255,0.8)',
+                color: '#6B7280',
                 textDecoration: 'none',
                 transition: 'color 0.3s',
                 position: 'relative',
               }}
-              onMouseEnter={e => e.currentTarget.style.color = scrolled ? '#111827' : '#FFFFFF'}
-              onMouseLeave={e => e.currentTarget.style.color = scrolled ? '#6B7280' : 'rgba(255,255,255,0.8)'}
+              onMouseEnter={e => e.currentTarget.style.color = '#111827'}
+              onMouseLeave={e => e.currentTarget.style.color = '#6B7280'}
             >
               {item}
             </Link>
@@ -89,14 +92,14 @@ const Header = () => {
           <Link
             to="/login"
             style={{
-              color: scrolled ? '#6B7280' : 'rgba(255,255,255,0.8)',
+              color: '#6B7280',
               fontSize: '0.9rem',
               fontWeight: '500',
               textDecoration: 'none',
               transition: 'color 0.3s',
             }}
-            onMouseEnter={e => e.currentTarget.style.color = scrolled ? '#111827' : '#FFFFFF'}
-            onMouseLeave={e => e.currentTarget.style.color = scrolled ? '#6B7280' : 'rgba(255,255,255,0.8)'}
+            onMouseEnter={e => e.currentTarget.style.color = '#111827'}
+            onMouseLeave={e => e.currentTarget.style.color = '#6B7280'}
           >
             Login
           </Link>
@@ -124,7 +127,7 @@ const Header = () => {
               e.currentTarget.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
             }}
           >
-            Book a Demo
+            Contact Us
           </button>
         </div>
       </header>
