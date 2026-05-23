@@ -1,13 +1,281 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>untitled-folder</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Multitech Solutions — Digital Transformation Partner</title>
+<meta name="description" content="Multitech Solutions — 25+ years of Oracle, Cloud, AI and Product Design experience. Based in Kolkata, India." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Anton&family=Bebas+Neue&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body id="top">
+
+<!-- ===== Page-load intro overlay ===== -->
+<div class="loader" id="loader">
+  <div class="loader-brand">MULTITECH</div>
+  <div class="loader-sub">SOLUTIONS</div>
+  <div class="loader-bar"><span id="loader-fill"></span></div>
+  <div class="loader-pct"><span id="loader-pct">0</span>%</div>
+  <div class="loader-tag">Digital Transformation · Est. 2000</div>
+</div>
+
+<!-- Fixed cosmic backdrop (starfield + particle comet) -->
+<canvas id="scene"></canvas>
+
+<!-- Nav -->
+<header class="nav">
+  <a href="#top" class="brand" aria-label="Multitech Solutions">
+    <span class="brand-name">Multitech</span>
+    <span class="brand-bar"></span>
+    <span class="brand-sub">Solutions</span>
+  </a>
+  <nav class="links">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#work">Cases</a>
+    <a href="#team">Team</a>
+    <a href="#contact" class="cta">Let's Talk</a>
+  </nav>
+  <button class="menu" aria-label="Menu"><span></span><span></span><span></span></button>
+</header>
+
+<!-- Custom cursor -->
+<div class="cursor" id="cursor"></div>
+
+<main>
+
+  <!-- SECTION 1 - HERO -->
+  <section class="section hero" data-section="hero">
+    <div class="hero-text">
+      <span class="eyebrow">— Digital Transformation Partner</span>
+      <h1 class="display">
+        <span class="line ghost">BUILD</span>
+        <span class="line ghost">WHAT'S</span>
+        <span class="line ghost">NEXT.</span>
+      </h1>
+      <p class="sub">
+        Multitech Solutions has delivered <b>Oracle ERP</b>, <b>cloud</b>, <b>AI</b> and
+        <b>product design</b> at enterprise scale for <b>25+ years</b> — helping clients
+        unlock <b>₹500M+ in funding</b> and ship products that endure.
+      </p>
+    </div>
+    <div class="scroll-hint">Scroll <span class="arrow">↓</span></div>
+  </section>
+
+  <!-- SECTION 2 - MISSION -->
+  <section class="section mission" data-section="mission">
+    <h2 class="big-line ghost-line">
+      <span>EXECUTING DIGITAL TRANSFORMATIONS</span>
+      <span>ACROSS ORACLE, CLOUD, AI &amp; PRODUCT DESIGN.</span>
+    </h2>
+  </section>
+
+  <!-- SECTION 3 - ABOUT / AGENCY -->
+  <section class="section agency" id="about" data-section="agency">
+    <div class="agency-text">
+      <h2 class="display right">
+        <span class="line ghost">ABOUT</span>
+        <span class="line ghost">US.</span>
+      </h2>
+      <p class="sub right">
+        Founded in <b>Kolkata, India</b> in <b>2000</b>, we partner with enterprises and
+        startups to ship <b>future-ready software</b> — from Fortune-500 Oracle rollouts to
+        <b>AI-powered</b> product launches. <b>500+ projects</b> delivered, <b>120+ awards</b>,
+        <b>150+ enterprise clients</b>, and a <b>98%</b> satisfaction rate.
+      </p>
+      <div class="stats-row">
+        <div class="stat"><span class="num">25+</span><span class="lbl">Years</span></div>
+        <div class="stat"><span class="num">₹500M+</span><span class="lbl">Client funding secured</span></div>
+        <div class="stat"><span class="num">120+</span><span class="lbl">Awards</span></div>
+        <div class="stat"><span class="num">150+</span><span class="lbl">Enterprise clients</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4 - SERVICES / EXPERTISE -->
+  <section class="section expertise" id="services" data-section="expertise">
+    <h2 class="marquee">
+      <span class="ghost-track">services &nbsp;&nbsp;&nbsp; What we do &nbsp;&nbsp;&nbsp; services &nbsp;&nbsp;&nbsp; What we do &nbsp;&nbsp;&nbsp;</span>
+    </h2>
+    <div class="grid">
+      <div class="col">
+        <h3 class="ghost-text" data-ghost="Strategy">Strategy</h3>
+        <ul>
+          <li>Digital Transformation</li>
+          <li>Enterprise Consulting</li>
+          <li>UX Strategy &amp; Research</li>
+          <li>Product Roadmapping</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h3 class="ghost-text" data-ghost="Oracle">Oracle &amp; Cloud</h3>
+        <ul>
+          <li>Oracle ERP / Cloud ERP</li>
+          <li>Cloud Migration</li>
+          <li>Managed Services</li>
+          <li>SOC 2 · HIPAA · ISO 27001</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h3 class="ghost-text" data-ghost="AI">AI &amp; Data</h3>
+        <ul>
+          <li>Generative AI Consulting</li>
+          <li>Conversational AI</li>
+          <li>ML &amp; RPA Integration</li>
+          <li>Data Platforms</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h3 class="ghost-text" data-ghost="Design">Product Design</h3>
+        <ul>
+          <li>UX / UI Design</li>
+          <li>Web &amp; Mobile App</li>
+          <li>SaaS &amp; MVP Design</li>
+          <li>Design Systems</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4.5 - CASES (horizontal scroll) -->
+  <section class="section showcase" id="work" data-section="showcase">
+    <div class="showcase-pin">
+      <div class="showcase-head">
+        <span class="eyebrow">Selected Cases</span>
+        <h2 class="display"><span class="ghost">CASES</span></h2>
+      </div>
+      <div class="track" id="showcase-track">
+        <article class="card" style="--g: linear-gradient(135deg,#1e3c72,#2a5298,#7e8ce0);">
+          <div class="card-num">01</div>
+          <div class="card-meta"><span>Oracle ERP</span><span>Fortune 500</span></div>
+          <h3>Enterprise Cloud Migration</h3>
+        </article>
+        <article class="card" style="--g: linear-gradient(135deg,#0f2027,#203a43,#2c5364);">
+          <div class="card-num">02</div>
+          <div class="card-meta"><span>AI Platform</span><span>FinTech</span></div>
+          <h3>Conversational AI Suite</h3>
+        </article>
+        <article class="card" style="--g: linear-gradient(135deg,#42275a,#734b6d);">
+          <div class="card-num">03</div>
+          <div class="card-meta"><span>SaaS</span><span>HealthTech</span></div>
+          <h3>HIPAA-Ready Data Platform</h3>
+        </article>
+        <article class="card" style="--g: linear-gradient(135deg,#0b486b,#3b8686,#79bd9a);">
+          <div class="card-num">04</div>
+          <div class="card-meta"><span>Product Design</span><span>D2C</span></div>
+          <h3>Mobile Commerce Relaunch</h3>
+        </article>
+        <article class="card" style="--g: linear-gradient(135deg,#232526,#414345);">
+          <div class="card-num">05</div>
+          <div class="card-meta"><span>Managed Services</span><span>Manufacturing</span></div>
+          <h3>24/7 Cloud Operations</h3>
+        </article>
+      </div>
+      <div class="showcase-progress"><span id="showcase-fill"></span></div>
+    </div>
+  </section>
+
+  <!-- SECTION 5 - TEAM -->
+  <section class="section team" id="team" data-section="team">
+    <div class="team-intro">
+      <h2 class="display">
+        <span class="line ghost">SMART</span>
+        <span class="line ghost">TEAM</span>
+      </h2>
+      <p class="sub">
+        <b>Living well to work better.</b> A senior, India-based team blending
+        <b>enterprise rigour</b> with <b>boutique craft</b>. We scale dynamically to fit each
+        project — from a tight strike team to a full delivery org.
+      </p>
+    </div>
+
+    <div class="leadership">
+      <div class="lead">
+        <span class="lead-init">AJ</span>
+        <div>
+          <h4>Annurag Jhunjhunwala</h4>
+          <p>CEO &amp; Co-Founder</p>
+        </div>
+      </div>
+      <div class="lead">
+        <span class="lead-init">AJ</span>
+        <div>
+          <h4>Aaditya Jhunjhunwala</h4>
+          <p>CEO &amp; Co-Founder</p>
+        </div>
+      </div>
+      <div class="lead">
+        <span class="lead-init">SD</span>
+        <div>
+          <h4>Subhankar Dhar</h4>
+          <p>Chief Technology Officer</p>
+        </div>
+      </div>
+      <div class="lead">
+        <span class="lead-init">CB</span>
+        <div>
+          <h4>Chanchal Banerjee</h4>
+          <p>VP — Client Success</p>
+        </div>
+      </div>
+      <div class="lead">
+        <span class="lead-init">DS</span>
+        <div>
+          <h4>Debashis Sapui</h4>
+          <p>General Manager — IT</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="people">
+      <div class="row" data-speed="0.6">
+        <span>Annurag</span><span class="sep">•</span>
+        <span>Aaditya</span><span class="sep">•</span>
+        <span>Subhankar</span><span class="sep">•</span>
+        <span>Chanchal</span><span class="sep">•</span>
+        <span>Debashis</span><span class="sep">•</span>
+        <span>Annurag</span><span class="sep">•</span>
+        <span>Aaditya</span><span class="sep">•</span>
+      </div>
+      <div class="row reverse" data-speed="0.4">
+        <span>Strategy</span><span class="sep">•</span>
+        <span>Oracle</span><span class="sep">•</span>
+        <span>Cloud</span><span class="sep">•</span>
+        <span>AI</span><span class="sep">•</span>
+        <span>Design</span><span class="sep">•</span>
+        <span>Strategy</span><span class="sep">•</span>
+        <span>Oracle</span><span class="sep">•</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6 - CONTACT -->
+  <section class="section contact" id="contact" data-section="contact">
+    <span class="eyebrow center">— Become a client</span>
+    <h2 class="display center">
+      <span class="line ghost">LET'S</span>
+      <span class="line ghost">TALK.</span>
+    </h2>
+    <a class="big-cta" href="mailto:hello@multitechsolutions.in">hello@multitechsolutions.in</a>
+    <p class="contact-loc">Kolkata, India · Serving clients globally</p>
+    <footer>
+      <span>© 2026 Multitech Solutions</span>
+      <span>Oracle · Cloud · AI · Product Design</span>
+    </footer>
+  </section>
+
+</main>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "lenis": "https://unpkg.com/lenis@1.1.13/dist/lenis.mjs"
+  }
+}
+</script>
+<script type="module" src="main.js"></script>
+</body>
 </html>
